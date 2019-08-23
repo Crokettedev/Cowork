@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SpacePublicController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                Ajouter un evenemet
+            </div>
+            <div class="card-body">
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success text-center">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+
+                {% if not postForm.vars.valid %}
+                    <div class="alert alert-danger text-center">
+                        Votre message n'a pas pu être envoyer.
+                    </div>
+                {% endif %}
+                {{ form_start(postForm) }}
+                {{ form_row(postForm.title) }}
+                {{ form_row(postForm.content) }}
+                {{ form_row(postForm.imageFile) }}
+
+                <button class="btn">Enregistrer</button>
+                {{ form_end(postForm) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

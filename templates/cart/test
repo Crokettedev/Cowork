@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Coworking-Gusto{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card" id="card_home_supplies">
+                    <div class="card-header" id="card_home_supplies_header">
+                        <h5>Panier</h5>
+                    </div>
+                    <div class="card-body">
+                        {% set totalPrice = 0 %}
+                        {% for carts in cart  %}
+                            {% if carts.food.title is defined and carts.food.title is not empty  %}
+                                <div class="media">
+                                    <img src="{{ vich_uploader_asset(carts.food, 'imageFile') | imagine_filter('thumb')}}" class="mr-3" alt="..." id="img_cart">
+                                    <div class="media-body">
+                                        <div class="card-header" id="card_cart_1">
+                                            <b>{{  carts.food.title  }}</b><b style="float: right">{{ carts.food.price * carts.quantity }}€</b>
+                                            {% set totalPrice = totalPrice + (carts.food.price * carts.quantity) %}
+                                            <br>
+                                            {{  carts.food.content  }}
+                                            <br>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col">
+                                                    Quantité : {{ carts.quantity }}
+                                                </div>
+                                                <div class="col">
+                                                    <button type="button" class="btn btn-dark" id="btn_supp_cart">Supprimer</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <hr class="my-4">
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card" id="card_home_supplies">
+                    <div class="card-header" id="card_home_supplies_header">
+                        <h5>Récapitulatif</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Total</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">{{ totalPrice }}€</span>
+                            </button>
+                        </div>
+                        <br>
+                        <div>
+                            <form method="post" id="payment-form">
+                                <div class="form">
+                                    <div class="form">
+                                        <div class="col">
+                                            <label for="name">
+                                                Name
+                                            </label>
+                                            <input id="name" name="name" placeholder="Jenny Rosen" required>
+                                        </div>
+                                        <div class="col">
+                                            <label for="email">
+                                                Email Address
+                                            </label>
+                                            <input id="email" name="email" type="email" placeholder="jenny.rosen@example.com" required>
+                                        </div>
+                                    </div>
+                                    <div id="card-element">
+                                        <!-- A Stripe Element will be inserted here. -->
+                                    </div>
+
+                                    <!-- Used to display form errors. -->
+                                    <div id="card-errors" role="alert"></div>
+                                </div>
+
+                                <button>Submit Payment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Paiement</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="card-text">Nous vous conseillons de vous connecter, avant d'effectuer un achat.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <a href="{{ path('app_login') }}"><button type="button" class="btn" id="btn_reserver_home">Se connecter</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

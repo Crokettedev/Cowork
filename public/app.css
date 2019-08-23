@@ -1,0 +1,208 @@
+body
+{
+    background-color: orange;
+    font-family: 'Crete Round', serif;
+    color: black;
+}
+
+/* On screens that are 992px wide or less, the background color is blue */
+
+
+#imgprofile
+{
+    border-radius: 100%;
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+}
+
+#img_home
+{
+    margin-top: 20px;
+    width: 150px;
+
+}
+
+#img_food
+{
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 150px;
+}
+
+#img_food_cocktail
+{
+    margin-top: 20px;
+    margin-left: 50px;
+    width: 150px;
+}
+
+#img_food_salad
+{
+    margin-top: 20px;
+    margin-left: 50px;
+    width: 150px;
+}
+
+#img_food_coffee
+{
+    margin-top: 20px;
+    margin-left: 60px;
+    width: 150px;
+}
+
+
+#img_cart_base
+{
+    width: 30px;
+}
+
+#img_logout_base
+{
+    width: 30px;
+}
+
+#btn_card_home
+{
+    float: right;
+    width: 120px;
+}
+
+#imgprofile_customer
+{
+    border-radius: 100%;
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+}
+
+#card_footer_home
+{ background-color: white}
+
+#card_bio
+{
+    border-color: transparent;
+}
+
+#emailHelp
+{
+    color: black;
+}
+
+.StripeElement {
+    box-sizing: border-box;
+
+    height: 40px;
+
+    padding: 10px 12px;
+
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: white;
+
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+    border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+}
+
+#card_cart
+{
+    background-color: white;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    border-left-color: transparent;
+}
+
+#card_cart_1
+{
+    background-color: white;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}
+
+#btn_supp_cart
+{
+    background-color: transparent;
+    color: #000;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-radius: 5%;
+}
+
+#img_cart
+{
+    width: 110px;
+}
+@media screen and (max-width: 360px) {
+
+    #imgprofile
+    {
+        border-radius: 100%;
+        padding: 10px;
+        width: 100px;
+        height: 100px;
+    }
+
+    #card_bio
+    {
+        border-color: transparent;
+    }
+
+    #imgprofile_customer
+    {
+        border-radius: 100%;
+        padding: 10px;
+        width: 100px;
+        height: 100px;
+        margin-left: 19px;
+    }
+
+    #img_food
+    {
+        margin-top: 20px;
+        margin-left: 50px;
+        width: 150px;
+    }
+
+    #img_food_cocktail
+    {
+        margin-top: 20px;
+        margin-left: 70px;
+        width: 150px;
+    }
+
+    #img_food_salad
+    {
+        margin-top: 20px;
+        margin-left: 70px;
+        width: 150px;
+    }
+
+    #img_food_coffee
+    {
+        margin-top: 20px;
+        margin-left: 70px;
+        width: 150px;
+    }
+
+    #img_cart
+    {
+        width: 69px;
+    }
+}

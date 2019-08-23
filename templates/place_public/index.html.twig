@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PlacePublicController!{% endblock %}
+
+{% block body %}
+    <h5>Reserver place public</h5>
+    <div class="container">
+        <div class="card text-center" style="border-color: transparent">
+            <div class="card-header">
+                <p style="float: left">{{ places.title }}</p>
+                <h5>Sélectionnez une place</h5>
+            </div>
+            <div class="card-body">
+                <div class="container" style="display: grid; grid-template-columns: repeat(2, auto); grid-gap: 20px;">
+                    {% if places.placePublics is empty %}
+                        <div class="alert alert-danger" role="alert">
+                            Aucune place n'est disponible
+                        </div>
+                    {% endif %}
+                    {% for place in places.placePublics %}
+                        <div class="card text-center" style="border-color: transparent">
+                            <div class="card-body">
+
+                                    <div class="container">
+                                        <a href="{{ path('booking_calendar', {id: place.getId()}) }}" id="place"><img src="{{ asset('image/chair.png') }}" alt="" style="width: 34px"></a>
+                                        <a href="{{ path('booking_new', {id: place.getId()}) }}" id="place">Réserver</a>
+                                    </div>
+
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

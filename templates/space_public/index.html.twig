@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SpacePublicController!{% endblock %}
+
+{% block body %}
+    <h5>Reserver</h5>
+    <div class="container">
+        <div class="card text-center" style="border-color: transparent">
+            <div class="card-header">
+                <h5>Sélectionnez votre table</h5>
+            </div>
+            <div class="card-body">
+                <div class="container" style="display: grid; grid-template-columns: repeat(2, auto); grid-gap: 20px;">
+                    {% if SpacePublic is empty %}
+                        <div class="alert alert-danger" role="alert">
+                            Aucune table disponible
+                        </div>
+                    {% endif %}
+                    {% for SallePublics in SpacePublic %}
+                        <div class="card text-center" style="border-color: transparent">
+                            <div class="card-body">
+                                <p>{{ SallePublics.title }}</p>
+                                <a href="{{ path('place_public', {id: SallePublics.getId(), slug: SallePublics.slug}) }}" id="place"><img src="{{ asset('image/chair (2).png') }}" alt="" style="width: 60px; cursor: pointer;"></a>
+                                <br>
+                                <a href="{{ path('place_public', {id: SallePublics.getId()}) }}" id="place"><button type="button" class="btn btn-primary btn-sm">Réserver</button></a>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

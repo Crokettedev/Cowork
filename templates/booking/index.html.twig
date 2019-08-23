@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Booking index{% endblock %}
+
+{% block body %}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>BeginAt</th>
+                <th>EndAt</th>
+                <th>Title</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.id }}</td>
+                <td>{{ booking.beginAt ? booking.beginAt|date('d-m-Y H:i') : '' }}</td>
+                <td>{{ booking.endAt ? booking.endAt|date('d-m-Y H:i') : '' }}</td>
+                <td>{{ booking.title }}</td>
+                <td>{{ booking.place }}</td>
+                <td>
+                    <a href="{{ path('booking_show', {'id': booking.id}) }}">show</a>
+                    <a href="{{ path('booking_edit', {'id': booking.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<div class="card">
+    <div class="card-header">
+        Dernière réservations de {{ places.title }}
+    </div>
+    {% for booking in bookings %}
+
+            <div class="card-body">
+                <p>De </p><h5 class="card-title">{{ booking.beginAt ? booking.beginAt|date('d-m-Y H:i') : '' }} à {{ booking.endAt ? booking.endAt|date('d-m-Y H:i') : '' }}</h5>
+                <hr class="my-4">
+            </div>
+
+    {% endfor %}
+    </div>
+    <a href="">Create new</a>
+{% endblock %}

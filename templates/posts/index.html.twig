@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostsController!{% endblock %}
+
+{% block body %}
+<br>
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+            Les évenements
+        </div>
+        <div class="card-body">
+            {% if Post is empty %}
+                <div class="alert alert-danger" role="alert">
+                    Aucune annonce pour l'instant
+                </div>
+            {% endif %}
+            <blockquote class="blockquote mb-0">
+                {% for Posts in Post %}
+                    <p>{{ Posts.title }} | {{ Posts.createdAt | date('d-m-Y') }} | <a href="{{ path('register_post_user', {id: Posts.getId()}) }}"><button type="button" class="btn btn-primary">S'inscrire</button></a></p>
+                    <hr class="my-4">
+                {% endfor %}
+            </blockquote>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

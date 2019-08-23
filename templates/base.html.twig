@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.1.0/main.min.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.1.0/main.min.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@4.1.0/main.min.css">
+            <link rel="stylesheet" type="text/css" href="{{ asset('app.css') }}">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        {% endblock %}
+    </head>
+    <body>
+    {% if not app.user %}
+        <nav class="navbar navbar-light bg-light">
+            <a href="{{ path('home') }}" class="navbar-brand">Logo gusto</a>
+            <a>
+                <div class="btn-group" role="group" aria-label="Basic example">
+
+                    <a href="{{ path('cart')  }}"><img src="{{ asset('image/cart.png') }}" class="card-img-top" alt="..." id="img_cart_base"></a>
+                </div>
+            </a>
+        </nav>
+    <nav class="nav">
+        <a class="nav-link active" href="{{ path('app_register') }}">ajouter un admin</a>
+        <a class="nav-link active" href="{{ path('home') }}">Home</a>
+        <a class="nav-link" href="{{ path('app_register_customer') }}">Inscription client</a>
+        <a class="nav-link" href="{{ path('app_login_user') }}">Login admin</a>
+        <a class="nav-link" href="{{ path('app_login') }}" tabindex="-1" >Login client</a>
+        <a class="nav-link" href="{{ path('add_table') }}" tabindex="-1" >Ajouter une table</a>
+        <a class="nav-link" href="{{ path('add_view_place') }}" tabindex="-1" >Ajouter une place</a>
+        <a class="nav-link" href="{{ path('show_cart') }}" tabindex="-1" >Acheter a manger</a>
+        <a class="nav-link" href="{{ path('supply_food_add') }}" tabindex="-1" >Ajouter a manger</a>
+        <a class="nav-link" href="{{ path('add_posts') }}" tabindex="-1" >Ajouter un evenement</a>
+        <a class="nav-link" href="{{ path('add_supply_office') }}" tabindex="-1" >Ajouter du materiel informatique</a>
+        <a class="nav-link" href="{{ path('add_supply_office') }}" tabindex="-1" >Acheter du materiel informatique</a>
+    </nav>
+    {% endif %}
+    {% if is_granted('ROLE_USERS') %}
+        <nav class="navbar navbar-light bg-light">
+            <a href="{{ path('home') }}" class="navbar-brand">Logo gusto</a>
+            <a>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a><img src="{{ asset('image/cart.png') }}" class="card-img-top" alt="..." id="img_cart_base"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="{{ path('app_logout') }}" data-toggle="tooltip" data-placement="bottom" title="Déconnexion"><img src="{{ asset('image/logout (1).png') }}" class="card-img-top" alt="..." id="img_logout_base"></a>
+                </div>
+            </a>
+        </nav>
+    {% endif %}
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class="container">
+            <ul class="nav justify-content-end">
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </ul>
+        </div>
+    {% endif %}
+
+
+        {% block body %}{% endblock %}
+
+        {% block javascripts %}
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            <script src="{{ asset('build/app.js') }}"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.1.0/main.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@4.1.0/main.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.1.0/main.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@4.1.0/main.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+            <script src="https://js.stripe.com/v3/"></script>
+            <script src='fullcalendar/core/locales-all.js'></script>
+            <script type="text/javascript">
+                document.addEventListener('DOMContentLoaded', () => {
+                    var calendarEl = document.getElementById('calendar-holder');
+
+
+                    var calendar = new FullCalendar.Calendar(calendarEl, {
+                        selectable: false,
+                        defaultView: 'timeGridWeek',
+                        locale: 'fr',
+                        themeSystem: 'bootstrap4',
+                        editable: false,
+                        eventSources: [
+                            {
+                                url: "{{ path('fc_load_events') }}",
+                                method: "GET",
+                                extraParams: {
+                                    filters: JSON.stringify({})
+                                },
+                                textColor: 'white',
+                                failure: () => {
+                                    // alert("There was an error while fetching FullCalendar!");
+                                },
+                            },
+                        ],
+                        header: {
+                            locale: 'fr',
+                            left: 'prev,next',
+                            center: 'title',
+                            right: 'timeGridWeek,timeGridDay',
+                        },
+                        buttonText: {
+                            week : 'Semaine',
+                            day  : 'Aujourd\'hui'
+
+                        },
+                        firstDay: 1,
+                        minTime: '07:00:00',
+                        maxTime: '22:00:00',
+                        allDaySlot: false,
+                        plugins: [ 'interaction', 'dayGrid', 'timeGrid' ], // https://fullcalendar.io/docs/plugin-index
+                        timeZone: 'UTC',
+
+                    });
+                    calendar.render();
+                });
+
+                var stripe = Stripe('pk_test_nB9zbIPWkyq4DSKIKqkMXagI00tlXagjeh');
+
+                // Create an instance of Elements.
+                var elements = stripe.elements();
+
+                // Custom styling can be passed to options when creating an Element.
+                // (Note that this demo uses a wider set of styles than the guide below.)
+                var style = {
+                    base: {
+                        color: '#32325d',
+                        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                        fontSmoothing: 'antialiased',
+                        fontSize: '16px',
+                        '::placeholder': {
+                            color: '#aab7c4'
+                        }
+                    },
+                    invalid: {
+                        color: '#fa755a',
+                        iconColor: '#fa755a'
+                    }
+                };
+
+                // Create an instance of the card Element.
+                var card = elements.create('card', {style: style});
+
+                // Add an instance of the card Element into the `card-element` <div>.
+                card.mount('#card-element');
+
+                // Handle real-time validation errors from the card Element.
+                card.addEventListener('change', function(event) {
+                    var displayError = document.getElementById('card-errors');
+                    if (event.error) {
+                        displayError.textContent = event.error.message;
+                    } else {
+                        displayError.textContent = '';
+                    }
+                });
+
+                // Handle form submission.
+                var form = document.getElementById('payment-form');
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault();
+
+                    stripe.createToken(card).then(function(result) {
+                        if (result.error) {
+                            // Inform the user if there was an error.
+                            var errorElement = document.getElementById('card-errors');
+                            errorElement.textContent = result.error.message;
+                        } else {
+                            // Send the token to your server.
+                            stripeTokenHandler(result.token);
+                        }
+                    });
+                });
+
+                // Submit the form with the token ID.
+                function stripeTokenHandler(token) {
+                    // Insert the token ID into the form so it gets submitted to the server
+                    var form = document.getElementById('payment-form');
+                    var hiddenInput = document.createElement('input');
+                    hiddenInput.setAttribute('type', 'hidden');
+                    hiddenInput.setAttribute('name', 'stripeToken');
+                    hiddenInput.setAttribute('value', token.id);
+                    form.appendChild(hiddenInput);
+
+                    // Submit the form
+                    form.submit();
+                }
+            </script>
+        {% endblock %}
+    </body>
+</html>

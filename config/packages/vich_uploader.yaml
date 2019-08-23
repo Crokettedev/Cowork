@@ -1,0 +1,24 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        space_image:
+            uri_prefix: /images/spaces
+            upload_destination: '%kernel.project_dir%/public/images/spaces'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+        food_image:
+            uri_prefix: /images/food
+            upload_destination: '%kernel.project_dir%/public/images/food'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+        customer_image:
+            uri_prefix: /images/customer
+            upload_destination: '%kernel.project_dir%/public/images/customer'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+        event_image:
+            uri_prefix: /images/event
+            upload_destination: '%kernel.project_dir%/public/images/event'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+        office_image:
+            uri_prefix: /images/office
+            upload_destination: '%kernel.project_dir%/public/images/office'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer

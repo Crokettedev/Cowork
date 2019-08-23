@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SpacePublicController!{% endblock %}
+
+{% block body %}
+    <h5>Ajouter une place</h5>
+    <div class="container" style="display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 20px;">
+        {% if public is empty %}
+            <div class="alert alert-danger" role="alert">
+                Aucune table disponible
+            </div>
+        {% endif %}
+        {% for SallePublics in public %}
+            <div class="card" style="width: 18rem;">
+                <img src="{{ vich_uploader_asset(SallePublics, 'imageFile') | imagine_filter('thumb')}}" class="card-img-top" alt="..." style="width: 100%; height: auto">
+                <div class="card-body">
+                    <h5 class="card-title">{{ SallePublics.title }}</h5>
+                    <p class="card-text">{{ SallePublics.content }}</p>
+                    <a href="{{ path('add_place', {id: SallePublics.getId(),  slug: SallePublics.slug}) }}" class="btn btn-primary">Ajouter</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

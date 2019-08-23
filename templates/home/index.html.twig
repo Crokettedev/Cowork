@@ -1,0 +1,150 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    {% if not app.user %}
+    <div class="jumbotron">
+        <h1 class="display-4">Hello, world! Normal</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <a class="btn btn-primary btn-lg" href="{{ path('space_public') }}" role="button">Espace publique</a>
+        <a class="btn btn-primary btn-lg" href="" role="button">Booking</a>
+    </div>
+        <div class="container">
+            <div class="card text-center">
+                <div class="card-header">
+                    Les évenements
+                </div>
+                <div class="card-body">
+
+                </div>
+            </div>
+        </div>
+        <div id="app"></div>
+    {% endif %}
+    {% if is_granted('ROLE_USERS') %}
+        <br>
+        <div class="container">
+            <div class="card text-center">
+                <div class="card-body">
+                    <img src="{{ vich_uploader_asset(app.user, 'imageFile') | imagine_filter('thumb')}}" class="mr-3" alt="..." id="imgprofile">
+                    <h5 class="mt-0">{{ app.user.firstname }} {{ app.user.lastname }} <a href="{{ path('customer_count', {id: app.user.id}) }}"><button type="button" class="btn btn-primary btn-sm">Modifier le profil</button></a></h5>
+                        <div class="form-row">
+                            <div class="col">
+                                {{ app.user.society }}
+                            </div>
+                            <div class="col">
+                                {{ app.user.job }}
+                            </div>
+                            <div class="col">
+                                {{ app.user.points }} points
+                            </div>
+                        </div>
+                    <br>
+                    {% if app.user.bio is empty %}
+                        <h6>Pensez à renseigner une description pour que vos collegues ou futur collegues vous identifie</h6>
+                    {% else %}
+                    {{ app.user.bio }}
+                        {% endif %}
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="card-deck">
+                <div class="card">
+                    <div class="container text-center">
+                        <img src="{{ asset('image/desk.png') }}" class="card-img-top" alt="..." id="img_home">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Reserver</h5>
+                        <p class="card-text">
+                            Une place dans l'espace public ou un salon privée pour vos collègues et vous, le choix est à vous.
+                            <br><b>Reserver maintenant !</b>
+                        </p>
+                    </div>
+                    <div class="card-footer text-muted" id="card_footer_home">
+                        <button type="button" class="btn btn-primary" id="btn_card_home">Reserver</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="container text-center">
+                        <img src="{{ asset('image/conversation.png') }}" class="card-img-top" alt="..." id="img_home">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Les événements</h5>
+                        <p class="card-text">
+                            Le plus important chez Gusto, c'est le partage, l'entraide entre partenaires.
+                            <br>Gusto met en place des évènements pour vos réunir et étendre votre réseau.
+                            <br><b>Participer maintenant !</b>
+                        </p>
+                    </div>
+                    <div class="card-footer text-muted" id="card_footer_home">
+                        <a href="{{ path('view_event', {id: app.user.id}) }}"><button type="button" class="btn btn-primary" id="btn_card_home">Participer</button></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="container text-center">
+                        <img src="{{ asset('image/diet.png') }}" class="card-img-top" alt="..." id="img_home">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Acheter a manger</h5>
+                        <p class="card-text">
+                            Concilier restauration et travail n'a jamais été aussi simple.
+                            <br><b>Commandez maintenant !</b>
+                        </p>
+                    </div>
+                    <div class="card-footer text-muted" id="card_footer_home">
+                        <button type="button" class="btn btn-primary" id="btn_card_home">Acheter</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="card-deck">
+                <div class="card">
+                    <div class="container text-center">
+                        <img src="{{ asset('image/inventory.png') }}" class="card-img-top" alt="..." id="img_home">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Acheter des fournitures</h5>
+                        <p class="card-text">
+                            Ne tombez jamais en panne de fourniture.
+                            <br><b>Commander maintenant !</b>
+                        </p>
+                    </div>
+                    <div class="card-footer text-muted" id="card_footer_home">
+                        <button type="button" class="btn btn-primary" id="btn_card_home">Acheter</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="container text-center">
+                        <img src="{{ asset('image/friends.png') }}" class="card-img-top" alt="..." id="img_home">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Créer un groupe</h5>
+                        <p class="card-text">
+                            Créer votre réseau, le début d'un projet.
+                            <br><b>Créer maintenant !</b>
+                        </p>
+                    </div>
+                    <div class="card-footer text-muted" id="card_footer_home">
+                        <button type="button" class="btn btn-primary" id="btn_card_home">Créer</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="container text-center">
+                        <img src="{{ asset('image/receipt.png') }}" class="card-img-top" alt="..." id="img_home">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Mes tickets</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    </div>
+                    <div class="card-footer text-muted" id="card_footer_home">
+                        <button type="button" class="btn btn-primary" id="btn_card_home">Consulter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+

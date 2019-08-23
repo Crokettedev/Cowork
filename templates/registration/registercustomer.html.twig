@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="bd-example-modal-lg" tabindex="-1"  aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Inscription</h5>
+                        <span style="font-size: small">Déjà un compte ? <a class="nav-item nav-link"  href="{{ path('app_login') }}">Connectez-vous</a></span>
+                    </div>
+                    <div class="modal-body">
+                        {{ form_start(registrationForm) }}
+                        {{ form_row(registrationForm.email) }}
+                        {{ form_row(registrationForm.plainPassword) }}
+                        {{ form_row(registrationForm.firstname) }}
+                        {{ form_row(registrationForm.lastname) }}
+                        {{ form_row(registrationForm.phone) }}
+                        {{ form_row(registrationForm.society) }}
+                        {{ form_row(registrationForm.job) }}
+                        {{ form_row(registrationForm.imageFile) }}
+                        {{ form_row(registrationForm.agreeTerms) }}
+                        <small id="emailHelp" class="form-text text-muted">Tous les champs marque d'un * sont obligatoire</small>
+                        <small id="emailHelp" class="form-text text-muted">En créant un compte, vous acceptez de vous conformer à laPolitique de confidentialité et auxConditions générales de Gusto-Coffee.</small>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary">S'inscrire</button>
+                                {{ form_end(registrationForm) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

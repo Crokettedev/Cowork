@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SpacePublicController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                Ajouter du matériel informatique
+            </div>
+            <div class="card-body">
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success text-center">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+
+                {% if not officeForm.vars.valid %}
+                    <div class="alert alert-danger text-center">
+                        Votre message n'a pas pu être envoyer.
+                    </div>
+                {% endif %}
+                {{ form_start(officeForm) }}
+                {{ form_row(officeForm.title) }}
+                {{ form_row(officeForm.content) }}
+                {{ form_row(officeForm.price) }}
+                {{ form_row(officeForm.stock) }}
+                {{ form_row(officeForm.label) }}
+                {{ form_row(officeForm.imageFile) }}
+
+                <button class="btn">Enregistrer</button>
+                {{ form_end(officeForm) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

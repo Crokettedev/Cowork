@@ -1,0 +1,102 @@
+
+        {% extends 'base.html.twig' %}
+
+        {% block title %}Hello RegisterPostController!{% endblock %}
+
+        {% block body %}
+            {% if not app.user %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">{{ food.price }}€</span>
+                                    </button>
+                                    <h5 class="card-title">{{ food.title }}</h5>
+                                    <p class="card-text">{{ food.content }}</p>
+                                    <img src="{{ vich_uploader_asset(food, 'imageFile') | imagine_filter('thumb')}}" class="card-img-top" alt="..." style="width: 100%; height: auto">
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    {% for message in app.flashes('success') %}
+                                        <div class="alert alert-success text-center">
+                                            {{ message }}
+                                        </div>
+                                    {% endfor %}
+
+                                    {% if not addFoodForm.vars.valid %}
+                                        <div class="alert alert-danger text-center">
+                                            Votre message n'a pas pu être envoyer.
+                                        </div>
+                                    {% endif %}
+                                    <h5 class="card-title">Ajouter au panier</h5>
+                                    {% if food.stock > 2 %}
+                                        <span class="badge badge-success">Ce produit est disponible</span>
+                                        {{ form_start(addFoodForm) }}
+                                        {{ form_row(addFoodForm.quantity) }}
+
+
+                                        <button class="btn">Enregistrer</button>
+                                        {{ form_end(addFoodForm) }}
+                                    {% else %}
+                                        <span class="badge badge-danger">Ce produit n'est plus disponible</span>
+                                        <br>
+                                    {% endif %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            {% if is_granted('ROLE_USERS') %}
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ post.title }}</h5>
+                                    <img src="{{ vich_uploader_asset(post, 'imageFile') | imagine_filter('thumb')}}" class="card-img-top" alt="..." style="width: 100%; height: auto">
+                                    <br>
+                                    <p class="card-text">Le : {{ post.createdAt | date('d-m-Y') }}</p>
+                                    <p class="card-text">{{ post.content }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">S'inscrire à l'évenement</h5>
+                                    {% for message in app.flashes('success') %}
+                                        <div class="alert alert-success text-center">
+                                            {{ message }}
+                                        </div>
+                                    {% endfor %}
+
+                                    {% if not registerPostFormUser.vars.valid %}
+                                        <div class="alert alert-danger text-center">
+                                            Vous êtes inscrit ! A très bientôt.
+                                        </div>
+                                    {% endif %}
+                                    {{ form_start(registerPostFormUser) }}
+                                    {{ form_row(registerPostFormUser.firstname ) }}
+                                    {{ form_row(registerPostFormUser.lastname) }}
+                                    {{ form_row(registerPostFormUser.email) }}
+
+                                    <button class="btn">Enregistrer</button>
+                                    {{ form_end(registerPostFormUser) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+        {% endblock %}
+

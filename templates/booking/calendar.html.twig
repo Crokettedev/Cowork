@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <p>Nom de la table <b>{{ places.title }}</b></p>
+        <p>Le prix à l'heure est de <b>{{ places.price }}€</b></p>
+        <a href="{{ path('booking_new', {id: places.getId()}) }}">Reservez </a>
+        <p>
+            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Réserver
+            </a>
+        </p>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                {{ include('booking/_form.html.twig') }}
+            </div>
+        </div>
+        {% include '@Calendar/calendar.html' %}
+    </div>
+
+{% endblock %}
+

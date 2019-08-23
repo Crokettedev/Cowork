@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CustomerController!{% endblock %}
+
+{% block body %}
+    <br>
+    <div class="container">
+        <div class="card text-center">
+            <div class="card-header">
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success text-center">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+
+                {% if not customerForm.vars.valid %}
+                    <div class="alert alert-danger text-center">
+                        Votre message n'a pas pu être envoyer.
+                    </div>
+                {% endif %}
+                <img src="{{ vich_uploader_asset(customer, 'imageFile') | imagine_filter('thumb')}}" class="mr-3" alt="..." id="imgprofile_customer">
+                <br>
+                <a>Modifier la photo de profil</a>
+                <br>
+                {{ form_start(customerForm) }}
+                {{ form_row(customerForm.firstname) }}
+                {{ form_row(customerForm.lastname) }}
+                {{ form_row(customerForm.bio) }}
+                <hr class="my-4">
+                <p>Informations privées</p>
+                {{ form_row(customerForm.email) }}
+                {{ form_row(customerForm.society) }}
+                {{ form_row(customerForm.phone) }}
+                {{ form_row(customerForm.job) }}
+                <button class="btn btn-primary">Envoyer</button>
+                {{ form_end(customerForm) }}
+                <hr class="my-4">
+                <a href="{{ path('reset_password', {id: app.user.id}) }}"><button class="btn btn-primary">Changer mon mot de passe</button></a>
+                <hr class="my-4">
+                <a href="{{ path('reset_password', {id: app.user.id}) }}"><button class="btn btn-danger">Supprimer mon compte</button></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

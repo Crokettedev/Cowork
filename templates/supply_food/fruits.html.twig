@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SpacePublicController!{% endblock %}
+
+{% block body %}
+    <div class="tab-pane" id="fruits" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="container" style="display: grid; grid-template-columns: repeat(4, auto); grid-gap: 0px;">
+            <br>
+            {% if showFruit is empty %}
+                <div class="alert alert-danger" role="alert">
+                    Aucune table disponible
+                </div>
+            {% endif %}
+            {% for showFruits in showFruit %}
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ vich_uploader_asset(showFruits, 'imageFile') | imagine_filter('thumb')}}" class="card-img-top" alt="..." style="width: 100%; height: auto">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ showFruits.title }}</h5>
+                        <h5 style="float: right">{{ showFruits.price }}€</h5>
+                    </div>
+                    <div class="card-footer text-muted" id="card_footer_home">
+                        <a href="{{ path('add_supply_food', {id: showFruits.id, slug: showFruits.slug}) }}"><button type="button" class="btn btn-primary" id="btn_card_home">Acheter</button></a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
