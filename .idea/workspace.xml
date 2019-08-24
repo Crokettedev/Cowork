@@ -15,9 +15,7 @@
       <change afterPath="$PROJECT_DIR$/../GustoCowork/translations/security.fr.yaml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../GustoPro/src/Form/ContactFormType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Corworking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Corworking/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cart/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GustoCowork/.idea/GustoCowork.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../GustoCowork/.idea/GustoCowork.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GustoCowork/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GustoCowork/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GustoCowork/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GustoCowork/.idea/workspace.xml" afterDir="false" />
@@ -134,9 +132,22 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webpack.config.js">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="675">
+              <caret line="45" column="31" lean-forward="true" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -162,15 +173,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/add_cart/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="75" selection-start-line="15" selection-start-column="75" selection-end-line="15" selection-end-column="75" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -192,7 +194,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/customer/resetPassword.html.twig" />
         <option value="$PROJECT_DIR$/src/Form/ResetPasswordType.php" />
         <option value="$PROJECT_DIR$/templates/customer/show.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/User.php" />
@@ -243,6 +244,7 @@
         <option value="$PROJECT_DIR$/templates/cart/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/templates/home/index.html.twig" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -422,18 +424,6 @@
             <path>
               <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cowork" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -572,6 +562,11 @@
               <item name="Cowork" type="462c0819:PsiDirectoryNode" />
               <item name="translations" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
+              <item name="var" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -624,7 +619,7 @@
       <workItem from="1565201041530" duration="27737000" />
       <workItem from="1565541982612" duration="47406000" />
       <workItem from="1565785201425" duration="90759000" />
-      <workItem from="1566464387122" duration="16628000" />
+      <workItem from="1566464387122" duration="17652000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <created>1566596425864</created>
@@ -640,11 +635,18 @@
       <option name="project" value="LOCAL" />
       <updated>1566596535668</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="avec vendor">
+      <created>1566613684413</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1566613684413</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="287791000" />
+    <option name="totallyTimeSpent" value="288815000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -685,7 +687,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
+    <MESSAGE value="avec vendor" />
+    <option name="LAST_COMMIT_MESSAGE" value="avec vendor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -699,16 +702,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Form/AddFoodCartType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
-          <folding>
-            <element signature="e#28#54#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/twig.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1045,7 +1038,18 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="31" lean-forward="true" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
