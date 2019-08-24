@@ -1,15 +1,133 @@
-{% extends 'base.html.twig' %}
+{% extends 'base2.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block title 'Espace d\'administration' %}
 
 {% block body %}
 
+
     {% if is_granted('ROLE_ADMIN') %}
 
-        HELLO ADMIN::
+        <div class="container-mt-4">
+
+
+            <h1>Bienvenue dans l'Espace d'Administration</h1>
+            {% if app.user %}
+
+            <div class="container-mt-2">Bienvenue, {{ app.user.username }} | <a href="{{ path('app_logout') }}">Se déconnecter</a>
+
+                {% endif %}
+
+
+                <hr class="my-4">
+                <div class="card-deck">
+                    <div class="card">
+                        <div class="container text-center">
+                            <img src="{{ asset('image/public.png') }}" width="150" height="150">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Espace Publique</h5>
+                            <p class="card-text">
+                                Vous pouvez gérer ici tous les espace publique du site.
+                            </p>
+                        </div>
+                        <div class="card-footer text-muted" id="card_footer_home">
+                            <a href="" class="btn btn-info" role="button">Gérer les espaces publique</a>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="container text-center">
+                            <img src="{{ asset('image/privee.png') }}" width="150" height="150">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Espaces Privées</h5>
+                            <p class="card-text">
+                                Vous pouvez gérer ici tous les espaces privée du site.
+                            </p>
+                        </div>
+                        <div class="card-footer text-muted" id="card_footer_home">
+                            <a href=""><button type="button" class="btn btn-primary" id="btn_card_home">Gérer les espaces privées</button></a>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="container text-center">
+                            <img src="{{ asset('image/users.png') }}" width="150" height="150">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Utilisateurs</h5>
+                            <p class="card-text">
+                                Vous pouvez gérer ici tous les clients inscrit sur le site.
+
+                            </p>
+                        </div>
+                        <div class="card-footer text-muted" id="card_footer_home">
+                            <button type="button" class="btn btn-primary" id="btn_card_home">Gérer les utilisateurs</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr class="my-4">
+                <div class="card-deck">
+                    <div class="card">
+                        <div class="container text-center">
+                            <img src="{{ asset('image/fourniture.png') }}" width="150" height="150">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Fournitures</h5>
+                            <p class="card-text">
+                                Vous pouvez gérer ici les fournitures.
+
+                            </p>
+                        </div>
+                        <div class="card-footer text-muted" id="card_footer_home">
+                            <button type="button" class="btn btn-primary" id="btn_card_home">Gérer les fournitures</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="container text-center">
+                            <img src="{{ asset('image/nourriture.png') }}" width="150" height="150">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Nourritures</h5>
+                            <p class="card-text">
+                                Vous pouvez gérer ici les nourritures
+
+                            </p>
+                        </div>
+                        <div class="card-footer text-muted" id="card_footer_home">
+                            <button type="button" class="btn btn-primary" id="btn_card_home">Gérer les nourritures</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="container text-center">
+                            <img src="{{ asset('image/admins.png') }}" width="150" height="150">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Administrateurs</h5>
+                            <p class="card-text">
+                                Vous pouvez gérer ici les administrateurs
+
+                            </p>
+                        </div>
+                        <div class="card-footer text-muted" id="card_footer_home">
+                            <button type="button" class="btn btn-primary" id="btn_card_home">Gérer les administrateurs</button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+
 
 
     {% endif %}
 
 
-    {% endblock %}
+{% endblock %}
