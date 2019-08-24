@@ -69,6 +69,7 @@ class PlacePublicController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $public->setPlacePublic($spacePublic);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($public);
             $entityManager->flush();
