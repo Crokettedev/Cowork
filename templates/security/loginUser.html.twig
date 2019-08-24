@@ -1,26 +1,30 @@
-{% extends 'base.html.twig' %}
+{% extends 'base2.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+
+{% block title %}Connectez-vous !{% endblock %}
 
 {% block body %}
-<form method="post">
+<form method="post" xmlns="http://www.w3.org/1999/html">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
     {% if app.user %}
         <div class="checkbox mb-3">You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+
+
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in User</h1>
+            {% if not app.user %}
+                <h1 class="h3 mb-3 font-weight-normal">Espace d'Administration | </h1>
     <label for="inputEmail" class="sr-only">Email</label>
-    <input type="email" value="{{ last_username }}" name="email_users" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus><br>
     <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" name="password_users" id="inputPassword" class="form-control" placeholder="Password" required>
+    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
 
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
-    >
+    ><br>
 
     {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
@@ -34,7 +38,8 @@
     #}
 
     <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
+        Connexion
     </button>
 </form>
+    {% endif %}
 {% endblock %}
