@@ -3,86 +3,90 @@
 {% block title %}Coworking-Gusto{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card" id="card_home_supplies">
-                    <div class="card-header" id="card_home_supplies_header">
-                        <h5>Panier</h5>
-                    </div>
-                    <div class="card-body">
-                        {% set totalPrice = 0 %}
-                        {% for carts in cart  %}
-                            {% if carts.food.title is defined and carts.food.title is not empty  %}
-                                <div class="media">
-                                    <img src="{{ vich_uploader_asset(carts.food, 'imageFile') | imagine_filter('thumb')}}" class="mr-3" alt="..." id="img_cart">
-                                    <div class="media-body">
-                                        <div class="card-header" id="card_cart_1">
-                                            <b>{{  carts.food.title  }}</b><b style="float: right">{{ carts.food.price * carts.quantity }}€</b>
-                                            {% set totalPrice = totalPrice + (carts.food.price * carts.quantity) %}
-                                            <br>
-                                            {{  carts.food.content  }}
-                                            <br>
-                                            <br>
-                                            <div class="row">
-                                                <div class="col">
-                                                    Quantité : {{ carts.quantity }}
-                                                </div>
-                                                <div class="col">
-                                                    <form method="post" action="{{ path('delete_cart', {id: carts.id}) }}">
-                                                        <input type="hidden" name="_method" value="DELETE">
-                                                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ carts.id) }}">
-                                                        <button class="btn btn-dark" id="btn_supp_cart">Supprimer</button>
-                                                    </form>
+    <main class="my-5 toped">
+        <section class="shopping-cart dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-uppercase font-weight-bold">Panier</h2>
+                </div>
+                <div class="content">
+                    {% set totalPrice = 0 %}
+                    {% for carts in cart  %}
+                    {% if carts.food.title is defined and carts.food.title is not empty  %}
+                    <div class="row">
+                        <div class="col-md-12 col-lg-8">
+                            <div class="items">
+                                <div class="product">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-3">
+                                            <img class="img-fluid mx-auto d-block image" src="{{ vich_uploader_asset(carts.food, 'imageFile') | imagine_filter('thumb')}}">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="col-md-8 product-name">
+                                                        <div class="product-name">
+                                                            {{  carts.food.title  }}
+                                                            <div class="product-info">
+                                                                {{  carts.food.content  }}
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 quantity">
+                                                        <label for="quantity">Quantity: {{ carts.quantity }}</label>
+                                                        <input id="quantity" type="number" value="1" class="form-control quantity-input">
+                                                    </div>
+                                                    <div class="col-md-8 price">
+                                                        <span>{{ carts.food.price * carts.quantity }} € </span>
+                                                        {% set totalPrice = totalPrice + (carts.food.price * carts.quantity) %}
+                                                        <ul class="d-flex list-unstyled">
+                                                            <li class="flex-fill">
+                                                                <form method="post" action="{{ path('delete_cart', {id: carts.id}) }}">
+                                                                    <input type="hidden" name="_method" value="DELETE">
+                                                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ carts.id) }}">
+
+                                                                    <button class="btn"  id="btn_supp_cart" style="background-color: transparent; border-left-color: transparent">Supprimer</button>
+                                                                </form>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
-                                <hr class="my-4">
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="card" id="card_home_supplies">
-                    <div class="card-header" id="card_home_supplies_header">
-                        <h5>Récapitulatif</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Total</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">{{ totalPrice }}€</span>
-                            </button>
+                                <hr>
+                                {% endif %}
+                                {% endfor %}
+
+
+                            </div>
                         </div>
-                        <br>
-                        <button type="button" class="btn btn-primary btn-lg btn-block">Paiement</button>
+                        <div class="col-md-12 col-lg-4 unique-color-dark text-white p-4">
+                            <div class="summary">
+                                <h3 class="mb-3 font-weight-bold">Récapitulatif</h3>
+                                <div class="summary-item mb-3 d-flex justify-content-between"><span class="text">Sous-total :</span><span class="price">{{ totalPrice }}€</span></div>
+                                <span class="text d-flex justify-content-between">Code promo :</span><span class="price">-$5</span>
+                            </div>
+                            <div class="summary-item mb-5 d-flex justify-content-between"><span class="text">Livraison :</span><span class="price">$0</span></div>
+                            <div class="summary-item mb-5 d-flex justify-content-between font-weight-bold"><span class="text">Total: </span><span class="price">{{ totalPrice }}€</span></div>
+                            <form class="p-2 mb-5">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Code Promo" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-orange btn-md waves-effect m-0" type="button">Appliquer</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <a href="{{ path('paiement') }}"><button type="button" class="btn btn-orange accent-3 btn-lg btn-block mb-3"><i class="fas fa-lock"></i> paiement</button></a>
+                            <button type="button" class="btn btn-white btn-lg btn-block"><i class="fab fa-paypal"></i> paypal</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">Paiement</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p class="card-text">Nous vous conseillons de vous connecter, avant d'effectuer un achat.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                        <a href="{{ path('app_login') }}"><button type="button" class="btn" id="btn_reserver_home">Se connecter</button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+        </section>
+    </main>
 {% endblock %}
 

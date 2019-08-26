@@ -1,37 +1,62 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Inscription{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <div class="bd-example-modal-lg" tabindex="-1"  aria-labelledby="myLargeModalLabel">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Inscription</h5>
-                        <span style="font-size: small">Déjà un compte ? <a class="nav-item nav-link"  href="{{ path('app_login') }}">Connectez-vous</a></span>
-                    </div>
-                    <div class="modal-body">
-                        {{ form_start(registrationForm) }}
-                        {{ form_row(registrationForm.email) }}
-                        {{ form_row(registrationForm.plainPassword) }}
-                        {{ form_row(registrationForm.firstname) }}
-                        {{ form_row(registrationForm.lastname) }}
-                        {{ form_row(registrationForm.phone) }}
-                        {{ form_row(registrationForm.society) }}
-                        {{ form_row(registrationForm.job) }}
-                        {{ form_row(registrationForm.imageFile) }}
-                        {{ form_row(registrationForm.agreeTerms) }}
-                        <small id="emailHelp" class="form-text text-muted">Tous les champs marque d'un * sont obligatoire</small>
-                        <small id="emailHelp" class="form-text text-muted">En créant un compte, vous acceptez de vous conformer à laPolitique de confidentialité et auxConditions générales de Gusto-Coffee.</small>
-                        <div class="modal-footer">
-                            <button class="btn btn-primary">S'inscrire</button>
-                                {{ form_end(registrationForm) }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <main class="mt-5 mb-4 pt-3">
+        <div class="container">
+            <!--FORMULAIRE INSCRIPTION-->
+            <section>
 
+                <div class="row d-flex justify-content-center p-5 text-center">
+                    <!-- Default form register -->
+                        {{ form_start(registrationForm, {'attr': {'class': 'border border-light mt-5 p-5 col-md-6'}}) }}
+                        <p class="h4 mb-4 text-center">S'inscrire</p>
+                        <div class="form-row mb-4">
+
+                            <div class="col">
+                                <!-- First name -->
+                                {{ form_row(registrationForm.firstname) }}
+                            </div>
+                            <div class="col">
+                                <!-- Last name -->
+                                {{ form_row(registrationForm.lastname) }}
+                            </div>
+                        </div>
+
+                        <!-- E-mail -->
+                        {{ form_row(registrationForm.email) }}
+
+                        <!-- Password -->
+                        {{ form_row(registrationForm.plainPassword) }}
+                        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                            Au moins 8 caractères et 1 chiffre
+                        </small>
+
+                        <!-- Phone number -->
+                    {{ form_row(registrationForm.phone) }}
+                        <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+                            (Facultatif)
+                        </small>
+
+
+
+
+                        <hr>
+
+                        <!-- Terms of service -->
+                        {{ form_row(registrationForm.agreeTerms) }}
+                        <button class="btn peach-gradient my-4 btn-block" >S'inscrire</button>
+                        <!-- Register -->
+                    <p>Déja membre ?
+                        <a href="{{path('app_login')}}">Se connecter</a>
+                    </p>
+                    {{ form_end(registrationForm) }}
+
+                    <!-- Default form register -->
+                </div>
+            </section>
+            <!--FIN FORMULAIRE INSCRIPTION-->
+        </div>
+    </main>
 {% endblock %}

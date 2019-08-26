@@ -53,4 +53,16 @@ class CartController extends AbstractController
 
     }
 
+    /**
+     * @Route("/Shop", name="shop")
+     */
+    public function shop(){
+        return $this->render('shop/index.html.twig');
+    }
+    /**
+     * @Route("/Paiement", name="paiement")
+     */
+    public function paiement(){
+        return $this->render('paiement/index.html.twig');
+    }
 }

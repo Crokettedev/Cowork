@@ -47,7 +47,7 @@ class RegistrationController extends AbstractController
     }
 
     /**
-     * @Route("/register/customer", name="app_register_customer")
+     * @Route("/Inscription", name="app_register_customer")
      */
     public function registerCustomer(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
     {
@@ -57,9 +57,9 @@ class RegistrationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
-            $user->setPassword(
+            $customer->setPassword(
                 $passwordEncoder->encodePassword(
-                    $user,
+                    $customer,
                     $form->get('plainPassword')->getData()
                 )
             );
