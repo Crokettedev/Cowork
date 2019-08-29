@@ -1,53 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Connexion{% endblock %}
 
 {% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
-
-    {% if app.user %}
-        <div class="checkbox mb-3">You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-    {% endif %}
-            <div class="container">
-                <div class="bd-example-modal-lg" tabindex="-1"  aria-labelledby="myLargeModalLabel">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Connexion</h5>
-                                <h6 class="modal-title" style="float:right;">Pas de compte ? <a class="nav-item nav-link modal-title"  href="{{ path('app_register_customer') }}">Inscrivez-vous</a></h6>
+    <main class="mt-5 mb-4 pt-3">
+        <div class="container">
+            <section>
+                <div class="row d-flex justify-content-center">
+                    <form class="text-center border border-light mt-5 p-5 col-md-6" method="post">
+                        <p class="h4 mb-4">Se connecter</p>
+                        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control mb-4" placeholder="Email" required autofocus >
+                        <input type="password" name="password" id="inputPassword" class="form-control mb-4" placeholder="Mot de passe" required>
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+                        <div class="d-flex justify-content-around">
+                            <div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                                    <label class="custom-control-label" for="defaultLoginFormRemember">Se souvenir de moi</label>
+                                </div>
                             </div>
-                            <div class="modal-body">
-                                <label for="inputEmail" class="sr-only">Email</label>
-                                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
-                                <label for="inputPassword" class="sr-only">Password</label>
-                                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-
-                                <input type="hidden" name="_csrf_token"
-                                       value="{{ csrf_token('authenticate') }}"
-                                >
-
-                                {#
-                                    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-                                    See https://symfony.com/doc/current/security/remember_me.html
-
-                                    <div class="checkbox mb-3">
-                                        <label>
-                                            <input type="checkbox" name="_remember_me"> Remember me
-                                        </label>
-                                    </div>
-                                #}
-
-                                <button class="btn btn-lg btn-primary" type="submit">
-                                    Sign in
-                                </button>
+                            <div>
+                                <a href="">Mot de passe oublié?</a>
                             </div>
                         </div>
-                    </div>
+                        <button class="btn peach-gradient my-4 btn-block" type="submit">Se connecter</button>
+                        <hr>
+                        <p>Pas encore membre? <a href="{{ path('app_register_customer') }}">S'inscrire</a></p>
+                    </form>
                 </div>
-            </div>
+            </section>
+        </div>
+    </main>
 
-</form>
 {% endblock %}

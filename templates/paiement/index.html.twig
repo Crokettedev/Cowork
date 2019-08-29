@@ -1,0 +1,130 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Paiement{% endblock %}
+
+{% block body %}
+
+    <main class="mt-5 pt-4">
+        <div class="container">
+            <h2 class="my-5 h2 text-center">Paiement</h2>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <form class="card-body" method="post">
+                            <div class="row">
+                                <div class="col-md-6 mb-2">
+                                    <div class="md-form ">
+                                        <input type="text" id="firstName" class="form-control" name="firstname" required>
+                                        <label for="firstName" class="">Prénom</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <div class="md-form">
+                                        <input type="text" id="lastName" class="form-control" name="lastname" required>
+                                        <label for="lastName" class="">Nom</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="md-form mb-5">
+                                <input type="text" id="email" class="form-control" placeholder="" name="email" required>
+                                <label for="email" class="">Email</label>
+                            </div>
+                            <div class="md-form mb-5">
+                                <input type="text" id="address" class="form-control" placeholder="" name="adress" required>
+                                <label for="address" class="">Addresse</label>
+                            </div>
+                            <div class="md-form mb-5">
+                                <input type="text" id="address-2" class="form-control" placeholder="">
+                                <label for="address-2" class="">Addresse 2 (optionnel)</label>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="cc-name">Nom sur carte</label>
+                                    <input type="text" class="form-control" id="cc-name" placeholder="" name="name_cart" required>
+                                    <small class="text-muted">Nom complet tel qu'il apparaît sur la carte</small>
+                                    <div class="invalid-feedback">
+                                        Name on card is required
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="cc-number">Numéro de Carte de Crédit</label>
+                                    <input type="text" class="form-control" id="cc-number" placeholder="" name="num_cart" maxlength="14" minlength="2" required>
+                                    <div class="invalid-feedback">
+                                        Credit card number is required
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 mb-3">
+                                    <label for="cc-expiration">Expiration</label>
+                                    <input type="text" class="form-control" id="cc-expiration" placeholder="" name="num_exp" maxlength="4" minlength="4" required>
+                                    <div class="invalid-feedback">
+                                        Expiration date required
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="cc-expiration">CVV</label>
+                                    <input type="text" class="form-control" id="cc-cvv" placeholder="" name="num_cvv" maxlength="3" minlength="3" required>
+                                    <div class="invalid-feedback">
+                                        Security code required
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="mb-4">
+                            <button class="btn btn-orange btn-lg btn-block" type="submit">Poursuivre la commande</button>
+                    </div>
+                    <hr>
+                </div>
+                {% set totalPrice = 0 %}
+                <div class="col">
+                    {% if cart is empty %}
+                        <div class="card">
+                            <div class="card-header text-center">
+                                Le panier est vide
+                            </div>
+                        </div>
+                    {% else %}
+                    <div class="card">
+                        <div class="card-header text-dark">
+                            <h6>Dans votre panier <a href="{{ path('cart') }}" style="float: right; color: black;">Edit</a></h6>
+                        </div>
+                        <div class="card-body">
+                            {% for carts in cart  %}
+                                {% if carts.food.title is defined and carts.food.title is not empty  %}
+                                    <div class="media">
+                                        <img class="img-fluid mx-auto d-block image" src="{{ vich_uploader_asset(carts.food, 'imageFile') | imagine_filter('thumb')}}" style="width: 90px">
+                                        <div class="media-body">
+                                            <h5 class="mt-0">{{  carts.food.title  }}</h5>
+                                            <input type="text" name="supply_id" value="{{  carts.food.id  }}">
+                                            {% set totalPrice = totalPrice + (carts.food.price * carts.quantity) %}
+                                            {{  carts.food.content  }}
+                                            <br>
+                                            <label for="quantity">Quantity: {{ carts.quantity }}</label> | <label for="quantity">Prix: {{ carts.food.price * carts.quantity }} €</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    <hr>
+                    <div class="card">
+                        <div class="card-header unique-color-dark text-white">
+                            <div class="summary">
+                                <h3 class="mb-3 font-weight-bold">Récapitulatif</h3>
+                                <div class="summary-item mb-3 d-flex justify-content-between"><span class="text">Sous-total :</span><span class="price">{{ totalPrice }}€</span></div>
+                                <input type="text" name="totalPrice" value="{{ totalPrice }}">
+                                <div class="summary-item mb-5 d-flex justify-content-between font-weight-bold"><span class="text">Total: </span><span class="price">{{ totalPrice }}€</span></div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+            </form>
+        </div>
+    </main>
+    <br>
+{% endblock %}

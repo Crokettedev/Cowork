@@ -1,37 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Inscription{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <div class="bd-example-modal-lg" tabindex="-1"  aria-labelledby="myLargeModalLabel">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Inscription</h5>
-                        <span style="font-size: small">Déjà un compte ? <a class="nav-item nav-link"  href="{{ path('app_login') }}">Connectez-vous</a></span>
-                    </div>
-                    <div class="modal-body">
-                        {{ form_start(registrationForm) }}
-                        {{ form_row(registrationForm.email) }}
-                        {{ form_row(registrationForm.plainPassword) }}
-                        {{ form_row(registrationForm.firstname) }}
-                        {{ form_row(registrationForm.lastname) }}
-                        {{ form_row(registrationForm.phone) }}
-                        {{ form_row(registrationForm.society) }}
-                        {{ form_row(registrationForm.job) }}
-                        {{ form_row(registrationForm.imageFile) }}
-                        {{ form_row(registrationForm.agreeTerms) }}
-                        <small id="emailHelp" class="form-text text-muted">Tous les champs marque d'un * sont obligatoire</small>
-                        <small id="emailHelp" class="form-text text-muted">En créant un compte, vous acceptez de vous conformer à laPolitique de confidentialité et auxConditions générales de Gusto-Coffee.</small>
-                        <div class="modal-footer">
-                            <button class="btn btn-primary">S'inscrire</button>
-                                {{ form_end(registrationForm) }}
+    <main class="mt-5 mb-4 pt-3">
+        <div class="container">
+            <section>
+                <div class="row d-flex justify-content-center p-5 text-center">
+                    {{ form_start(registrationForm, {'attr': {'class': 'border border-light mt-5 p-5 col-md-6'}}) }}
+                    <p class="h4 mb-4 text-center">S'inscrire</p>
+                    <div class="form-row mb-4">
+                        <div class="col">
+                            {{ form_row(registrationForm.firstname) }}
+                        </div>
+                        <div class="col">
+                            {{ form_row(registrationForm.lastname) }}
                         </div>
                     </div>
+                    {{ form_row(registrationForm.email) }}
+                    {{ form_row(registrationForm.plainPassword) }}
+                    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">Au moins 6 caractères</small>
+                    {{ form_row(registrationForm.phone) }}
+                    <hr>
+                    {{ form_row(registrationForm.agreeTerms) }}
+                    <button class="btn peach-gradient my-4 btn-block" >S'inscrire</button>
+                    <p>Déja membre ? <a href="{{path('app_login')}}">Se connecter</a></p>
+                    {{ form_end(registrationForm) }}
                 </div>
-            </div>
+            </section>
         </div>
-    </div>
-
+    </main>
 {% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes évenements{% endblock %}
+
+{% block body %}
+    <main class="my-5 toped">
+        <div class="container text-center">
+            <h2 class="my-5 h2 text-center">Mes évenements</h2>
+            {% if app.user.registerPosts is empty %}
+                <div class="alert alert-danger" role="alert">
+                    Aucun évenement pour l'instant
+                </div>
+            {% endif %}
+            {% for events in app.user.registerPosts %}
+                <div class="card mb-3 text-center">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="{{ vich_uploader_asset(events.post, 'imageFile') | imagine_filter('thumb')}}" class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ events.post.title }}</h5>
+                                <p class="card-text">{{ events.post.content }}</p>
+                                <p class="card-text"><small class="text-muted">Vous participer</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}

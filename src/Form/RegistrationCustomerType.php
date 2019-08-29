@@ -23,13 +23,13 @@ class RegistrationCustomerType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'label' => 'E-mail *', 'required' => true,
+                'label' => false, 'required' => true,
                 'attr' => [
                     'placeholder' => 'E-mail'
                 ]
             ])
             ->add('plainPassword', PasswordType::class, [
-                'label' => 'Mot de passe *', 'required' => true,
+                'label' => false, 'required' => true,
                 'attr' => [
                     'placeholder' => 'Mot de passe'
                 ],
@@ -47,33 +47,21 @@ class RegistrationCustomerType extends AbstractType
                 ],
             ])
             ->add('firstname', TextType::class, [
-                'label' => 'Nom *', 'required' => true,
+                'label' => false, 'required' => true,
                 'attr' => [
                     'placeholder' => 'Nom'
                 ]
             ])
             ->add('lastname', TextType::class, [
-                'label' => 'Prénom *', 'required' => true,
+                'label' => false, 'required' => true,
                 'attr' => [
                     'placeholder' => 'Prénom'
                 ]
             ])
             ->add('phone', NumberType::class, [
-                'label' => 'Téléphone *', 'required' => true,
+                'label' => false, 'required' => true,
                 'attr' => [
                     'placeholder' => 'Téléphone'
-                ]
-            ])
-            ->add('society', TextType::class, [
-                'label' => 'Entreprise', 'required' => true,
-                'attr' => [
-                    'placeholder' => 'Nom de votre entreprise'
-                ]
-            ])
-            ->add('job', TextType::class, [
-                'label' => 'Profession', 'required' => false,
-                'attr' => [
-                    'placeholder' => 'Ex : Développeur, Commercial, Ingénieur'
                 ]
             ])
             ->add('agreeTerms', CheckboxType::class, [
@@ -83,9 +71,6 @@ class RegistrationCustomerType extends AbstractType
                         'message' => 'Vous devez acceptez.',
                     ]),
                 ],
-            ])
-            ->add('imageFile', FileType::class, [
-                'label' => 'Photo de profil','required' => false
             ])
         ;
     }

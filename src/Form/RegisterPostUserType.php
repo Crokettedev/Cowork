@@ -6,7 +6,9 @@ use App\Entity\Customer;
 use App\Entity\RegisterPost;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -15,24 +17,24 @@ class RegisterPostUserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstname', EntityType::class, [
-                'label' => 'Nom',
-                'class' => Customer::class,
-                'choice_label' => 'firstname',
-
+            ->add('firstname', TextType::class, [
+                'label' => 'Nom', 'required' => true,
+                'attr' => [
+                    'placeholder' => 'Nom'
+                ],
             ])
-            ->add('lastname', EntityType::class, [
-                'label' => 'Nom',
-                'class' => Customer::class,
-                'choice_label' => 'lastname',
-
+            ->add('lastname', TextType::class, [
+                'label' => 'Prénom', 'required' => true,
+                'attr' => [
+                    'placeholder' => 'Prénom'
+                ],
             ])
             ->add('createdAt', HiddenType::class)
-            ->add('email', EntityType::class, [
-                'label' => 'Nom',
-                'class' => Customer::class,
-                'choice_label' => 'email',
-
+            ->add('email', EmailType::class, [
+                'label' => 'E-mail', 'required' => true,
+                'attr' => [
+                    'placeholder' => 'E-mail'
+                ],
             ])
             ->add('post', HiddenType::class)
             ->add('user', HiddenType::class)

@@ -5,6 +5,8 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Cocur\Slugify\Slugify;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -14,6 +16,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CustomerRepository")
  * @Vich\Uploadable()
+ * @UniqueEntity(fields="email", message="Cet email est déjà existant")
  */
 class Customer implements UserInterface
 {
@@ -82,9 +85,12 @@ class Customer implements UserInterface
     private $registerPosts;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(
+     *     type="integer",
+     *     options={"default": 10}
+     * )
      */
-    private $points;
+    private $points = 10;
 
     /**
      * @ORM\Column(type="datetime")
@@ -106,10 +112,16 @@ class Customer implements UserInterface
      */
     private $carts;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Command", mappedBy="customer")
+     */
+    private $commands;
+
     public function __construct()
     {
         $this->registerPosts = new ArrayCollection();
         $this->carts = new ArrayCollection();
+        $this->commands = new ArrayCollection();
     }
 
 
@@ -391,6 +403,37 @@ class Customer implements UserInterface
             // set the owning side to null (unless already changed)
             if ($cart->getUser() === $this) {
                 $cart->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Command[]
+     */
+    public function getCommands(): Collection
+    {
+        return $this->commands;
+    }
+
+    public function addCommand(Command $command): self
+    {
+        if (!$this->commands->contains($command)) {
+            $this->commands[] = $command;
+            $command->setCustomer($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommand(Command $command): self
+    {
+        if ($this->commands->contains($command)) {
+            $this->commands->removeElement($command);
+            // set the owning side to null (unless already changed)
+            if ($command->getCustomer() === $this) {
+                $command->setCustomer(null);
             }
         }
 

@@ -1,0 +1,134 @@
+.top-nav-collapse {
+    /*background-color: #24355C;*/
+}
+
+.navbar.navbar-dark .breadcrumb .nav-item .nav-link,
+.navbar.navbar-dark .navbar-nav .nav-item .nav-link {
+    color: #000;
+}
+
+.navbar.navbar-dark .breadcrumb .nav-item .nav-link,
+.navbar.navbar-dark .navbar-nav .nav-item .nav-link:hover {
+    color: #FF8800 !important;
+}
+
+a:hover {
+    color: darkblue;
+    text-decoration: underline;
+}
+
+a {
+    cursor: pointer;
+    color: darkblue;
+}
+
+.carousel-caption button {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.bg-blue {
+    padding: 10px 20px;
+}
+
+.bg-blue {
+    background: blue;
+    color: white;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("../img/espace/standing.jpg");
+
+    /* Half height */
+    height: 50%;
+
+    /* Center and scale the image nicely */
+    background-position: 50% 41%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.no-pad {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.param {
+    margin-bottom: 7px;
+    line-height: 1.4;
+}
+
+.param-inline dt {
+    display: inline-block;
+}
+
+.param dt {
+    margin: 0;
+    margin-right: 7px;
+    font-weight: 600;
+}
+
+.param-inline dd {
+    vertical-align: baseline;
+    display: inline-block;
+}
+
+.param dd {
+    margin: 0;
+    vertical-align: baseline;
+}
+
+.shopping-cart-wrap .price {
+    color: #007bff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 5px;
+    display: block;
+}
+
+var {
+    font-style: normal;
+}
+
+.media img {
+    margin-right: 1rem;
+}
+
+.img-sm {
+    width: 90px;
+    max-height: 75px;
+    object-fit: cover;
+}
+
+.toped {
+    margin-top: 10rem !important;
+}
+
+.resize-select {
+    position: relative;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+.img-fluid{
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navbar:not(.top-nav-collapse) {
+        background-color: #24355C;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+    .navbar:not(.top-nav-collapse) {
+        background-color: #24355C;
+    }
+}

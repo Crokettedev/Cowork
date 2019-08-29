@@ -65,6 +65,16 @@ class Posts
      */
     private $registerPosts;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $place;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $date;
+
     public function __construct()
     {
         $this->registerPosts = new ArrayCollection();
@@ -201,5 +211,30 @@ class Posts
         }
         return $this;
     }
+
+    public function getPlace(): ?string
+    {
+        return $this->place;
+    }
+
+    public function setPlace(string $place): self
+    {
+        $this->place = $place;
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
 
 }

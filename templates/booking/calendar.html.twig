@@ -1,8 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <main class="my-5 toped">
+        <section class="shopping-cart dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-uppercase font-weight-bold">Reserver la {{ places.title }}</h2>
+                </div>
+                <div class="content">
+
+                </div>
+        </section>
+    </main>
     <div class="container">
-        <p>Nom de la table <b>{{ places.title }}</b></p>
         <p>Le prix à l'heure est de <b>{{ places.price }}€</b></p>
         <a href="{{ path('booking_new', {id: places.getId()}) }}">Reservez </a>
         <p>

@@ -47,7 +47,7 @@ class RegistrationController extends AbstractController
     }
 
     /**
-     * @Route("/register/customer", name="app_register_customer")
+     * @Route("/Inscription", name="app_register_customer")
      */
     public function registerCustomer(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
     {

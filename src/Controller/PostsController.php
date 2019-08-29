@@ -20,14 +20,21 @@ class PostsController extends AbstractController
     }
 
     /**
-     * @Route("/évenement/{id}", name="view_event")
+     * @Route("/Evenement", name="view_event")
      */
-    public function showInHome()
+    public function showEvent()
     {
-        $post = $this->posts->findAll();
+        $post = $this->posts->findbyDate();
         return $this->render('posts/index.html.twig', [
             'Post' => $post
         ]);
+    }
+
+    /**
+     * @Route("/Mes-évenements-{id}", name="myeventuser")
+     */
+    public function eventUser(){
+        return $this->render('posts/eventUser.html.twig');
     }
 
     /**

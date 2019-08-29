@@ -1,90 +1,91 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello RegisterPostController!{% endblock %}
+{% block title %}Evenements - Inscription{% endblock %}
 
 {% block body %}
     {% if not app.user %}
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ post.title }}</h5>
-                        <p class="card-text">{{ post.content }}</p>
-                        <p class="card-text">{{ post.createdAt | date('Y-m-d') }}</p>
+        <main class="my-5 toped">
+            <div class="container text-center">
+                <h2 class="my-5 text-center">S'inscrire à l'évenement {{ post.title }}</h2>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="card text-center">
+                            <img src="{{ vich_uploader_asset(post, 'imageFile') | imagine_filter('thumb')}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">{{ post.content }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-body">
+                                {% for message in app.flashes('success') %}
+                                    <div class="alert alert-success text-center">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+
+                                {% if not registerPostForm.vars.valid %}
+                                    <div class="alert alert-danger text-center">
+                                        Vous êtes inscrit ! A très bientôt.
+                                    </div>
+                                {% endif %}
+                                {{ form_start(registerPostForm) }}
+                                {{ form_row(registerPostForm.firstname ) }}
+                                {{ form_row(registerPostForm.lastname) }}
+                                {{ form_row(registerPostForm.email) }}
+
+                                <button class="btn">Enregistrer</button>
+                                {{ form_end(registerPostForm) }}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">S'inscrire à l'évenement</h5>
-                        {% for message in app.flashes('success') %}
-                            <div class="alert alert-success text-center">
-                                {{ message }}
-                            </div>
-                        {% endfor %}
-
-                        {% if not registerPostForm.vars.valid %}
-                            <div class="alert alert-danger text-center">
-                                Votre message n'a pas pu être envoyer.
-                            </div>
-                        {% endif %}
-                        {{ form_start(registerPostForm) }}
-                        {{ form_row(registerPostForm.firstname) }}
-                        {{ form_row(registerPostForm.lastname) }}
-                        {{ form_row(registerPostForm.email) }}
-
-                        <button class="btn">Enregistrer</button>
-                        {{ form_end(registerPostForm) }}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        </main>
     {% endif %}
     {% if is_granted('ROLE_USERS') %}
-        <br>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ post.title }}</h5>
-                            <img src="{{ vich_uploader_asset(post, 'imageFile') | imagine_filter('thumb')}}" class="card-img-top" alt="..." style="width: 100%; height: auto">
-                            <br>
-                             <p class="card-text">Le : {{ post.createdAt | date('d-m-Y') }}</p>
-                            <p class="card-text">{{ post.content }}</p>
+        <main class="my-5 toped">
+            <div class="container text-center">
+                <h2 class="my-5 h2 text-center">S'inscrire à l'évenement {{ post.title }}</h2>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="card text-center">
+                            <img src="{{ vich_uploader_asset(post, 'imageFile') | imagine_filter('thumb')}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">{{ post.content }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">S'inscrire à l'évenement</h5>
-                            {% for message in app.flashes('success') %}
-                                <div class="alert alert-success text-center">
-                                    {{ message }}
-                                </div>
-                            {% endfor %}
+                    <hr>
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-body">
+                                {% for message in app.flashes('success') %}
+                                    <div class="alert alert-success text-center">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
 
-                            {% if not registerPostFormUser.vars.valid %}
-                                <div class="alert alert-danger text-center">
-                                    Vous êtes inscrit ! A très bientôt.
-                                </div>
-                            {% endif %}
-                            {{ form_start(registerPostFormUser) }}
-                            {{ form_row(registerPostFormUser.firstname ) }}
-                            {{ form_row(registerPostFormUser.lastname) }}
-                            {{ form_row(registerPostFormUser.email) }}
+                                {% if not registerPostFormUser.vars.valid %}
+                                    <div class="alert alert-danger text-center">
+                                        Vous êtes inscrit ! A très bientôt.
+                                    </div>
+                                {% endif %}
+                                {{ form_start(registerPostFormUser) }}
+                                {{ form_row(registerPostFormUser.firstname ) }}
+                                {{ form_row(registerPostFormUser.lastname) }}
+                                {{ form_row(registerPostFormUser.email) }}
 
-                            <button class="btn">Enregistrer</button>
-                            {{ form_end(registerPostFormUser) }}
+                                <button class="btn">Enregistrer</button>
+                                {{ form_end(registerPostFormUser) }}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     {% endif %}
 
 {% endblock %}

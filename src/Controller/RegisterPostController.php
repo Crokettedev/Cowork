@@ -84,7 +84,7 @@ class RegisterPostController extends AbstractController
     }
 
     /**
-     * @Route("/register/user/{id}", name="register_post_user")
+     * @Route("/Evenement/Inscription/{id}", name="register_post_user")
      */
     public function registerUser(Posts $posts, Request $request)
     {

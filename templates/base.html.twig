@@ -1,197 +1,219 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.1.0/main.min.css">
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.1.0/main.min.css">
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@4.1.0/main.min.css">
-            <link rel="stylesheet" type="text/css" href="{{ asset('app.css') }}">
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        {% endblock %}
-    </head>
-    <body>
-    {% if not app.user %}
-        <nav class="navbar navbar-light bg-light">
-            <a href="{{ path('home') }}" class="navbar-brand">Logo gusto</a>
-            <a>
-                <div class="btn-group" role="group" aria-label="Basic example">
+<html lang="fr">
 
-                    <a href="{{ path('cart')  }}"><img src="{{ asset('image/cart.png') }}" class="card-img-top" alt="..." id="img_cart_base"></a>
-                </div>
-            </a>
-        </nav>
-    <nav class="nav">
-        <a class="nav-link active" href="{{ path('app_register') }}">ajouter un admin</a>
-        <a class="nav-link active" href="{{ path('home') }}">Home</a>
-        <a class="nav-link" href="{{ path('app_register_customer') }}">Inscription client</a>
-        <a class="nav-link" href="{{ path('app_login') }}" tabindex="-1" >Login client</a>
-        <a class="nav-link" href="{{ path('add_table') }}" tabindex="-1" >Ajouter une table</a>
-        <a class="nav-link" href="{{ path('add_view_place') }}" tabindex="-1" >Ajouter une place</a>
-        <a class="nav-link" href="{{ path('show_cart') }}" tabindex="-1" >Acheter a manger</a>
-        <a class="nav-link" href="{{ path('supply_food_add') }}" tabindex="-1" >Ajouter a manger</a>
-        <a class="nav-link" href="{{ path('add_posts') }}" tabindex="-1" >Ajouter un evenement</a>
-        <a class="nav-link" href="{{ path('add_supply_office') }}" tabindex="-1" >Ajouter du materiel informatique</a>
-        <a class="nav-link" href="{{ path('add_supply_office') }}" tabindex="-1" >Acheter du materiel informatique</a>
-    </nav>
-    {% endif %}
-    {% if is_granted('ROLE_USERS') %}
-        <nav class="navbar navbar-light bg-light">
-            <a href="{{ path('home') }}" class="navbar-brand">Logo gusto</a>
-            <a>
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <a><img src="{{ asset('image/cart.png') }}" class="card-img-top" alt="..." id="img_cart_base"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="{{ path('app_logout') }}" data-toggle="tooltip" data-placement="bottom" title="Déconnexion"><img src="{{ asset('image/logout (1).png') }}" class="card-img-top" alt="..." id="img_logout_base"></a>
-                </div>
-            </a>
-        </nav>
-    {% endif %}
-    {% if is_granted('ROLE_ADMIN') %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}Gusto Coffee - Café &amp; Coworking {% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.1.0/main.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.1.0/main.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@4.1.0/main.min.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/mdb.min.css') }}">
+        <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style-landing.css') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    {% endblock %}
+</head>
+
+<body>
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light  white fixed-top scrolling-navbar">
         <div class="container">
-            <ul class="nav justify-content-end">
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </ul>
+            <a class="navbar-brand" href="/"><img src="{{ asset('img/logo/logo.png') }}" alt="" width="150"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="basicExampleNav">
+                <ul class="navbar-nav mr-auto smooth-scroll">
+                    <li class="nav-item dropdown color-me">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Espaces de travail</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Espace partagé</a>
+                            <a class="dropdown-item" href="#">Bureaux Dédié</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('aboutus') }}">A propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('shop')}}">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('view_event') }}">Evenements</a>
+                    </li>
+                    {% if not app.user %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_logout') }}">Deconnexion</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <a href="{{ path('cart') }}">
+                <button class="btn btn-outline-elegant">Panier<i class="fas fa-shopping-cart pl-1"></i></button>
+                </a>
+            </div>
         </div>
-    {% endif %}
+    </nav>
+</div>
+{% block body %}{% endblock %}
 
+<footer class="page-footer unique-color-dark indigo pt-4">
+    <div class="container mt-5 mb-4 text-center text-md-left">
+        <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+                <h6 class="text-uppercase font-weight-bold">
+                    <strong>Gusto Coffee</strong>
+                </h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit
+                    amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <h6 class="text-uppercase font-weight-bold">
+                    <strong>Products</strong>
+                </h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                    <a href="#!">MDBootstrap</a>
+                </p>
+                <p>
+                    <a href="#!">MDWordPress</a>
+                </p>
+                <p>
+                    <a href="#!">BrandFlow</a>
+                </p>
+                <p>
+                    <a href="#!">Bootstrap Angular</a>
+                </p>
+            </div>
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                <h6 class="text-uppercase font-weight-bold">
+                    <strong>Useful links</strong>
+                </h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                    <a href="#!">Your Account</a>
+                </p>
+                <p>
+                    <a href="#!">Become an Affiliate</a>
+                </p>
+                <p>
+                    <a href="#!">Shipping Rates</a>
+                </p>
+                <p>
+                    <a href="#!">Help</a>
+                </p>
+            </div>
+            <div class="col-md-4 col-lg-3 col-xl-3">
+                <h6 class="text-uppercase font-weight-bold">
+                    <strong>Contact</strong>
+                </h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                    <i class="fas fa-home  mr-3"></i> New York, NY 10012, US</p>
+                <p>
+                    <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+                <p>
+                    <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                <p>
+                    <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+            </div>
+            <div class="container">
+                <div class="row py-2 d-flex align-items-start">
+                    <div class="col-md-6 col-lg-7 text-center text-md-left">
+                        <a class="fb-ic ml-0">
+                            <i class="fab fa-facebook-f white-text mr-4"> </i>
+                        </a>
+                        <a class="tw-ic">
+                            <i class="fab fa-twitter white-text mr-4"> </i>
+                        </a>
+                        <a class="gplus-ic">
+                            <i class="fab fa-google-plus-g white-text mr-4"> </i>
+                        </a>
+                        <a class="li-ic">
+                            <i class="fab fa-linkedin-in white-text mr-4"> </i>
+                        </a>
+                        <a class="ins-ic">
+                            <i class="fab fa-instagram white-text mr-lg-4"> </i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+        <a href="#"> Opus.com</a>
+    </div>
+</footer>
 
-        {% block body %}
-        {% endblock %}
-
-        {% block javascripts %}
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-            <script src="{{ asset('build/app.js') }}"></script>
-            <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.1.0/main.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@4.1.0/main.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.1.0/main.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@4.1.0/main.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-            <script src="https://js.stripe.com/v3/"></script>
-            <script src='fullcalendar/core/locales-all.js'></script>
-            <script type="text/javascript">
-                document.addEventListener('DOMContentLoaded', () => {
-                    var calendarEl = document.getElementById('calendar-holder');
-
-
-                    var calendar = new FullCalendar.Calendar(calendarEl, {
-                        selectable: false,
-                        defaultView: 'timeGridWeek',
-                        locale: 'fr',
-                        themeSystem: 'bootstrap4',
-                        editable: false,
-                        eventSources: [
-                            {
-                                url: "{{ path('fc_load_events') }}",
-                                method: "GET",
-                                extraParams: {
-                                    filters: JSON.stringify({})
-                                },
-                                textColor: 'white',
-                                failure: () => {
-                                    // alert("There was an error while fetching FullCalendar!");
-                                },
-                            },
-                        ],
-                        header: {
-                            locale: 'fr',
-                            left: 'prev,next',
-                            center: 'title',
-                            right: 'timeGridWeek,timeGridDay',
+{% block javascripts %}
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script src="{{ asset('build/app.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.1.0/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@4.1.0/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.1.0/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@4.1.0/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src='fullcalendar/core/locales-all.js'></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+            var calendarEl = document.getElementById('calendar-holder');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                defaultView: 'timeGridWeek',
+                locale: 'fr',
+                themeSystem: 'bootstrap4',
+                editable: false,
+                eventSources: [
+                    {
+                        url: "{{ path('fc_load_events') }}",
+                        method: "GET",
+                        extraParams: {
+                            filters: JSON.stringify({})
                         },
-                        buttonText: {
-                            week : 'Semaine',
-                            day  : 'Aujourd\'hui'
-
+                        textColor: 'white',
+                        failure: () => {
+                            // alert("There was an error while fetching FullCalendar!");
                         },
-                        firstDay: 1,
-                        minTime: '07:00:00',
-                        maxTime: '22:00:00',
-                        allDaySlot: false,
-                        plugins: [ 'interaction', 'dayGrid', 'timeGrid' ], // https://fullcalendar.io/docs/plugin-index
-                        timeZone: 'UTC',
-
-                    });
-                    calendar.render();
-                });
-
-                var stripe = Stripe('pk_test_nB9zbIPWkyq4DSKIKqkMXagI00tlXagjeh');
-
-                // Create an instance of Elements.
-                var elements = stripe.elements();
-
-                // Custom styling can be passed to options when creating an Element.
-                // (Note that this demo uses a wider set of styles than the guide below.)
-                var style = {
-                    base: {
-                        color: '#32325d',
-                        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-                        fontSmoothing: 'antialiased',
-                        fontSize: '16px',
-                        '::placeholder': {
-                            color: '#aab7c4'
-                        }
                     },
-                    invalid: {
-                        color: '#fa755a',
-                        iconColor: '#fa755a'
-                    }
-                };
+                ],
+                header: {
+                    locale: 'fr',
+                    left: 'prev,next',
+                    center: 'title',
+                    right: 'timeGridWeek,timeGridDay',
+                },
+                buttonText: {
+                    week : 'Semaine',
+                    day  : 'Aujourd\'hui'
 
-                // Create an instance of the card Element.
-                var card = elements.create('card', {style: style});
+                },
+                firstDay: 1,
+                minTime: '07:00:00',
+                maxTime: '22:00:00',
+                allDaySlot: false,
+                plugins: [ 'interaction', 'dayGrid', 'timeGrid' ], // https://fullcalendar.io/docs/plugin-index
+                timeZone: 'UTC',
 
-                // Add an instance of the card Element into the `card-element` <div>.
-                card.mount('#card-element');
+            });
+            calendar.render();
+        });
 
-                // Handle real-time validation errors from the card Element.
-                card.addEventListener('change', function(event) {
-                    var displayError = document.getElementById('card-errors');
-                    if (event.error) {
-                        displayError.textContent = event.error.message;
-                    } else {
-                        displayError.textContent = '';
-                    }
-                });
 
-                // Handle form submission.
-                var form = document.getElementById('payment-form');
-                form.addEventListener('submit', function(event) {
-                    event.preventDefault();
+        $('.carousel').carousel({
+            interval: 2450,
+        })
 
-                    stripe.createToken(card).then(function(result) {
-                        if (result.error) {
-                            // Inform the user if there was an error.
-                            var errorElement = document.getElementById('card-errors');
-                            errorElement.textContent = result.error.message;
-                        } else {
-                            // Send the token to your server.
-                            stripeTokenHandler(result.token);
-                        }
-                    });
-                });
+    </script>
+{% endblock %}
+</body>
 
-                // Submit the form with the token ID.
-                function stripeTokenHandler(token) {
-                    // Insert the token ID into the form so it gets submitted to the server
-                    var form = document.getElementById('payment-form');
-                    var hiddenInput = document.createElement('input');
-                    hiddenInput.setAttribute('type', 'hidden');
-                    hiddenInput.setAttribute('name', 'stripeToken');
-                    hiddenInput.setAttribute('value', token.id);
-                    form.appendChild(hiddenInput);
-
-                    // Submit the form
-                    form.submit();
-                }
-            </script>
-        {% endblock %}
-    </body>
 </html>

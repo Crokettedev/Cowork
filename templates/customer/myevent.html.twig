@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Evenements{% endblock %}
+
+{% block body %}
+    <main class="my-5 toped">
+        <section class="shopping-cart dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-uppercase font-weight-bold">Mes évenements</h2>
+                </div>
+                <div class="content">
+                    {% if app.user.registerPosts is empty %}
+                        <div class="card">
+                            <div class="card-header text-center">
+                                Vous êtes inscrit à aucun événement
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% for Posts in app.user.registerPosts %}
+                        <div class="row">
+                            <div class="col-12 col-md-8">
+                                <div class="card bg-dark text-white">
+                                    <img src="{{ vich_uploader_asset(Posts.post, 'imageFile') | imagine_filter('thumb')}}" class="card-img" alt="...">
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="col">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ Posts.post.title }}</h5>
+                                        <p><img src="{{ asset('image/location-pin.png') }}" class="card-img-top" alt="..." style="width: 25px">{{ Posts.post.place }}</p>
+                                        <p><img src="{{ asset('image/calendartime.png') }}" class="card-img-top" alt="..." style="width: 25px">  {{ Posts.post.date|date('d-m-Y à H:i') }}</p>
+                                        <p class="card-text">{{ Posts.post.content }}.</p>
+                                        <h6 class="card-title">Vous êtes inscrit a cette évenement</h6>
+                                        <form method="post" action="{{ path('delete_event', {id: Posts.id}) }}">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ Posts.id) }}">
+
+                                            <button class="btn peach-gradient my-4 btn-sm"  id="btn_supp_cart">Se désinscrire</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    {% endfor %}
+                </div>
+        </section>
+    </main>
+{% endblock %}

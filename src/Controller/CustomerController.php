@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Customer;
+use App\Entity\RegisterPost;
 use App\Form\ResetPasswordType;
 use App\Form\UpdateCustomerType;
 use App\Repository\CustomerRepository;
@@ -38,7 +39,7 @@ class CustomerController extends AbstractController
     }
 
     /**
-     * @Route("/accounts/edit/{id}", name="customer_count")
+     * @Route("/MonCompte/{id}", name="customer_count")
      * @param Customer $customer
      * @return Response
      */
@@ -93,6 +94,35 @@ class CustomerController extends AbstractController
             'resetForm' => $form->createView(),
             'customer' => $show,
         ]);
+    }
+
+    /**
+     * @Route("/Mes/Evenements", name="myevent")
+     */
+    public function showCoffee()
+    {
+        return $this->render('customer/myevent.html.twig');
+    }
+
+    /**
+     * @Route("/Mes/Evenements/{id}", name="delete_event", methods="DELETE")
+     * @param RegisterPost $registerPost
+     * @return Response
+     */
+    public function delete(RegisterPost $registerPost, Request $request, ObjectManager $manager): Response
+    {
+        /*
+        dump('suppression');
+        return new Response('Suppression')
+        */
+        if ($this->isCsrfTokenValid('delete'. $registerPost->getId(), $request->get('_token')))
+        {
+            $manager->remove($registerPost);
+            $manager->flush();
+        }
+
+        return $this->redirectToRoute('myevent');
+
     }
 
 }

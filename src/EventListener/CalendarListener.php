@@ -23,12 +23,8 @@ class CalendarListener
 
     public function load(CalendarEvent $calendar): void
     {
-        $place = new PlacePublic();
-
         $start = $calendar->getStart();
         $end = $calendar->getEnd();
-        $filters = $calendar->getFilters();
-        $p = $place->getId();
 
 
         // Modify the query to fit to your entity and needs
@@ -45,7 +41,6 @@ class CalendarListener
         foreach ($bookings as $booking) {
             // this create the events with your data (here booking data) to fill calendar
             $bookingEvent = new Event(
-                $booking->getTitle(),
                 $booking->getBeginAt(),
                 $booking->getEndAt()// If the end date is null or not defined, a all day event is creat
             );
