@@ -58,7 +58,7 @@ class RegistrationCustomerType extends AbstractType
                     'placeholder' => 'Prénom'
                 ]
             ])
-            ->add('phone', NumberType::class, [
+            ->add('phone', TextType::class, [
                 'label' => false, 'required' => true,
                 'attr' => [
                     'placeholder' => 'Téléphone'

@@ -117,11 +117,17 @@ class Customer implements UserInterface
      */
     private $commands;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\JobPosts", mappedBy="customer")
+     */
+    private $jobPosts;
+
     public function __construct()
     {
         $this->registerPosts = new ArrayCollection();
         $this->carts = new ArrayCollection();
         $this->commands = new ArrayCollection();
+        $this->jobPosts = new ArrayCollection();
     }
 
 
@@ -434,6 +440,37 @@ class Customer implements UserInterface
             // set the owning side to null (unless already changed)
             if ($command->getCustomer() === $this) {
                 $command->setCustomer(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|JobPosts[]
+     */
+    public function getJobPosts(): Collection
+    {
+        return $this->jobPosts;
+    }
+
+    public function addJobPost(JobPosts $jobPost): self
+    {
+        if (!$this->jobPosts->contains($jobPost)) {
+            $this->jobPosts[] = $jobPost;
+            $jobPost->setCustomer($this);
+        }
+
+        return $this;
+    }
+
+    public function removeJobPost(JobPosts $jobPost): self
+    {
+        if ($this->jobPosts->contains($jobPost)) {
+            $this->jobPosts->removeElement($jobPost);
+            // set the owning side to null (unless already changed)
+            if ($jobPost->getCustomer() === $this) {
+                $jobPost->setCustomer(null);
             }
         }
 

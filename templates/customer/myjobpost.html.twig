@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes Posts{% endblock %}
+
+{% block body %}
+    <main class="my-5 toped">
+        <section class="shopping-cart dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-uppercase font-weight-bold">
+                        Mes posts <a href="{{ path('addjobpost') }}"><button type="button" class="btn btn-dark">Ajouter un post</button></a>
+                    </h2>
+                </div>
+                <div class="content">
+                    {% if app.user.jobPosts is empty %}
+                        <div class="card">
+                            <div class="card-header text-center">
+                                Vous n'avez aucun post actuellement
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% for myjobPosts in app.user.jobPosts|sort %}
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>{{ myjobPosts.author }} <p style="float: right">{{ myjobPosts.createdAt|date('d-m-Y') }}</p></h6>
+                            </div>
+                            <div class="card-body text-center">
+                                <p class="card-text">{{ myjobPosts.content }}</p>
+                                <form method="post" action="{{ path('delete_jobpost', {id: myjobPosts.id}) }}">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ myjobPosts.id) }}">
+
+                                    <button class="btn peach-gradient my-4 btn-sm"  id="btn_supp_cart">Supprimer</button>
+                                </form>
+                            </div>
+                        </div>
+                        <hr>
+                    {% endfor %}
+                </div>
+        </section>
+    </main>
+
+{% endblock %}

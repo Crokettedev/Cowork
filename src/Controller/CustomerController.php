@@ -3,10 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\Customer;
+use App\Entity\JobPosts;
 use App\Entity\RegisterPost;
+use App\Form\AddJobPostType;
 use App\Form\ResetPasswordType;
 use App\Form\UpdateCustomerType;
 use App\Repository\CustomerRepository;
+use App\Repository\JobPostsRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormError;
@@ -20,22 +23,112 @@ class CustomerController extends AbstractController
     private $em;
     private $repository;
     protected $oldPassword;
+    private $jobPostsRepository;
 
-    public function __construct(CustomerRepository $repository, ObjectManager $em)
+    public function __construct(CustomerRepository $repository, ObjectManager $em, JobPostsRepository $jobPostsRepository)
     {
         $this->repository = $repository;
         $this->em = $em;
+        $this->jobPostsRepository = $jobPostsRepository;
 
     }
 
     /**
-     * @Route("/customer", name="customer")
+     * @Route("/Reseau", name="mynetwork")
      */
-    public function index()
+    public function viewNetwork()
     {
-        return $this->render('customer/index.html.twig', [
-            'controller_name' => 'CustomerController',
+        $jobPost = $this->jobPostsRepository->findAllPost();
+        return $this->render('customer/mynetwork.html.twig', [
+            'jobPost' => $jobPost,
         ]);
+    }
+
+    /**
+     * @Route("/Mes/Posts", name="myjobpost")
+     */
+    public function viewmyjobPost()
+    {
+        return $this->render('customer/myjobpost.html.twig');
+    }
+
+    /**
+     * @Route("/Ajouter/Posts", name="addjobpost")
+     * @return Response
+     */
+    public function addjobPost( Request $request): Response
+    {
+        $addjobPost = new JobPosts();
+        $form = $this->createForm(AddJobPostType::class, $addjobPost);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $addjobPost->setCustomer($this->getUser());
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($addjobPost);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('myjobpost');
+        }
+
+        return $this->render('customer/addjobpost.html.twig', [
+            'addJobPostForm' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/Mes/Posts/{id}", name="delete_jobpost", methods="DELETE")
+     * @param JobPosts $jobPosts
+     * @return Response
+     */
+    public function delete_jobpost(JobPosts $jobPosts, Request $request, ObjectManager $manager): Response
+    {
+        if ($this->isCsrfTokenValid('delete'. $jobPosts->getId(), $request->get('_token')))
+        {
+            $manager->remove($jobPosts);
+            $manager->flush();
+        }
+
+        return $this->redirectToRoute('myjobpost');
+    }
+
+    /**
+     * @Route("/Mes/Posts/{id}", name="delete_allpost", methods="DELETE")
+     * @param JobPosts $jobPosts
+     * @return Response
+     */
+    public function delete_allpost(JobPosts $jobPosts, Request $request, ObjectManager $manager): Response
+    {
+        if ($this->isCsrfTokenValid('delete'. $jobPosts->getCustomer(), $request->get('_token')))
+        {
+            $manager->remove($jobPosts);
+            $manager->flush();
+        }
+
+        return $this->redirectToRoute('myjobpost');
+    }
+
+    /**
+     * @Route("/Repondre/{slug}-{id}", name="answerjobpost", requirements={"slug": "[a-z0-9\-]*"})
+     */
+    public function answerjobpost(JobPosts $jobPosts, Request $request, string $slug)
+    {
+        if ($jobPosts->getSlug() !== $slug)
+        {
+            $this->redirectToRoute('add_food', [
+                'id' => $jobPosts->getId(),
+                'slug' => $jobPosts->getSlug()
+            ], 301);
+        }
+
+        $repo = $this->getDoctrine()->getRepository(JobPosts::class);
+        $job = $repo->find($jobPosts);
+
+        return $this->render('customer/answerjobpost.html.twig', [
+            'jobs' => $job,
+        ]);
+
     }
 
     /**
@@ -109,7 +202,7 @@ class CustomerController extends AbstractController
      * @param RegisterPost $registerPost
      * @return Response
      */
-    public function delete(RegisterPost $registerPost, Request $request, ObjectManager $manager): Response
+    public function delete_event(RegisterPost $registerPost, Request $request, ObjectManager $manager): Response
     {
         /*
         dump('suppression');

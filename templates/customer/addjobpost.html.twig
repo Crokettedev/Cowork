@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes Posts{% endblock %}
+
+{% block body %}
+    <main class="my-5 toped">
+        <section class="shopping-cart dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-uppercase font-weight-bold">
+                        Ajouter un post
+                    </h2>
+                </div>
+                <div class="content">
+                    {% if not addJobPostForm.vars.valid %}
+                        <div class="alert alert-danger text-center">
+                            Votre message n'a pas pu être envoyer.
+                        </div>
+                    {% endif %}
+                    {{ form_start(addJobPostForm) }}
+                    {{ form_row(addJobPostForm.author) }}
+                    {{ form_row(addJobPostForm.content) }}
+
+
+                    <button class="btn peach-gradient my-4 btn-sm">Enregistrer</button>
+                    {{ form_end(addJobPostForm) }}
+                </div>
+        </section>
+    </main>
+
+{% endblock %}

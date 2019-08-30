@@ -1,0 +1,121 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reseau{% endblock %}
+
+{% block body %}
+    {% if not app.user %}
+        <main class="my-5 toped">
+            <section class="shopping-cart dark">
+                <div class="container">
+                    <div class="block-heading">
+                        <h2 class="text-uppercase font-weight-bold">Réseau</h2>
+                        <div class="card">
+                            <div class="card-body text-center">
+                                Connectez-vous pour profiter de notre réseau de professionnel <a href="{{ path('app_login') }}"><button class="btn peach-gradient my-4 btn-sm" >Connexion</button></a>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="content">
+                        {% if jobPost is empty %}
+                            <div class="card">
+                                <div class="card-header text-center">
+                                    Vous n'avez aucun post actuellement
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% for jobPosts in jobPost %}
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>{{ jobPosts.author }} <p style="float: right">{{ jobPosts.createdAt|date('d-m-Y') }}</p></h6>
+                                </div>
+                                <div class="card-body text-center">
+                                    <p class="card-text">{{ jobPosts.content }}</p>
+                                </div>
+                            </div>
+                            <hr>
+                        {% endfor %}
+                    </div>
+                </div>
+                </div>
+            </section>
+        </main>
+    {% endif %}
+    {% if is_granted('ROLE_USERS') %}
+        <main class="my-5 toped">
+            <section class="shopping-cart dark">
+                <div class="container">
+                    <div class="block-heading">
+                        <h2 class="text-uppercase font-weight-bold">Réseau</h2>
+                    </div>
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-12 col-md-8">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Les annonces</h5>
+                                        <hr>
+                                        <p class="card-text">
+                                            {% for jobPosts in jobPost %}
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h6>{{ jobPosts.title }} <p style="float: right">{{ jobPosts.createdAt|date('d-m-Y') }}</p></h6>
+                                                    </div>
+                                                    <div class="card-body text-center">
+                                                        <p>{{ jobPosts.content }}</p>
+                                                        {% if app.user == jobPosts.customer %}
+                                                            <p class="card-text">C'est votre post</p>
+                                                        {% else %}
+                                                            <a href="{{ path('answerjobpost', {id: jobPosts.id, slug: jobPosts.slug}) }}"><button class="btn peach-gradient my-4 btn-sm" >Répondre</button></a>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                            {% endfor %}
+                                        </p>
+                                <div class="pos-f-t">
+                                    <div class="collapse" id="navbarToggleExternalContent">
+                                        <div class="bg-dark p-4">
+                                            <h5 class="text-white h4">Collapsed content</h5>
+                                            <span class="text-muted">Toggleable via the navbar brand.</span>
+                                        </div>
+                                    </div>
+                                    <nav class="navbar navbar-dark bg-dark">
+                                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                                            <span class="navbar-toggler-icon"></span>
+                                        </button>
+                                    </nav>
+                                </div>
+                                <a href=""><button class="btn peach-gradient my-4 btn-sm" >Voir tout</button></a>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="col">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Mes posts</h5>
+                                        <p class="card-text">
+                                            {% for customerjobPosts in app.user.jobPosts %}
+                                            {{ customerjobPosts.content }}
+                                            {% endfor %}
+                                        </p>
+                                        <a href="{{ path('myjobpost') }}"><button class="btn peach-gradient my-4 btn-sm" >Consulter</button></a>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Mes messages</h5>
+                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <a href=""><button class="btn peach-gradient my-4 btn-sm" >Consulter</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+        </main>
+    {% endif %}
+
+{% endblock %}
