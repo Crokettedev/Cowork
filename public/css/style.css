@@ -117,14 +117,47 @@ var {
     margin-bottom: .5rem;
 }
 
+.canvas-container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .img-fluid{
     cursor: pointer;
+}
+
+#space_private{
+    width: 28rem;
+    margin-left: 10px
+}
+
+label {
+    display: inline-block;
+    width: 36px;
+    margin: 8px;
+    text-align: right;
+}
+
+dl {
+    display: grid;
+    grid-template-columns: max-content auto;
+    grid-gap: 8px;
+}
+
+dt {
+    grid-column-start: 1;
+}
+
+dd {
+    grid-column-start: 2;
 }
 
 @media (max-width: 768px) {
     .navbar:not(.top-nav-collapse) {
         background-color: #24355C;
     }
+
+
 }
 
 @media (min-width: 800px) and (max-width: 850px) {

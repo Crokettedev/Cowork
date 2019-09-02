@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une espace{% endblock %}
+
+{% block body %}
+    <main class="my-5 toped">
+        <section class="shopping-cart dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-uppercase font-weight-bold">Ajouter espace privé</h2>
+                    <div class="card">
+                        <div class="card-body text-center">
+                            Connectez-vous pour profiter de notre réseau de professionnel <a href="{{ path('app_login') }}"><button class="btn peach-gradient my-4 btn-sm" >Connexion</button></a> ou
+                            <a href="{{ path('app_login') }}">Inscrivez-vous</a>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="content">
+                    {% for message in app.flashes('success') %}
+                        <div class="alert alert-success text-center">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+
+                    {% if not spacePrivateForm.vars.valid %}
+                        <div class="alert alert-danger text-center">
+                            Votre message n'a pas pu être envoyer.
+                        </div>
+                    {% endif %}
+                    {{ form_start(spacePrivateForm) }}
+                    {{ form_row(spacePrivateForm.title) }}
+                    {{ form_row(spacePrivateForm.content) }}
+                    {{ form_row(spacePrivateForm.imageFile) }}
+
+                    <button class="btn">Enregistrer</button>
+                    {{ form_end(spacePrivateForm) }}
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

@@ -22,7 +22,7 @@
                     {% for myjobPosts in app.user.jobPosts|sort %}
                         <div class="card">
                             <div class="card-header">
-                                <h6>{{ myjobPosts.author }} <p style="float: right">{{ myjobPosts.createdAt|date('d-m-Y') }}</p></h6>
+                                <h6>{{ myjobPosts.title }} <p style="float: right">{{ myjobPosts.createdAt|date('d-m-Y') }}</p></h6>
                             </div>
                             <div class="card-body text-center">
                                 <p class="card-text">{{ myjobPosts.content }}</p>

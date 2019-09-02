@@ -6,14 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% block title %}Gusto Coffee - Café &amp; Coworking {% endblock %}</title>
     {% block stylesheets %}
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.1.0/main.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.1.0/main.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@4.1.0/main.min.css">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/mdb.min.css') }}">
         <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style-landing.css') }}">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <link rel="shortcut icon" href="{{ asset('image/logo_solo.png') }}">
     {% endblock %}
 </head>
 
@@ -31,7 +29,7 @@
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Espaces de travail</a>
                         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="#">Espace partagé</a>
-                            <a class="dropdown-item" href="#">Bureaux Dédié</a>
+                            <a class="dropdown-item" href="{{ path('viewspaceprivate') }}">Salons privé</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -100,16 +98,19 @@
                 </h6>
                 <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p>
-                    <a href="#!">Your Account</a>
+                    <a href="">Créer un compte</a>
                 </p>
                 <p>
-                    <a href="#!">Become an Affiliate</a>
+                    <a href="#!">S'inscrire</a>
                 </p>
                 <p>
-                    <a href="#!">Shipping Rates</a>
+                    <a href="{{ path('legalnotice') }}">Mentions légagles</a>
                 </p>
                 <p>
-                    <a href="#!">Help</a>
+                    <a href="{{ path('legalnoticevente') }}">Conditions générales de ventes</a>
+                </p>
+                <p>
+                    <a href="{{ path('legalnoticecookie') }}">Politique de cookie</a>
                 </p>
             </div>
             <div class="col-md-4 col-lg-3 col-xl-3">
@@ -155,66 +156,53 @@
 </footer>
 
 {% block javascripts %}
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="js/popper.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-    <script src="{{ asset('build/app.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.1.0/main.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@4.1.0/main.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.1.0/main.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@4.1.0/main.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/cookiechoices.js') }}"></script>
     <script src="https://js.stripe.com/v3/"></script>
-    <script src='fullcalendar/core/locales-all.js'></script>
+    <script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'http://127.0.0.1:8000/Politque-de-cookie');});</script>
     <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', () => {
-            var calendarEl = document.getElementById('calendar-holder');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                defaultView: 'timeGridWeek',
-                locale: 'fr',
-                themeSystem: 'bootstrap4',
-                editable: false,
-                eventSources: [
-                    {
-                        url: "{{ path('fc_load_events') }}",
-                        method: "GET",
-                        extraParams: {
-                            filters: JSON.stringify({})
-                        },
-                        textColor: 'white',
-                        failure: () => {
-                            // alert("There was an error while fetching FullCalendar!");
-                        },
-                    },
-                ],
-                header: {
-                    locale: 'fr',
-                    left: 'prev,next',
-                    center: 'title',
-                    right: 'timeGridWeek,timeGridDay',
-                },
-                buttonText: {
-                    week : 'Semaine',
-                    day  : 'Aujourd\'hui'
+        function append(dl, dtTxt, ddTxt) {
+            var dt = document.createElement("dt");
+            var dd = document.createElement("dd");
+            dt.textContent = dtTxt;
+            dd.textContent = ddTxt;
+            dl.appendChild(dt);
+            dl.appendChild(dd);
+        }
 
-                },
-                firstDay: 1,
-                minTime: '07:00:00',
-                maxTime: '22:00:00',
-                allDaySlot: false,
-                plugins: [ 'interaction', 'dayGrid', 'timeGrid' ], // https://fullcalendar.io/docs/plugin-index
-                timeZone: 'UTC',
+        $(document).ready(function() {
 
+            var today = new Date();
+            $('#d1').val(today.getFullYear() + "-" + ('0' + (today.getMonth() + 1)).slice(-2) + "-" + ('0' + (today.getDate() + 1)).slice(-2));
+            $('#d2').val($('#d1').val());
+            $('#t1').val('00:00');
+            $('#t2').val('00:00');
+            //
+            //$('#d1 #d2 #t1 #t2').
+            $('#d1, #d2, #t1, #t2').on('change', function(ev) {
+                var dl = document.getElementById("diff");
+                while (dl.hasChildNodes()) {
+                    dl.removeChild(dl.lastChild);
+                }
+
+                var date1 = new Date($('#d1').val() + " " + $('#t1').val()).getTime();
+                var date2 = new Date($('#d2').val() + " " + $('#t2').val()).getTime();
+                var msec = date2 - date1;
+                var p = document.getElementById("price").value
+                var mins = Math.floor(msec / 60000);
+                var hrs = Math.floor(mins / 60);
+                var days = Math.floor(hrs / 24);
+                var yrs = Math.floor(days / 365);
+                p = mins * p;
+                append(dl, "Prix total: ", p + " € ");
             });
-            calendar.render();
+
+            // trigger change
+            $('#d1').change();
+
         });
-
-
-        $('.carousel').carousel({
-            interval: 2450,
-        })
-
     </script>
 {% endblock %}
 </body>

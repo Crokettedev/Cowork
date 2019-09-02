@@ -22,3 +22,8 @@ vich_uploader:
             uri_prefix: /images/office
             upload_destination: '%kernel.project_dir%/public/images/office'
             namer: Vich\UploaderBundle\Naming\UniqidNamer
+
+        spaceprivate_image:
+            uri_prefix: /images/spacesprivate
+            upload_destination: '%kernel.project_dir%/public/images/spacesprivate'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer

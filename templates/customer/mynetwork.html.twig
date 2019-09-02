@@ -11,7 +11,8 @@
                         <h2 class="text-uppercase font-weight-bold">Réseau</h2>
                         <div class="card">
                             <div class="card-body text-center">
-                                Connectez-vous pour profiter de notre réseau de professionnel <a href="{{ path('app_login') }}"><button class="btn peach-gradient my-4 btn-sm" >Connexion</button></a>
+                                Connectez-vous pour profiter de notre réseau de professionnel <a href="{{ path('app_login') }}"><button class="btn peach-gradient my-4 btn-sm" >Connexion</button></a> ou
+                                <a href="{{ path('app_login') }}">Inscrivez-vous</a>
                             </div>
                         </div>
                         <hr>
@@ -68,25 +69,15 @@
                                                         {% else %}
                                                             <a href="{{ path('answerjobpost', {id: jobPosts.id, slug: jobPosts.slug}) }}"><button class="btn peach-gradient my-4 btn-sm" >Répondre</button></a>
                                                         {% endif %}
+                                                        {% if jobPosts.messageJobs is not empty %}
+                                                            <a href="{{ path('answerjobpost', {id: jobPosts.id, slug: jobPosts.slug}) }}"><button class="btn peach-gradient my-4 btn-sm" >Suivre la discussion</button></a>
+                                                        {% endif %}
                                                     </div>
                                                 </div>
                                                 <hr>
                                             {% endfor %}
                                         </p>
-                                <div class="pos-f-t">
-                                    <div class="collapse" id="navbarToggleExternalContent">
-                                        <div class="bg-dark p-4">
-                                            <h5 class="text-white h4">Collapsed content</h5>
-                                            <span class="text-muted">Toggleable via the navbar brand.</span>
-                                        </div>
-                                    </div>
-                                    <nav class="navbar navbar-dark bg-dark">
-                                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                                            <span class="navbar-toggler-icon"></span>
-                                        </button>
-                                    </nav>
-                                </div>
-                                <a href=""><button class="btn peach-gradient my-4 btn-sm" >Voir tout</button></a>
+                                <a href=""><button class="btn peach-gradient my-4 btn-sm" style="float: right">Voir tout</button></a>
                                     </div>
                                 </div>
                                 <hr>
@@ -95,20 +86,8 @@
                                 <div class="card text-center">
                                     <div class="card-body">
                                         <h5 class="card-title">Mes posts</h5>
-                                        <p class="card-text">
-                                            {% for customerjobPosts in app.user.jobPosts %}
-                                            {{ customerjobPosts.content }}
-                                            {% endfor %}
-                                        </p>
                                         <a href="{{ path('myjobpost') }}"><button class="btn peach-gradient my-4 btn-sm" >Consulter</button></a>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="card text-center">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Mes messages</h5>
-                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <a href=""><button class="btn peach-gradient my-4 btn-sm" >Consulter</button></a>
+                                        <a href="{{ path('addjobpost') }}"><button class="btn peach-gradient my-4 btn-sm" >Deposer une annonce</button></a>
                                     </div>
                                 </div>
                             </div>

@@ -23,15 +23,15 @@ class RegistrationCustomerType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'label' => false, 'required' => true,
+                'label' => 'Adresse e-mail*', 'required' => true,
                 'attr' => [
-                    'placeholder' => 'E-mail'
-                ]
+                    'placeholder' => 'Adresse e-mail à laquelle vous contacter'
+                ],
             ])
             ->add('plainPassword', PasswordType::class, [
-                'label' => false, 'required' => true,
+                'label' => 'Mot de passe*', 'required' => true,
                 'attr' => [
-                    'placeholder' => 'Mot de passe'
+                    'placeholder' => '**********'
                 ],
                 'mapped' => false,
                 'constraints' => [
@@ -47,25 +47,32 @@ class RegistrationCustomerType extends AbstractType
                 ],
             ])
             ->add('firstname', TextType::class, [
-                'label' => false, 'required' => true,
+                'label' => 'Nom*', 'required' => true,
                 'attr' => [
-                    'placeholder' => 'Nom'
+                    'placeholder' => 'Votre nom'
                 ]
             ])
             ->add('lastname', TextType::class, [
-                'label' => false, 'required' => true,
+                'label' => 'Prénom*', 'required' => true,
                 'attr' => [
-                    'placeholder' => 'Prénom'
+                    'placeholder' => 'Votre prénom'
+                ]
+            ])
+
+            ->add('job', TextType::class, [
+                'label' => 'Nom de l\'entreprise',
+                'attr' => [
+                    'placeholder' => 'Nom de l\'enteprise intéressée par un/des espaces de travail'
                 ]
             ])
             ->add('phone', TextType::class, [
-                'label' => false, 'required' => true,
+                'label' => 'Numéro de*', 'required' => true,
                 'attr' => [
-                    'placeholder' => 'Téléphone'
+                    'placeholder' => 'Votre numéro de téléphone'
                 ]
             ])
             ->add('agreeTerms', CheckboxType::class, [
-                'label' => 'Vous êtes d\'accord avec les termes de réglementation de Gusto', 'mapped' => false, 'required' => false,
+                'label' => 'Je souhaite que Gusto-Coffee m\'envoie des offres attractives et d\'autres communications sur Gusto-Coffee', 'mapped' => false, 'required' => false,
                 'constraints' => [
                     new IsTrue([
                         'message' => 'Vous devez acceptez.',

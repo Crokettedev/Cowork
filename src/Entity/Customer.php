@@ -17,6 +17,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity(repositoryClass="App\Repository\CustomerRepository")
  * @Vich\Uploadable()
  * @UniqueEntity(fields="email", message="Cet email est déjà existant")
+ * @UniqueEntity(fields="phone", message="Ce numéro de téléphone est déjà utiliser")
  */
 class Customer implements UserInterface
 {
@@ -122,12 +123,24 @@ class Customer implements UserInterface
      */
     private $jobPosts;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\MessageJob", mappedBy="customerMsg")
+     */
+    private $messageJobs;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\MessageJob", mappedBy="customerPost")
+     */
+    private $messageCustomerJobs;
+
     public function __construct()
     {
         $this->registerPosts = new ArrayCollection();
         $this->carts = new ArrayCollection();
         $this->commands = new ArrayCollection();
         $this->jobPosts = new ArrayCollection();
+        $this->messageJobs = new ArrayCollection();
+        $this->messageCustomerJobs = new ArrayCollection();
     }
 
 
@@ -471,6 +484,68 @@ class Customer implements UserInterface
             // set the owning side to null (unless already changed)
             if ($jobPost->getCustomer() === $this) {
                 $jobPost->setCustomer(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|MessageJob[]
+     */
+    public function getMessageJobs(): Collection
+    {
+        return $this->messageJobs;
+    }
+
+    public function addMessageJob(MessageJob $messageJob): self
+    {
+        if (!$this->messageJobs->contains($messageJob)) {
+            $this->messageJobs[] = $messageJob;
+            $messageJob->setCustomerMsg($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMessageJob(MessageJob $messageJob): self
+    {
+        if ($this->messageJobs->contains($messageJob)) {
+            $this->messageJobs->removeElement($messageJob);
+            // set the owning side to null (unless already changed)
+            if ($messageJob->getCustomerMsg() === $this) {
+                $messageJob->setCustomerMsg(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|MessageJob[]
+     */
+    public function getMessageCustomerJobs(): Collection
+    {
+        return $this->messageCustomerJobs;
+    }
+
+    public function addMessageCustomerJob(MessageJob $messageCustomerJob): self
+    {
+        if (!$this->messageCustomerJobs->contains($messageCustomerJob)) {
+            $this->messageCustomerJobs[] = $messageCustomerJob;
+            $messageCustomerJob->setCustomerPost($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMessageCustomerJob(MessageJob $messageCustomerJob): self
+    {
+        if ($this->messageCustomerJobs->contains($messageCustomerJob)) {
+            $this->messageCustomerJobs->removeElement($messageCustomerJob);
+            // set the owning side to null (unless already changed)
+            if ($messageCustomerJob->getCustomerPost() === $this) {
+                $messageCustomerJob->setCustomerPost(null);
             }
         }
 

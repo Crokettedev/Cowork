@@ -4,13 +4,16 @@ namespace App\Controller;
 
 use App\Entity\Customer;
 use App\Entity\JobPosts;
+use App\Entity\MessageJob;
 use App\Entity\RegisterPost;
 use App\Form\AddJobPostType;
 use App\Form\ResetPasswordType;
 use App\Form\UpdateCustomerType;
 use App\Repository\CustomerRepository;
 use App\Repository\JobPostsRepository;
+use App\Repository\MessageJobRepository;
 use Doctrine\Common\Persistence\ObjectManager;
+use phpDocumentor\Reflection\Types\This;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,12 +27,14 @@ class CustomerController extends AbstractController
     private $repository;
     protected $oldPassword;
     private $jobPostsRepository;
+    private $messageJobRepo;
 
-    public function __construct(CustomerRepository $repository, ObjectManager $em, JobPostsRepository $jobPostsRepository)
+    public function __construct(CustomerRepository $repository, ObjectManager $em, JobPostsRepository $jobPostsRepository, MessageJobRepository $messageJobRepository)
     {
         $this->repository = $repository;
         $this->em = $em;
         $this->jobPostsRepository = $jobPostsRepository;
+        $this->messageJobRepo = $messageJobRepository;
 
     }
 
@@ -39,8 +44,10 @@ class CustomerController extends AbstractController
     public function viewNetwork()
     {
         $jobPost = $this->jobPostsRepository->findAllPost();
+        $msg = $this->messageJobRepo->findAll();
         return $this->render('customer/mynetwork.html.twig', [
             'jobPost' => $jobPost,
+            'msgPost' => $msg
         ]);
     }
 
@@ -50,6 +57,14 @@ class CustomerController extends AbstractController
     public function viewmyjobPost()
     {
         return $this->render('customer/myjobpost.html.twig');
+    }
+
+    /**
+     * @Route("/Message", name="viewmymessagejob")
+     */
+    public function viewmymessagejob()
+    {
+        return $this->render('customer/messagejob.html.twig');
     }
 
     /**
@@ -69,7 +84,7 @@ class CustomerController extends AbstractController
             $entityManager->persist($addjobPost);
             $entityManager->flush();
 
-            return $this->redirectToRoute('myjobpost');
+            return $this->redirectToRoute('mynetwork');
         }
 
         return $this->render('customer/addjobpost.html.twig', [
@@ -112,11 +127,11 @@ class CustomerController extends AbstractController
     /**
      * @Route("/Repondre/{slug}-{id}", name="answerjobpost", requirements={"slug": "[a-z0-9\-]*"})
      */
-    public function answerjobpost(JobPosts $jobPosts, Request $request, string $slug)
+    public function answerjobpost(JobPosts $jobPosts, Request $request, string $slug, ObjectManager $manager)
     {
         if ($jobPosts->getSlug() !== $slug)
         {
-            $this->redirectToRoute('add_food', [
+            $this->redirectToRoute('answerjobpost', [
                 'id' => $jobPosts->getId(),
                 'slug' => $jobPosts->getSlug()
             ], 301);
@@ -124,6 +139,20 @@ class CustomerController extends AbstractController
 
         $repo = $this->getDoctrine()->getRepository(JobPosts::class);
         $job = $repo->find($jobPosts);
+
+        if ($request->request->count() > 0)
+        {
+            $message = new MessageJob();
+            $message->setMessage($jobPosts);
+            $message->setCustomerMsg($this->getUser());
+            $message->setContent($request->request->get('message'));
+            $message->setCustomerPostId($request->request->get('customer_post'));
+
+            $manager->persist($message);
+            $manager->flush();
+
+            $this->addFlash('success','Vos informations ont bien été changé.');
+        }
 
         return $this->render('customer/answerjobpost.html.twig', [
             'jobs' => $job,

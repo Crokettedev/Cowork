@@ -12,7 +12,7 @@
                             <h2 class="display-4 font-weight-bold white-text pt-5 mb-2">Chez Gusto Coffee</h2>
                             <hr class="hr-light">
                             <h4 class="white-text my-4">&laquo; Il n'y a pas de hasard, il n'y a que des rendez-vous &raquo;</h4>
-                            <button type="button" class="btn btn-outline-white">Réservez votre espace</button>
+                            <a href="#test"><button type="button" class="btn btn-outline-white">Réservez votre espace</button></a>
                         </div>
                     </div>
                 </div>
@@ -32,62 +32,31 @@
                         </div>
                     </section>
                     <hr class="my-5">
-                    <section class="pricing-space">
+                    <section class="pricing-space" id="test">
                         <div class="row text-center">
                             <div class="col-md-12 mb-5">
                                 <h2 class="mb-2 font-weight-bold ">Nos espaces de travail</h2>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-12">
-                                <div class="card mb-4">
-                                    <div class="view">
-                                        <img src="img/espace/space2.jpg" class="card-img-top" alt="photo">
-                                        <a href="#">
-                                            <div class="mask rgba-white-slight"></div>
-                                        </a>
+                        <div class="card-deck">
+                            <div class="card">
+                                <img src="{{ asset('img/espace/space2.jpg') }}" class="card-img-top" alt="photo">
+                                <div class="card-body">
+                                    <h5 class="card-title">Salons privés</h5>
+                                    <p class="card-text">Des espaces fermés pouvant accueillir les équipes comptant jusqu'à X membres, avec accès, aux salons et aux équipements partagés de Gusto Coffee, tels que nos sélections de café et les services d'impression.</p>
+                                    <div class="text-center">
+                                        <a href="{{ path('viewspaceprivate') }}"><button class="btn peach-gradient my-4 btn-sm" >Reservez</button></a>
                                     </div>
-                                    <div class="card-body">
-                                        <h4 class="card-title font-weight-bold"><a href="">Bureaux privés</a></h4>
-                                        <p class="card-text">Des espaces fermés pouvant accueillir les équipes comptant jusqu'à X membres, avec accès, aux salons et aux équipements partagés de Gusto Coffee, tels que nos sélections de café et les services d'impression.</p>
-                                        <hr class="my-3">
-                                        <small class="grey-text"><i class="fas fa-user-circle"></i> 1 - 6 • Services partagés</small>
-                                    </div>
-
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-12">
-                                <div class="card mb-4">
-                                    <div class="view">
-                                        <img src="img/espace/space3.jpg" class="card-img-top" alt="photo">
-                                        <a href="#">
-                                            <div class="mask rgba-white-slight"></div>
-                                        </a>
+                            <div class="card">
+                                <img src="{{ asset('img/espace/space1.jpg') }}" class="card-img-top" alt="photo">
+                                <div class="card-body">
+                                    <h5 class="card-title">Poste de travail attribué</h5>
+                                    <p class="card-text">Des espaces fermés pouvant accueillir les équipes comptant jusqu'à X membres, avec accès, aux salons et aux équipements partagés de Gusto Coffee, tels que nos sélections de café et les services d'impression.</p>
+                                    <div class="text-center">
+                                        <a href="{{ path('app_login') }}"><button class="btn peach-gradient my-4 btn-sm" >Reservez</button></a>
                                     </div>
-                                    <div class="card-body">
-                                        <h4 class="card-title font-weight-bold"><a href="">Poste de travail non attribué</a></h4>
-                                        <p class="card-text">Des espaces fermés pouvant accueillir les équipes comptant jusqu'à X membres, avec accès, aux salons et aux équipements partagés de Gusto Coffee, tels que nos sélections de café et les services d'impression.</p>
-                                        <hr class="my-3">
-                                        <small class="grey-text"><i class="fas fa-user-circle"></i> 1 - 200 • Services partagés</small>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-12">
-                                <div class="card ">
-                                    <div class="view">
-                                        <img src="img/espace/space1.jpg" class="card-img-top" alt="photo">
-                                        <a href="#">
-                                            <div class="mask rgba-white-slight"></div>
-                                        </a>
-                                    </div>
-                                    <div class="card-body">
-                                        <h4 class="card-title font-weight-bold"><a href="">Poste de travail attribué</a></h4>
-                                        <p class="card-text">Des espaces fermés pouvant accueillir les équipes comptant jusqu'à X membres, avec accès, aux salons et aux équipements partagés de Gusto Coffee, tels que nos sélections de café et les services d'impression.</p>
-                                        <hr class="my-3">
-                                        <small class="grey-text"><i class="fas fa-user-circle"></i> 1 - 4 • Services partagés</small>
-                                    </div>
-
                                 </div>
                             </div>
                         </div>
@@ -131,6 +100,7 @@
                         <h2 class="text-uppercase font-weight-bold">Mon compte</h2>
                     </div>
                     <div class="content">
+                        <input type="text" name="datetimes" />
                         <div class="row">
                             <div class="col-12 col-md-8">
                                 <div class="card">

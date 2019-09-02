@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Cocur\Slugify\Slugify;
 
@@ -41,6 +43,16 @@ class JobPosts
      * @ORM\Column(type="string", length=255)
      */
     private $title;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\MessageJob", mappedBy="message")
+     */
+    private $messageJobs;
+
+    public function __construct()
+    {
+        $this->messageJobs = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -108,6 +120,37 @@ class JobPosts
     public function setTitle(string $title): self
     {
         $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|MessageJob[]
+     */
+    public function getMessageJobs(): Collection
+    {
+        return $this->messageJobs;
+    }
+
+    public function addMessageJob(MessageJob $messageJob): self
+    {
+        if (!$this->messageJobs->contains($messageJob)) {
+            $this->messageJobs[] = $messageJob;
+            $messageJob->setMessage($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMessageJob(MessageJob $messageJob): self
+    {
+        if ($this->messageJobs->contains($messageJob)) {
+            $this->messageJobs->removeElement($messageJob);
+            // set the owning side to null (unless already changed)
+            if ($messageJob->getMessage() === $this) {
+                $messageJob->setMessage(null);
+            }
+        }
 
         return $this;
     }
