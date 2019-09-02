@@ -5,6 +5,25 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 
 services:
+    supply_food.search_filter:
+        parent: 'api_platform.doctrine.orm.search_filter'
+        arguments: [ { id: 'exact', category: 'exact' } ]
+        tags:  [ {name: 'api_platform.filter', id: 'supply_food.search'} ]
+        # The following are mandatory only if a _defaults section is defined
+        # You may want to isolate filters in a dedicated file to avoid adding them
+        autowire: false
+        autoconfigure: false
+        public: false
+    user.search_filter:
+        parent: 'api_platform.doctrine.orm.search_filter'
+        arguments: [ { id: 'exact', name: 'exact', telephone: 'exact', mail: 'exact', password: 'exact' } ]
+        tags:  [ {name: 'api_platform.filter', id: 'user.search'} ]
+        # The following are mandatory only if a _defaults section is defined
+        # You may want to isolate filters in a dedicated file to avoid adding them
+        autowire: false
+        autoconfigure: false
+        public: false
+        
     # default configuration for services in *this* file
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.

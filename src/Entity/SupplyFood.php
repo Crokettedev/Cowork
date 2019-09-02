@@ -9,8 +9,10 @@ use Cocur\Slugify\Slugify;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
+ * @ApiResource(attributes={"filters"={"supply_food.search"}})
  * @ORM\Entity(repositoryClass="App\Repository\SupplyFoodRepository")
  * @Vich\Uploadable()
  */
