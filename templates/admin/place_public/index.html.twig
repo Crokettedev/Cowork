@@ -1,0 +1,55 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Gérer les réservations{% endblock %}
+
+{% block body %}
+    <h1>Gérer les réservations |</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <td>Utilisateur</td>
+                <th>n° de Place</th>
+                <th>n° de Table</th>
+                <th>Prix</th>
+                <td>Date de début</td>
+                <td>Date de fin</td>
+                <td>Réserver</td>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for place_public in place_publics %}
+
+
+            <tr>
+
+                <td>{{ place_public.customer }}</td>
+                <td>{{ place_public.title }}</td>
+                <td>{{ place_public.placepublic }}</td>
+                <td>{{ place_public.price }}€</td>
+                <td>{{ place_public.beginAt ? place_public.beginAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ place_public.endAt ? place_public.endAt|date('Y-m-d H:i:s') : ''  }}</td>
+                <td>{{ place_public.disponible }}</td>
+
+                <td>
+                    <a href="{{ path('admin_place_public_show', {'id': place_public.id}) }}" class="btn btn-secondary">Voir</a>
+                    <a href="{{ path('admin_place_public_edit', {'id': place_public.id}) }}" class="btn btn-secondary">Editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Aucune place disponible</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+    <a href="{{ path('admin_place_public_new') }}" class="btn btn-primary">Ajouter une réservation</a>
+
+    <a href="{{ path('admin_space_public_index') }}" class="btn btn-primary">Revenir en arrière</a>
+
+{% endblock %}

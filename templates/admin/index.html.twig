@@ -22,7 +22,7 @@
                 <div class="card-deck">
                     <div class="card">
                         <div class="container text-center">
-                            <img src="{{ asset('image/public.png') }}" width="150" height="150">
+                            <img src="{{ asset('image/public.png') }}" width="150" height="150" alt="Admin Espace Publique">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Espace Publique</h5>
@@ -31,14 +31,14 @@
                             </p>
                         </div>
                         <div class="card-footer text-muted" id="card_footer_home">
-                            <a href="" class="btn btn-info" role="button">Gérer les espaces publique</a>
+                            <a href="{{ path('admin_space_public_index') }}" class="btn btn-info" role="button">Gérer les espaces publique</a>
                         </div>
                     </div>
 
 
                     <div class="card">
                         <div class="container text-center">
-                            <img src="{{ asset('image/privee.png') }}" width="150" height="150">
+                            <img src="{{ asset('image/privee.png') }}" width="150" height="150" alt="Admin Espace Privee">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Espaces Privées</h5>
@@ -54,7 +54,7 @@
 
                     <div class="card">
                         <div class="container text-center">
-                            <img src="{{ asset('image/users.png') }}" width="150" height="150">
+                            <img src="{{ asset('image/users.png') }}" width="150" height="150" alt="Admin Customer">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Utilisateurs</h5>
@@ -64,7 +64,7 @@
                             </p>
                         </div>
                         <div class="card-footer text-muted" id="card_footer_home">
-                            <button type="button" class="btn btn-primary" id="btn_card_home">Gérer les utilisateurs</button>
+                            <a href="{{ path('admin_customer_index') }}" class="btn btn-info" role="button">Gérer les utilisateurs</a>
                         </div>
                     </div>
 
@@ -74,7 +74,7 @@
                 <div class="card-deck">
                     <div class="card">
                         <div class="container text-center">
-                            <img src="{{ asset('image/fourniture.png') }}" width="150" height="150">
+                            <img src="{{ asset('image/fourniture.png') }}" width="150" height="150" alt="Admin Fourniture">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Fournitures</h5>
@@ -104,7 +104,7 @@
                     </div>
                     <div class="card">
                         <div class="container text-center">
-                            <img src="{{ asset('image/admins.png') }}" width="150" height="150">
+                            <img src="{{ asset('image/admins.png') }}" width="150" height="150" alt="Admin Nourriture">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Administrateurs</h5>
@@ -114,7 +114,7 @@
                             </p>
                         </div>
                         <div class="card-footer text-muted" id="card_footer_home">
-                            <button type="button" class="btn btn-primary" id="btn_card_home">Gérer les administrateurs</button>
+                            <a href="{{ path('admin_user_index') }}" class="btn btn-info" role="button">Gérer les administrateurs</a>
                         </div>
                     </div>
 

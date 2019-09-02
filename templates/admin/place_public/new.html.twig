@@ -1,0 +1,25 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Hello SpacePublicController!{% endblock %}
+
+{% block body %}
+    <div style="text-align: center; margin-top: 3em;"><h5></h5></div>
+    <div class="container" style="display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 20px;">
+
+        {% for SallePublics in public %}
+            <div class="card" style="width: 18rem;">
+                <img src="{{ vich_uploader_asset(SallePublics, 'imageFile') | imagine_filter('thumb')}}" class="card-img-top" alt="..." style="width: 100%; height: auto">
+                <div class="card-body">
+                    <h5 class="card-title">{{ SallePublics.title }}</h5>
+                    <p class="card-text">{{ SallePublics.content }}</p>
+                    <a href="{{ path('add_place', {id: SallePublics.getId(),  slug: SallePublics.slug}) }}" class="btn btn-primary">Ajouter</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div style="text-align: center; margin-top: 5em;"/><a href="{{ path('admin_space_public_index') }}" class="btn btn-primary">Revenir en arrière</a></div>
+
+{% endblock %}

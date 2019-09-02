@@ -1,0 +1,11 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}New SpacePublic{% endblock %}
+
+{% block body %}
+    <h1>Create new SpacePublic</h1>
+
+    {{ include('admin/space_public/_form.html.twig') }}
+
+    <a href="{{ path('admin_space_public_index') }}" class="btn btn-info">Revenir à la liste</a> </br></br>
+{% endblock %}

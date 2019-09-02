@@ -1,0 +1,13 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Crée un utilisateur{% endblock %}
+
+{% block body %}
+
+
+    <h1>Crée un utilisateur</h1>
+
+    {{ include('admin/customer/_form.html.twig') }} </br>
+
+    <a href="{{ path('admin_customer_index') }}" class="btn btn-primary">Revenir en arrière</a></br></br>
+{% endblock %}

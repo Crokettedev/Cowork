@@ -1,0 +1,17 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Modifier les informations{% endblock %}
+
+{% block body %}
+    <h1>Modifier les informations</h1>
+
+
+    {{ include('admin/customer/_form.html.twig', {'button_label': 'Modifier'}) }}
+    {{ include('admin/customer/_delete_form.html.twig') }}
+
+
+
+
+
+
+{% endblock %}

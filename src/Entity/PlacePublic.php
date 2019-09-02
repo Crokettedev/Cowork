@@ -40,6 +40,33 @@ class PlacePublic
      */
     private $price;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Customer", inversedBy="placePublics")
+     */
+    private $customer;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $beginAt;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $endAt;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $disponible;
+
+
+
+
+
+
+
+
     public function __construct()
     {
         $this->bookings = new ArrayCollection();
@@ -128,4 +155,57 @@ class PlacePublic
 
         return $this;
     }
+
+    public function getCustomer(): ?Customer
+    {
+        return $this->customer;
+    }
+
+    public function setCustomer(?Customer $customer): self
+    {
+        $this->customer = $customer;
+
+        return $this;
+    }
+
+    public function getBeginAt(): ?\DateTimeInterface
+    {
+        return $this->beginAt;
+    }
+
+    public function setBeginAt(\DateTimeInterface $beginAt): self
+    {
+        $this->beginAt = $beginAt;
+
+        return $this;
+    }
+
+    public function getEndAt(): ?\DateTimeInterface
+    {
+        return $this->endAt;
+    }
+
+    public function setEndAt(\DateTimeInterface $endAt): self
+    {
+        $this->endAt = $endAt;
+
+        return $this;
+    }
+
+    public function getDisponible(): ?bool
+    {
+        return $this->disponible;
+    }
+
+    public function setDisponible(bool $disponible): self
+    {
+        $this->disponible = $disponible;
+
+        return $this;
+    }
+
+
+
+
+
 }

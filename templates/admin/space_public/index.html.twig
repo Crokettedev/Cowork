@@ -1,0 +1,52 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Espace publique{% endblock %}
+
+{% block body %}
+    {% if is_granted('ROLE_ADMIN') %}
+    <h1>Gérer les tables | Espace Publique</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom de l'image</th>
+                <th>Titre</th>
+                <th>Contenu</th>
+                <th>UpdateAt</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for space_public in space_publics %}
+            <tr>
+                <td>{{ space_public.id }}</td>
+                <td>{{ space_public.filename }}</td>
+                <td>{{ space_public.title }}</td>
+                <td>{{ space_public.content }}</td>
+                <td>{{ space_public.updateAt ? space_public.updateAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('admin_space_public_show', {'id': space_public.id}) }}" class="btn btn-secondary">Voir</a>
+                    <a href="{{ path('admin_space_public_edit', {'id': space_public.id}) }}" class="btn btn-secondary">Editer</a>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_space_public_new') }}" class="btn btn-primary">Crée une nouvelle table</a>
+
+        <a href="{{ path('admin_place_public_new') }}" class="btn btn-primary">Ajouter une réservation</a>
+
+        <a href="{{ path('admin') }}" class="btn btn-primary">Revenir à l'accueil</a>
+
+        <a href="{{ path('admin_place_public_index') }}" class="btn btn-primary">Voir les réservations</a>
+
+        
+   {% endif %}
+{% endblock %}
