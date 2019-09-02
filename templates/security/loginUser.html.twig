@@ -1,45 +1,44 @@
-{% extends 'base2.html.twig' %}
+{% extends 'base.html.twig' %}
 
-
-{% block title %}Connectez-vous !{% endblock %}
+{% block title %}Connexion{% endblock %}
 
 {% block body %}
-<form method="post" xmlns="http://www.w3.org/1999/html">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
 
-    {% if app.user %}
-        <div class="checkbox mb-3">You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+    <main class="mt-5 mb-4 pt-3">
+        <div class="container">
+            
+            <section>
+                <div class="row d-flex justify-content-center">
+                    <!-- Material form login -->
+                    <!-- Default form login -->
+                    <form class="text-center border border-light mt-5 p-5 col-md-6" method="post">
+                        <p class="h4 mb-4">Connexion | Partie Administrateur</p>
+                        <!-- Email -->
+                        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control mb-4" placeholder="Email" required autofocus >
+
+                        <!-- Password -->
+                        <input type="password" name="password" id="inputPassword" class="form-control mb-4" placeholder="Mot de passe" required>
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
 
 
-    {% endif %}
+                        <!-- Sign in button -->
 
-            {% if not app.user %}
-                <h1 class="h3 mb-3 font-weight-normal">Espace d'Administration | </h1>
-    <label for="inputEmail" class="sr-only">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus><br>
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
+                        <button class="btn peach-gradient my-4 btn-block" type="submit">Se connecter</button>
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    ><br>
+                        <hr>
+                        <!-- Register -->
 
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
 
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
+                    </form>
+                    <!-- Default form login -->
+                    <!-- Material form login -->
+                </div>
+            </section>
+            <!--FIN FORMULAIRE INSCRIPTION-->
         </div>
-    #}
+    </main>
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Connexion
-    </button>
-</form>
-    {% endif %}
 {% endblock %}
