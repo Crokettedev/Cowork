@@ -1,0 +1,13 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Editer une table{% endblock %}
+
+{% block body %}
+    <h1>Editer une table</h1>
+
+    {{ include('admin/space_public/_form.html.twig', {'button_label': 'Modifier'}) }}</br>
+
+    <a href="{{ path('admin_space_public_index') }}" class="btn btn-info">Revenir à la liste</a> </br></br>
+
+    {{ include('admin/space_public/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Modifier les informations{% endblock %}
+
+{% block body %}
+    <h1>Modifier les informations</h1>
+
+    {{ include('admin/user/_form.html.twig', {'button_label': 'Modifier'}) }}<br>
+
+
+    {{ include('admin/user/_delete_form.html.twig') }}<br>
+
+    <a href="{{ path('admin_user_index') }}" class="btn btn-primary">Revenir en arrière</a>
+{% endblock %}

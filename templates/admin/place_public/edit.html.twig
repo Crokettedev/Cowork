@@ -1,0 +1,13 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Edit PlacePublic{% endblock %}
+
+{% block body %}
+    <h1>Editer une place</h1>
+
+    {{ include('admin/place_public/_form.html.twig', {'button_label': 'Modifier'}) }}<br>
+
+    <a href="{{ path('admin_place_public_index') }}" class="btn btn-info">Revenir à la liste</a><br><br>
+
+    {{ include('admin/place_public/_delete_form.html.twig') }}
+{% endblock %}

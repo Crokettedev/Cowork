@@ -1,0 +1,41 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Gérer les administrateurs{% endblock %}
+
+{% block body %}
+
+
+    {% if is_granted('ROLE_ADMIN') %}
+    <h1>Gérer les administrateurs</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Mot de passe</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.password }}</td>
+                <td><a href="{{ path('admin_user_show', {'id': user.id}) }}" class="btn btn-secondary">Détails</a></td>
+                <td><a href="{{ path('admin_user_edit', {'id': user.id}) }}" class="btn btn-secondary">Editer</a></td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Pas d'administrateur inscrit</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_user_new') }}" class="btn btn-primary">Crée un Administrateur</a>
+    <a href="{{ path('admin') }}" class="btn btn-primary">Revenir à l'accueil</a>
+    {% endif %}
+{% endblock %}

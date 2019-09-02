@@ -1,0 +1,38 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Gérer les utilisateurs{% endblock %}
+
+{% block body %}
+    <h1>Gérer les utilisateurs |</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Mot de passe</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for customer in customers %}
+            <tr>
+                <td>{{ customer.id }}</td>
+                <td>{{ customer.email }}</td>
+                <td>{{ customer.password }}</td>
+                <td><a href="{{ path('admin_customer_show', {'id': customer.id}) }}" class="btn btn-secondary">Détails</a></td>
+                <td><a href="{{ path('admin_customer_edit', {'id': customer.id}) }}" class="btn btn-secondary">Editer</a><td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="14">Aucun utilisateurs</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_customer_new') }}" class="btn btn-primary">Crée un utilisateur</a>
+
+    <a href="{{ path('admin') }}" class="btn btn-primary">Revenir à l'accueil</a>
+{% endblock %}
