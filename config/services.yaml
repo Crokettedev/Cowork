@@ -7,7 +7,7 @@
 services:
     supply_food.search_filter:
         parent: 'api_platform.doctrine.orm.search_filter'
-        arguments: [ { id: 'exact', category: 'exact' } ]
+        arguments: [ { id: 'exact', category: 'exact', filename: 'exact' } ]
         tags:  [ {name: 'api_platform.filter', id: 'supply_food.search'} ]
         # The following are mandatory only if a _defaults section is defined
         # You may want to isolate filters in a dedicated file to avoid adding them

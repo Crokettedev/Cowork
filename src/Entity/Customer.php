@@ -126,12 +126,12 @@ class Customer implements UserInterface
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\MessageJob", mappedBy="customerMsg")
      */
-    private $messageJobs;
+//    private $messageJobs;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\MessageJob", mappedBy="customerPost")
      */
-    private $messageCustomerJobs;
+//    private $messageCustomerJobs;
 
     public function __construct()
     {

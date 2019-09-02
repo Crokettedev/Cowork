@@ -11,7 +11,7 @@ use App\Form\ResetPasswordType;
 use App\Form\UpdateCustomerType;
 use App\Repository\CustomerRepository;
 use App\Repository\JobPostsRepository;
-use App\Repository\MessageJobRepository;
+//use App\Repository\MessageJobRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use phpDocumentor\Reflection\Types\This;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -29,12 +29,12 @@ class CustomerController extends AbstractController
     private $jobPostsRepository;
     private $messageJobRepo;
 
-    public function __construct(CustomerRepository $repository, ObjectManager $em, JobPostsRepository $jobPostsRepository, MessageJobRepository $messageJobRepository)
+    public function __construct(CustomerRepository $repository, ObjectManager $em, JobPostsRepository $jobPostsRepository)
     {
         $this->repository = $repository;
         $this->em = $em;
         $this->jobPostsRepository = $jobPostsRepository;
-        $this->messageJobRepo = $messageJobRepository;
+//        $this->messageJobRepo = $messageJobRepository;
 
     }
 

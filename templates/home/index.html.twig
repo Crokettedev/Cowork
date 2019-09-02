@@ -3,6 +3,7 @@
 {% block title %}Gusto Coffee - Café &amp; Coworking{% endblock %}
 
 {% block body %}
+
     {% if not app.user %}
         <div id="intro" class="view">
             <div class="mask rgba-black-light">
@@ -45,7 +46,7 @@
                                     <h5 class="card-title">Salons privés</h5>
                                     <p class="card-text">Des espaces fermés pouvant accueillir les équipes comptant jusqu'à X membres, avec accès, aux salons et aux équipements partagés de Gusto Coffee, tels que nos sélections de café et les services d'impression.</p>
                                     <div class="text-center">
-                                        <a href="{{ path('viewspaceprivate') }}"><button class="btn peach-gradient my-4 btn-sm" >Reservez</button></a>
+                                        <a href=""><button class="btn peach-gradient my-4 btn-sm" >Reservez</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -92,7 +93,102 @@
             </div>
         </main>
     {% endif %}
-    {% if is_granted('ROLE_USERS') %}
+
+    {% if is_granted('ROLE_ADMIN') %}
+
+        <div id="intro" class="view">
+            <div class="mask rgba-black-light">
+                <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+                    <div class="row d-flex justify-content-center text-center">
+                        <div class="col-md-12">
+                            <h2 class="display-4 font-weight-bold white-text pt-5 mb-2">Chez Gusto Coffee</h2>
+                            <hr class="hr-light">
+                            <h4 class="white-text my-4">&laquo; Il n'y a pas de hasard, il n'y a que des rendez-vous &raquo;</h4>
+                            <a href="#test"><button type="button" class="btn btn-outline-white">Réservez votre espace</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <main class="my-5">
+            <div class="container-fluid no-pad">
+                <div class="container">
+                    <section id="best-features" class="text-center">
+                        <div class="row d-flex mb-5 align-items-center">
+                            <div class="col-md-5">
+                                <h2 class="mb-2 font-weight-bold ">Gusto Coffee <br> Café &amp; Coworking</h2>
+                            </div>
+                            <div class="col-md-7">
+                                <p class="text-dark text-justify">Né en Italie, le concept <span class="font-weight-bold">Gusto Coffee</span> repose sur l’idée que le succès appelle le succès. Notre ambition est de repenser votre façon de travailler. C’est pourquoi nous avons cultivé une communauté de membres constituée de visionnaires, de bâtisseurs et de créateurs. Découvrez comment l’énergie de nos espaces de travail peut bénéficier à votre activité.</p>
+                            </div>
+                        </div>
+                    </section>
+                    <hr class="my-5">
+                    <section class="pricing-space" id="test">
+                        <div class="row text-center">
+                            <div class="col-md-12 mb-5">
+                                <h2 class="mb-2 font-weight-bold ">Nos espaces de travail</h2>
+                            </div>
+                        </div>
+                        <div class="card-deck">
+                            <div class="card">
+                                <img src="{{ asset('img/espace/space2.jpg') }}" class="card-img-top" alt="photo">
+                                <div class="card-body">
+                                    <h5 class="card-title">Salons privés</h5>
+                                    <p class="card-text">Des espaces fermés pouvant accueillir les équipes comptant jusqu'à X membres, avec accès, aux salons et aux équipements partagés de Gusto Coffee, tels que nos sélections de café et les services d'impression.</p>
+                                    <div class="text-center">
+                                        <a href=""><button class="btn peach-gradient my-4 btn-sm" >Reservez</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="{{ asset('img/espace/space1.jpg') }}" class="card-img-top" alt="photo">
+                                <div class="card-body">
+                                    <h5 class="card-title">Poste de travail attribué</h5>
+                                    <p class="card-text">Des espaces fermés pouvant accueillir les équipes comptant jusqu'à X membres, avec accès, aux salons et aux équipements partagés de Gusto Coffee, tels que nos sélections de café et les services d'impression.</p>
+                                    <div class="text-center">
+                                        <a href="{{ path('app_login') }}"><button class="btn peach-gradient my-4 btn-sm" >Reservez</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <hr class="my-5">
+                </div>
+                <section id="carousel-shop">
+                    <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <div class="view">
+                                    <img class="d-block w-100" src="img/shop/coffee-poducts.jpg" alt="First slide">
+                                    <div class="mask rgba-black-light"></div>
+                                </div>
+                                <div class="carousel-caption d-flex h-100 align-items-center justify-content-center">
+                                    <a href="{{ path('shop') }}"><button type="button" class="btn btn-outline-white">shop</button></a>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="view">
+                                    <img class="d-block w-100" src="img/shop/usb.jpg" alt="Second slide">
+                                    <div class="mask rgba-black-light"></div>
+                                </div>
+                                <div class="carousel-caption d-flex h-100 align-items-center justify-content-center">
+                                    <a href="{{ path('shop') }}"><button type="button" class="btn btn-outline-white">shop</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="contact">
+                </section>
+            </div>
+        </main>
+
+
+
+    {% endif %}
+
+    {% if is_granted('ROLE_USERS')  %}
         <main class="my-5 toped">
             <section class="shopping-cart dark">
                 <div class="container">
@@ -178,4 +274,5 @@
             </section>
         </main>
     {% endif %}
+
 {% endblock %}
