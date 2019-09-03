@@ -3,25 +3,67 @@
 {% block title %}A Propos de nous{% endblock %}
 
 {% block body %}
-    <div class="bg"></div>
+     <div class="bg"></div>
     <main mt-5>
         <div class="container-fluid">
             <div class="container">
-                <section id="best-features" class="text-justify">
-                    <div class="row mt-5 d-flex align-items-center">
-                        <div class="col-md-6">
-                            <h2 class="mb-3 font-weight-bold text-uppercase">Qui sommes-nous?</h2>
-                            <p class="text-dark text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, et modi quia architecto ducimus illo ipsam nemo ipsa dolor veritatis sunt delectus in veniam quaerat dolores animi quo officiis natus.<br>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia itaque minima libero cumque fuga, architecto officiis nulla laboriosam facere adipisci nesciunt quaerat nobis, perspiciatis sit eveniet esse qui. Cupiditate, quaerat.<br>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dicta quaerat maiores! Voluptas vitae saepe odio suscipit consequatur tempora eligendi quod, reprehenderit explicabo? Veniam cumque ipsum maiores quidem, velit aliquid!</p>
-                        </div>
-                        <div class="col-md-6">
-                            <iframe src="mapbox-markers/index.html" width="600" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+
+                <!-- SECTION : PRESENTATION -->
+                <section id="best-features" class="mt-5 text-center">
+                    <div class="row ">
+                        <h2>“Chacun de nous a besoin d’un ordinateur, d’un réseau connecté et d’une étincelle brillante d’initiative et de créativité pour voir son monde s'accélérer»</h2>
+                    </div>
+                    <hr class="my-3">
+                    <div class="row d-flex justify-content-center">
+                        <h1 class="font-weight-bold mb-3">Qui sommes-nous?</h1>
+                    </div>
+                    <div class="row text-justify">
+                        <p class="h5 font-weight-normal mb-3">Nous croyons que le travail concerne les personnes et les idées. Que vous soyez une petite entreprise, un entrepreneur ou un entrepreneur en entreprise, chez Gusto Coffee, nous souhaitons aider notre communauté à élargir son horizon. Notre esprit libre attire une communauté dynamique de penseurs du monde des affaires positifs et ouverts, qui aiment rencontrer de nouvelles personnes.</p>
+
+                        <p class="h5 font-weight-normal mb-3">En créant des espaces de travail dynamiques dotés d'un esprit d'entreprise unique, nous vous aidons à penser, créer et collaborer tout en veillant à ce que notre équipe amicale veille à l'ensemble de la logistique et des services. Chez Gusto Coffee, nous veillons à ce que notre communauté puisse se concentrer sur ses activités.</p>
+                    </div>
+
+                    <div class="row mt-4 mb-4">
+                        <div class="col-md-6"><img src="img/espace/gallery_space.jpg" alt=""></div>
+                        <div class="col-md-6 d-flex flex-column justify-content-center text-justify">
+                            <h3 class="font-weight-bold">L'espace de travail</h3>
+                            <p>Connectez-vous à internet haut débit grâce à nos solutions wifi sur mesure. Vous trouverez des prises électriques à côté de chaque chaise pour pouvoir recharger facilement vos outils de travail. Chez Hubsy, vous pouvez également imprimer et numériser vos documents en couleur ou en noir et blanc. Vous avez la possibilité de réserver un espace privé pour vous et votre équipe, afin réaliser vos conférences téléphoniques et vos réunions de manière efficace. <br><button class="btn btn-outline-orange">découvrir</button>
+                            </p>
                         </div>
                     </div>
+
+                    <div class="row mt-4 mb-4">
+                        <div class="col-md-6 d-flex flex-column justify-content-center text-justify">
+                            <h3 class="font-weight-bold">L'excellence de notre café</h3>
+                            <p>Depuis maintenant 2010, Gusto Coffee comble les papilles des amateurs de café grâce à son coffee shop convivial et exigeant.
+
+                                Comme certains de ses collèges, Gusto Coffee utilise la fameuse Marzocco pour proposer des cafés de qualité.
+
+                                Moulu sur place, le café est donc le produit phare de Gusto Coffee. A la carte ? Expresso de la semaine, Cappuccino, café crème, Latte Glacé, Piccolo Latte, café noir glacé, le café noisette… Mais retrouvez aussi différentes sortes de thé ou encore l’incontournable chocolat chaud ! <br><button class="btn btn-outline-orange">découvrir</button>
+                            </p>
+                        </div>
+                        <div class="col-md-6"><img src="img/espace/gallery_coffee.jpg" alt=""></div>
+                    </div>
+
                 </section>
+                <!-- FIN SECTION : PRESENTATION -->
+                <section id="best-features" class="mt-5 mb-5 text-center">
+
+                    <div class="row d-flex justify-content-center">
+                        <h1 class="font-weight-bold mb-3">Où nous trouver</h1>
+                    </div>
+                    <div class="row">
+                        <iframe src="mapbox-markers/index.html" frameborder="0" style="width: 100%; height: 500px;"></iframe>
+                    </div>
+
+                </section>
+
+
+
             </div>
         </div>
+
     </main>
     <br>
 {% endblock %}
