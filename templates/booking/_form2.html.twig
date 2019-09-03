@@ -1,0 +1,74 @@
+
+
+<div class="container" style="margin-top: 250px;">
+	<form method="post">
+    	<p>
+			It's will also useful for use with two input-fields.<br />
+			<input type="text" id="debut" name="debut">
+			-
+			<input type="text" id="fin" name="fin">
+
+			{% block javascripts %}
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+			<script type="text/javascript">
+				$(function(){
+					$('*[name=debut]').appendDtpicker({
+						"closeOnSelected": true
+					});
+				});
+				$(function(){
+					$('*[name=fin]').appendDtpicker({
+						"closeOnSelected": true
+					});
+				});
+
+				$(document).ready(function(){
+					$("#debut").change(function() {
+					var debut = document.getElementById("debut").value;
+					var fin = document.getElementById("fin").value;
+					var today = new Date();
+
+					date1 = new Date('2019');
+
+					console.log(date1);
+
+					date2 = new Date(fin);
+					// var diffEnMilliseconde = date2-date1;
+					// var diffEnHeures = ((date2-date1)/1000)/3600;
+
+					alert(diffEnHeures); //49
+					});
+					// $("#debut").change(function() {
+			        // var date = $(this).val();
+					// 	$("#placeholder").text(date);
+					//
+					// 	});
+
+				});
+
+
+			</script>
+			{% endblock %}
+
+			<br />
+
+			<label>Nombre de personnes:</label>
+
+			<select>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+			</select>
+		</p>
+
+	</form>
+
+    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+
+
+</div>
+
