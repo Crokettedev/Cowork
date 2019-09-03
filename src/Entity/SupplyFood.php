@@ -9,10 +9,8 @@ use Cocur\Slugify\Slugify;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
-use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
- * @ApiResource(attributes={"filters"={"supply_food.search"}})
  * @ORM\Entity(repositoryClass="App\Repository\SupplyFoodRepository")
  * @Vich\Uploadable()
  */
@@ -76,6 +74,11 @@ class SupplyFood
      * @ORM\OneToMany(targetEntity="App\Entity\Cart", mappedBy="food")
      */
     private $carts;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Customer", inversedBy="supplyFoods")
+     */
+    private $customer;
 
     public function __construct()
     {
@@ -252,6 +255,18 @@ class SupplyFood
         // TODO: Implement __toString() method.
         return (string) $this->id;
 
+    }
+
+    public function getCustomer(): ?Customer
+    {
+        return $this->customer;
+    }
+
+    public function setCustomer(?Customer $customer): self
+    {
+        $this->customer = $customer;
+
+        return $this;
     }
 
 }
