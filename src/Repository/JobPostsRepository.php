@@ -1,11 +1,8 @@
 <?php
-
 namespace App\Repository;
-
 use App\Entity\JobPosts;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
-
 /**
  * @method JobPosts|null find($id, $lockMode = null, $lockVersion = null)
  * @method JobPosts|null findOneBy(array $criteria, array $orderBy = null)
@@ -18,11 +15,9 @@ class JobPostsRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, JobPosts::class);
     }
-
     /**
      * @return JobPosts[] Returns an array of JobPosts objects
     */
-
     public function findAllPost()
     {
         return $this->createQueryBuilder('j')
@@ -33,7 +28,6 @@ class JobPostsRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-
     /*
     public function findOneBySomeField($value): ?JobPosts
     {

@@ -12,9 +12,11 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CustomerRepository")
+ * @ApiResource(attributes={"filters"={"customer.search"}})
  * @Vich\Uploadable()
  * @UniqueEntity(fields="email", message="Cet email est déjà existant")
  * @UniqueEntity(fields="phone", message="Ce numéro de téléphone est déjà utiliser")
@@ -126,12 +128,12 @@ class Customer implements UserInterface
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\MessageJob", mappedBy="customerMsg")
      */
-    private $messageJobs;
+//    private $messageJobs;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\MessageJob", mappedBy="customerPost")
      */
-    private $messageCustomerJobs;
+//    private $messageCustomerJobs;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\MessageJob", mappedBy="customerPost")

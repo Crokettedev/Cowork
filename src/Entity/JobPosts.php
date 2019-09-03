@@ -47,12 +47,12 @@ class JobPosts
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\MessageJob", mappedBy="message")
      */
-    private $messageJobs;
-
-    public function __construct()
-    {
-        $this->messageJobs = new ArrayCollection();
-    }
+//    private $messageJobs;
+//
+//    public function __construct()
+//    {
+//        $this->messageJobs = new ArrayCollection();
+//    }
 
     public function getId(): ?int
     {

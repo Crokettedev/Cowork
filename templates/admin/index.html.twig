@@ -1,24 +1,32 @@
-{% extends 'base2.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title 'Espace d\'administration' %}
 
 {% block body %}
 
 
+
     {% if is_granted('ROLE_ADMIN') %}
 
-        <div class="container-mt-4">
 
+        <div class="container-mt-4" style="margin-top:6em;">
 
-            <h1>Bienvenue dans l'Espace d'Administration</h1>
-            {% if app.user %}
+            <div class="card-deck" style="margin-left:1em;">
+                    <h1>Espace d'adminisitration</h1>
+                </div>
 
-            <div class="container-mt-2">Bienvenue, {{ app.user.username }} | <a href="{{ path('app_logout') }}">Se déconnecter</a>
+            <div class="card-deck" style="margin-left:2em;">
+
+                {% if app.user %}
+
+                    Bienvenue, {{ app.user.username }}  |   <a href="{{ path('app_logout') }}">Se déconnecter</a>
 
                 {% endif %}
 
+            </div>
 
                 <hr class="my-4">
+
                 <div class="card-deck">
                     <div class="card">
                         <div class="container text-center">
@@ -99,7 +107,7 @@
                             </p>
                         </div>
                         <div class="card-footer text-muted" id="card_footer_home">
-                            <button type="button" class="btn btn-primary" id="btn_card_home">Gérer les nourritures</button>
+                            <a href="{{ path('admin_supply_food_index') }}" class="btn btn-info" role="button">Gérer les nourritures</a>
                         </div>
                     </div>
                     <div class="card">
