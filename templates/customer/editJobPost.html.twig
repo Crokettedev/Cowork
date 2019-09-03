@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editer un Posts{% endblock %}
+
+{% block body %}
+    <main class="my-5 toped">
+        <section class="shopping-cart dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-uppercase font-weight-bold">
+                        Editer le post {{ jobs.title }}
+                    </h2>
+                </div>
+                <div class="content">
+                    {% if not editJobForm.vars.valid %}
+                        <div class="alert alert-danger text-center">
+                            Votre message n'a pas pu être envoyer.
+                        </div>
+                    {% endif %}
+                    {{ form_start(editJobForm) }}
+                    {{ form_row(editJobForm.title) }}
+                    {{ form_row(editJobForm.content) }}
+
+
+                    <button class="btn peach-gradient my-4 btn-sm">Enregistrer</button>
+                    {{ form_end(editJobForm) }}
+                </div>
+        </section>
+    </main>
+
+{% endblock %}

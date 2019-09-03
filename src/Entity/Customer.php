@@ -133,6 +133,21 @@ class Customer implements UserInterface
      */
     private $messageCustomerJobs;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\MessageJob", mappedBy="customerPost")
+     */
+    private $messageCustomerJob;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Booking", mappedBy="customer")
+     */
+    private $bookings;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\ReservationSpace", mappedBy="customer")
+     */
+    private $reservationSpaces;
+
     public function __construct()
     {
         $this->registerPosts = new ArrayCollection();
@@ -141,6 +156,9 @@ class Customer implements UserInterface
         $this->jobPosts = new ArrayCollection();
         $this->messageJobs = new ArrayCollection();
         $this->messageCustomerJobs = new ArrayCollection();
+        $this->messageCustomerJob = new ArrayCollection();
+        $this->bookings = new ArrayCollection();
+        $this->reservationSpaces = new ArrayCollection();
     }
 
 
@@ -546,6 +564,76 @@ class Customer implements UserInterface
             // set the owning side to null (unless already changed)
             if ($messageCustomerJob->getCustomerPost() === $this) {
                 $messageCustomerJob->setCustomerPost(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|MessageJob[]
+     */
+    public function getMessageCustomerJob(): Collection
+    {
+        return $this->messageCustomerJob;
+    }
+
+    /**
+     * @return Collection|Booking[]
+     */
+    public function getBookings(): Collection
+    {
+        return $this->bookings;
+    }
+
+    public function addBooking(Booking $booking): self
+    {
+        if (!$this->bookings->contains($booking)) {
+            $this->bookings[] = $booking;
+            $booking->setCustomer($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBooking(Booking $booking): self
+    {
+        if ($this->bookings->contains($booking)) {
+            $this->bookings->removeElement($booking);
+            // set the owning side to null (unless already changed)
+            if ($booking->getCustomer() === $this) {
+                $booking->setCustomer(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ReservationSpace[]
+     */
+    public function getReservationSpaces(): Collection
+    {
+        return $this->reservationSpaces;
+    }
+
+    public function addReservationSpace(ReservationSpace $reservationSpace): self
+    {
+        if (!$this->reservationSpaces->contains($reservationSpace)) {
+            $this->reservationSpaces[] = $reservationSpace;
+            $reservationSpace->setCustomer($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReservationSpace(ReservationSpace $reservationSpace): self
+    {
+        if ($this->reservationSpaces->contains($reservationSpace)) {
+            $this->reservationSpaces->removeElement($reservationSpace);
+            // set the owning side to null (unless already changed)
+            if ($reservationSpace->getCustomer() === $this) {
+                $reservationSpace->setCustomer(null);
             }
         }
 

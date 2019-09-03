@@ -97,7 +97,7 @@
                                         <img class="img-fluid mx-auto d-block image" src="{{ vich_uploader_asset(carts.food, 'imageFile') | imagine_filter('thumb')}}" style="width: 90px">
                                         <div class="media-body">
                                             <h5 class="mt-0">{{  carts.food.title  }}</h5>
-                                            <input type="text" name="supply_id" value="{{  carts.food.id  }}">
+                                            <input type="text" name="supply_id[]" value="{{  carts.food.id  }}">
                                             {% set totalPrice = totalPrice + (carts.food.price * carts.quantity) %}
                                             {{  carts.food.content  }}
                                             <br>

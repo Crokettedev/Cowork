@@ -32,6 +32,10 @@
 
                                     <button class="btn peach-gradient my-4 btn-sm"  id="btn_supp_cart">Supprimer</button>
                                 </form>
+                                <a href="{{ path('editjobpost', {id: myjobPosts.id, slug: myjobPosts.slug}) }}"><button class="btn peach-gradient my-4 btn-sm"  id="btn_supp_cart">Editer</button></a>
+                                {% if myjobPosts.messageJobs is not empty %}
+                                    <a href="{{ path('discussionJobPost', {id: myjobPosts.id, slug: myjobPosts.slug}) }}"><button class="btn peach-gradient my-4 btn-sm" >Suivre la discussion</button></a>
+                                {% endif %}
                             </div>
                         </div>
                         <hr>

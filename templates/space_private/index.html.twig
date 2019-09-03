@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Salons Privé{% endblock %}
+
+{% block body %}
+    <div class="bg"></div>
+    <main class="">
+        <div class="container">
+            <section class="text-center my-5">
+                <h2 class="h1-responsive font-weight-bold text-center my-5 text-uppercase">Salons Privés</h2>
+                <div class="row">
+                    <div class="col-6 text-left">
+                        {% for spaces in space %}
+                        <div class="card mb-3">
+                            <img src="{{ vich_uploader_asset(spaces, 'imageFile') | imagine_filter('thumb')}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ spaces.title }}</h5>
+                                <p class="card-text">{{ spaces.content }}</p>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <small class="text-muted">Nombre de place : {{ spaces.nbPlace }}</small>
+                                        <a href="{{ path('reservation.space.private', {id: spaces.id, slug: spaces.slug}) }}"><button class="btn peach-gradient my-4 btn-sm" style="float: right">Reservez</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <hr>
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-body text-left">
+                                <h5>A disposition</h5>
+                                <img src="{{ asset('image/wifi.png') }}" class="card-img-top" alt="photo" style="width: 30px"> Internet
+                                <br>
+                                <img src="{{ asset('image/coffee-cup (1).png') }}" class="card-img-top" alt="photo" style="width: 30px"> Boissons chaudes
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+{% endblock %}

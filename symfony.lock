@@ -2,6 +2,9 @@
     "behat/transliterator": {
         "version": "v1.2.0"
     },
+    "braintree/braintreehttp": {
+        "version": "0.3.0"
+    },
     "cocur/slugify": {
         "version": "v3.2"
     },
@@ -138,6 +141,9 @@
     },
     "ocramius/proxy-manager": {
         "version": "2.1.1"
+    },
+    "paypal/paypal-checkout-sdk": {
+        "version": "1.0.0"
     },
     "phpdocumentor/reflection-common": {
         "version": "1.0.1"

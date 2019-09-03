@@ -9,6 +9,7 @@ use App\Entity\RegisterPost;
 use App\Form\AddJobPostType;
 use App\Form\ResetPasswordType;
 use App\Form\UpdateCustomerType;
+use App\Form\UpdateJobPostType;
 use App\Repository\CustomerRepository;
 use App\Repository\JobPostsRepository;
 use App\Repository\MessageJobRepository;
@@ -146,7 +147,6 @@ class CustomerController extends AbstractController
             $message->setMessage($jobPosts);
             $message->setCustomerMsg($this->getUser());
             $message->setContent($request->request->get('message'));
-            $message->setCustomerPostId($request->request->get('customer_post'));
 
             $manager->persist($message);
             $manager->flush();
@@ -158,6 +158,104 @@ class CustomerController extends AbstractController
             'jobs' => $job,
         ]);
 
+    }
+
+    /**
+     * @Route("/Editer/{slug}-{id}", name="editjobpost", requirements={"slug": "[a-z0-9\-]*"})
+     */
+    public function editjobpost(JobPosts $jobPosts, Request $request, string $slug, ObjectManager $manager)
+    {
+        if ($jobPosts->getSlug() !== $slug)
+        {
+            $this->redirectToRoute('answerjobpost', [
+                'id' => $jobPosts->getId(),
+                'slug' => $jobPosts->getSlug()
+            ], 301);
+        }
+
+        $repo = $this->getDoctrine()->getRepository(JobPosts::class);
+        $job = $repo->find($jobPosts);
+
+        $form = $this->createForm(UpdateJobPostType::class, $jobPosts);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->em->flush();
+
+            return $this->redirectToRoute('myjobpost');
+        }
+
+        return $this->render('customer/editJobPost.html.twig', [
+            'jobs' => $job,
+            'editJobForm' => $form->createView(),
+        ]);
+
+    }
+
+    /**
+     * @Route("/Discussion/{slug}-{id}", name="discussionJobPost", requirements={"slug": "[a-z0-9\-]*"})
+     */
+    public function discussionJobPost(JobPosts $jobPosts, Request $request, string $slug, ObjectManager $manager)
+    {
+        if ($jobPosts->getSlug() !== $slug)
+        {
+            $this->redirectToRoute('answerjobpost', [
+                'id' => $jobPosts->getId(),
+                'slug' => $jobPosts->getSlug()
+            ], 301);
+        }
+
+        $repo = $this->getDoctrine()->getRepository(JobPosts::class);
+        $job = $repo->find($jobPosts);
+
+        if ($request->request->count() > 0)
+        {
+            $message = new MessageJob();
+            $message->setMessage($jobPosts);
+            $message->setCustomerMsg($this->getUser());
+            $message->setContent($request->request->get('message'));
+
+            $manager->persist($message);
+            $manager->flush();
+
+            $this->redirectToRoute('discussionJobPost', [
+                'id' => $jobPosts->getId(),
+                'slug' => $jobPosts->getSlug()
+            ], 301);
+        }
+
+
+        return $this->render('customer/discJobPost.html.twig', [
+            'jobs' => $job,
+        ]);
+
+    }
+
+    /**
+     * @Route("/Discussion/{slug}-{id}", name="delete_msgdiscpost", methods="DELETE")
+     * @param MessageJob $messageJob
+     * @return Response
+     */
+    public function delete_msgdiscpost(MessageJob $messageJob, Request $request, ObjectManager $manager, string $slug): Response
+    {
+        if ($messageJob->getSlug() !== $slug)
+        {
+            $this->redirectToRoute('answerjobpost', [
+                'id' => $messageJob->getId(),
+                'slug' => $messageJob->getSlug()
+            ], 301);
+        }
+
+        if ($this->isCsrfTokenValid('delete'. $messageJob->getId(), $request->get('_token')))
+        {
+            $manager->remove($messageJob);
+            $manager->flush();
+        }
+
+        $this->redirectToRoute('discussionJobPost', [
+            'id' => $messageJob->getId(),
+            'slug' => $messageJob->getSlug()
+        ], 301);
     }
 
     /**

@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>{% block title %}Gusto Coffee - Café &amp; Coworking {% endblock %}</title>
     {% block stylesheets %}
         <link rel="stylesheet" type="text/css" href="{{ asset('css/mdb.min.css') }}">
@@ -161,6 +162,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="{{ asset('js/cookiechoices.js') }}"></script>
     <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AcymRim0A-FwoQi2Lwo2bnvkDluRqbruZ2gL54AIeUjVXJC6zGmyxSYyNwJ_clTILn7DRJysU1zRjKmr&currency=EUR"></script>
     <script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'http://127.0.0.1:8000/Politque-de-cookie');});</script>
     <script type="text/javascript">
         function append(dl, dtTxt, ddTxt) {
@@ -195,13 +197,26 @@
                 var hrs = Math.floor(mins / 60);
                 var days = Math.floor(hrs / 24);
                 var yrs = Math.floor(days / 365);
-                p = mins * p;
+                p = hrs * p;
                 append(dl, "Prix total: ", p + " € ");
             });
 
             // trigger change
             $('#d1').change();
 
+        });
+
+        paypal.Buttons({
+            style : {
+                color: 'blue',
+            }
+        }).render('#paypal-button-container');
+
+        $(function () {
+            $('#datetimepicker12').datetimepicker({
+                inline: true,
+                sideBySide: true
+            });
         });
     </script>
 {% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reservation{% endblock %}
+
+{% block body %}
+    <main class="my-5 toped">
+        <div class="container">
+            <h2 class="my-5 ">Réserver le salon {{ spacesReser.title }}</h2>
+            <p class="card-text">{{ spacesReser.content }}</p>
+            <div class="card-deck">
+                <div class="card">
+                    <img src="{{ vich_uploader_asset(spacesReser, 'imageFile') | imagine_filter('thumb')}}" class="card-img-top" alt="...">
+                    <p class="card-text text-center"><small class="text-muted">Le prix du salon est de {{ spacesReser.price }}€/h</small></p>
+                    <div class="card-body">
+                        <form method="post">
+                        <div class="block">
+                            It's will also useful for use with two input-fields.<br />
+                            <input type="text" id="debut" name="debut">
+                            -
+                            <input type="text" id="fin" name="fin">
+                            <label for="date">From:</label>
+                            <input type="date" class="date form-control" name="date1" id="d1" value="" required/>
+                            <label for="time">at:</label>
+                            <input type="time" class="date form-control" data-theme="a" data-clear-btn="true" name="date1" id="t1" value="" required>
+                        </div>
+
+                        <div class="block">
+                            <label for="date">To:</label>
+                            <input type="date" class="date form-control" name="date2" id="d2" value="" required/>
+                            <label for="time">at:</label>
+                            <input type="time" class="date form-control" data-theme="a" data-clear-btn="true" name="date2" id="t2" value="" required>
+                        </div>
+
+                        <input type="hidden" value="{{ spacesReser.price }}" id="price">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Ajoutez des extra</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Recapitulatif</h5>
+                        <p class="card-text">
+                        <dl id="diff">
+                        </dl>
+                        </p>
+                        <button type="submit" class="btn peach-gradient my-4 btn-sm" style="float: right">Envoyer</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </main>
+{% endblock %}

@@ -80,7 +80,7 @@
                                         <button type="button" class="btn btn-white btn-lg btn-block" disabled><i class="fab fa-paypal"></i> paypal</button>
                                     {% else %}
                                         <a href="{{ path('paiement') }}"><button type="button" class="btn btn-orange accent-3 btn-lg btn-block mb-3"><i class="fas fa-lock"></i> paiement</button></a>
-                                        <button type="button" class="btn btn-white btn-lg btn-block"><i class="fab fa-paypal"></i> paypal</button>
+                                        <div id="paypal-button-container"></div>
                                     {% endif %}
 
                                 </div>

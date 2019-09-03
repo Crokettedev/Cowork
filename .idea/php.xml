@@ -147,6 +147,8 @@
       <path value="$PROJECT_DIR$/vendor/vendor/psr" />
       <path value="$PROJECT_DIR$/vendor/vendor/sensio" />
       <path value="$PROJECT_DIR$/vendor/vendor/stof" />
+      <path value="$PROJECT_DIR$/vendor/braintree/braintreehttp" />
+      <path value="$PROJECT_DIR$/vendor/paypal/paypal-checkout-sdk" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

@@ -70,7 +70,7 @@
                                                             <a href="{{ path('answerjobpost', {id: jobPosts.id, slug: jobPosts.slug}) }}"><button class="btn peach-gradient my-4 btn-sm" >Répondre</button></a>
                                                         {% endif %}
                                                         {% if jobPosts.messageJobs is not empty %}
-                                                            <a href="{{ path('answerjobpost', {id: jobPosts.id, slug: jobPosts.slug}) }}"><button class="btn peach-gradient my-4 btn-sm" >Suivre la discussion</button></a>
+                                                            <a href="{{ path('discussionJobPost', {id: jobPosts.id, slug: jobPosts.slug}) }}"><button class="btn peach-gradient my-4 btn-sm" >Suivre la discussion</button></a>
                                                         {% endif %}
                                                     </div>
                                                 </div>
