@@ -1,0 +1,42 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Gérer les commandes{% endblock %}
+
+{% block body %}
+    <h1>Gérer les commandes | Nourritures</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>Utilisateur</th>
+                <th>Produit</th>
+                <th>Prix</th>
+                <th>Date de la commande</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for supply_food in supply_foods %}
+            <tr>
+
+                <td>{{ supply_food.customer.email}}</td>
+                <td>{{ supply_food.title }}</td>
+                <td>{{ supply_food.price }} €</td>
+                <td>{{ supply_food.createdAt ? supply_food.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('admin_supply_food_show', {'id': supply_food.id}) }}" class="btn btn-secondary">Voir</a>
+                    <a href="{{ path('admin_supply_food_edit', {'id': supply_food.id}) }}" class="btn btn-secondary">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">Pas de commande de nourriture</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_supply_food_new') }}" class="btn btn-primary">Ajouter une commande</a>
+    <a href="{{ path('admin') }}" class="btn btn-primary">Revenir à l'accueil</a>
+{% endblock %}

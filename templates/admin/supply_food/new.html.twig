@@ -1,0 +1,10 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Ajouter une commande | Nourriture{% endblock %}
+
+{% block body %}
+    <h1>Ajouter une commande | Nourriture</h1>
+
+    {{ include('admin/supply_food/_form.html.twig') }} <br>
+    <a href="{{ path('admin_supply_food_index') }}" class="btn btn-primary">Revenir à l'accueil</a><br><br>
+{% endblock %}
