@@ -48,7 +48,7 @@ class SupplyFoodController extends AbstractController
     }
 
     /**
-     * @Route("/Menu", name="show_menu")
+     * @Route("/Plats", name="show_menu")
      */
     public function showFood()
     {

@@ -75,9 +75,15 @@ class SupplyOffice
      */
     private $carts;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\CommandBis", mappedBy="supplyOffice")
+     */
+    private $commandBis;
+
     public function __construct()
     {
         $this->carts = new ArrayCollection();
+        $this->commandBis = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -246,5 +252,36 @@ class SupplyOffice
         // TODO: Implement __toString() method.
         return (string) $this->id;
 
+    }
+
+    /**
+     * @return Collection|CommandBis[]
+     */
+    public function getCommandBis(): Collection
+    {
+        return $this->commandBis;
+    }
+
+    public function addCommandBi(CommandBis $commandBi): self
+    {
+        if (!$this->commandBis->contains($commandBi)) {
+            $this->commandBis[] = $commandBi;
+            $commandBi->setSupplyOffice($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommandBi(CommandBis $commandBi): self
+    {
+        if ($this->commandBis->contains($commandBi)) {
+            $this->commandBis->removeElement($commandBi);
+            // set the owning side to null (unless already changed)
+            if ($commandBi->getSupplyOffice() === $this) {
+                $commandBi->setSupplyOffice(null);
+            }
+        }
+
+        return $this;
     }
 }

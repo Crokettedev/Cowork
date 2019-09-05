@@ -19,22 +19,18 @@ class MessageJobRepository extends ServiceEntityRepository
         parent::__construct($registry, MessageJob::class);
     }
 
-    // /**
-    //  * @return MessageJob[] Returns an array of MessageJob objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+    * @return MessageJob[] Returns an array of MessageJob objects
+    */
+    public function findAllMsg()
     {
         return $this->createQueryBuilder('m')
-            ->andWhere('m.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('m.id', 'ASC')
-            ->setMaxResults(10)
+            ->select('m')
+            ->orderBy('m.createdAt' , 'DESC')
             ->getQuery()
             ->getResult()
-        ;
+            ;
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?MessageJob

@@ -3,56 +3,165 @@
 {% block title %}Reservation{% endblock %}
 
 {% block body %}
+    {% if not app.user %}
     <main class="my-5 toped">
         <div class="container">
             <h2 class="my-5 ">Réserver le salon {{ spacesReser.title }}</h2>
-            <p class="card-text">{{ spacesReser.content }}</p>
-            <div class="card-deck">
-                <div class="card">
-                    <img src="{{ vich_uploader_asset(spacesReser, 'imageFile') | imagine_filter('thumb')}}" class="card-img-top" alt="...">
-                    <p class="card-text text-center"><small class="text-muted">Le prix du salon est de {{ spacesReser.price }}€/h</small></p>
-                    <div class="card-body">
-                        <form method="post">
-                        <div class="block">
-                            It's will also useful for use with two input-fields.<br />
-                            <input type="text" id="debut" name="debut">
-                            -
-                            <input type="text" id="fin" name="fin">
-                            <label for="date">From:</label>
-                            <input type="date" class="date form-control" name="date1" id="d1" value="" required/>
-                            <label for="time">at:</label>
-                            <input type="time" class="date form-control" data-theme="a" data-clear-btn="true" name="date1" id="t1" value="" required>
-                        </div>
-
-                        <div class="block">
-                            <label for="date">To:</label>
-                            <input type="date" class="date form-control" name="date2" id="d2" value="" required/>
-                            <label for="time">at:</label>
-                            <input type="time" class="date form-control" data-theme="a" data-clear-btn="true" name="date2" id="t2" value="" required>
-                        </div>
-
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Début de la réservation</label>
+                        <input type="date" class="date form-control" name="date1" id="d1" value="" required>
+                        <br>
+                        <input type="time" class="date form-control" data-theme="a" data-clear-btn="true" name="time1" id="t1" value="" required>
                         <input type="hidden" value="{{ spacesReser.price }}" id="price">
                     </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Fin de la réservation</label>
+                        <input type="date" class="date form-control" name="date2" id="d2" value="" required>
+                        <br>
+                        <input type="time" class="date form-control" data-theme="a" data-clear-btn="true" name="time2" id="t2" value="" required>
+                    </div>
+                    <br>
                 </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Ajoutez des extra</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <dl id="diff">
+                </dl>
+                <a href="{{ path('app_login') }}"><button class="btn btn-primary">Sign in</button></a>
+            <hr>
+            <div class="card text-center">
+                <img src="{{ vich_uploader_asset(spacesReser, 'imageFile') | imagine_filter('thumb')}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">A disposition</h5>
+                    <div class="row">
+                        <div class="col-sm">
+                            <img src="{{ asset('image/wifi.png') }}" class="card-img-top" alt="photo" style="width: 30px">
+                            <p class="card-text">Internet</p>
+                        </div>
+                        <div class="col-sm">
+                            <img src="{{ asset('image/coffee-cup (1).png') }}" class="card-img-top" alt="photo" style="width: 30px">
+                            <p class="card-text">Boissons chaudes</p>
+                        </div>
+                        <div class="col-sm">
+                            <img src="{{ asset('image/cocktail (1).png') }}" class="card-img-top" alt="photo" style="width: 30px">
+                            <p class="card-text">Boissons fraîches</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm">
+                            <img src="{{ asset('image/apple (1).png') }}" class="card-img-top" alt="photo" style="width: 30px">
+                            <p class="card-text">Snacks & Fruits</p>
+                        </div>
+                        <div class="col-sm">
+                            <img src="{{ asset('image/monitor (1).png') }}" class="card-img-top" alt="photo" style="width: 30px">
+                            <p class="card-text">Ecran</p>
+                        </div>
+                        <div class="col-sm">
+                            <img src="{{ asset('image/printer.png') }}" class="card-img-top" alt="photo" style="width: 30px">
+                            <p class="card-text">Imprimante wifi</p>
+                        </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Recapitulatif</h5>
-                        <p class="card-text">
-                        <dl id="diff">
-                        </dl>
-                        </p>
-                        <button type="submit" class="btn peach-gradient my-4 btn-sm" style="float: right">Envoyer</button>
-                    </div>
-                </div>
-                </form>
             </div>
         </div>
     </main>
+    {% endif %}
+    {% if is_granted('ROLE_USERS') %}
+        <main class="my-5 toped">
+            <div class="container">
+                <h2 class="my-5 ">Réserver le salon {{ spacesReser.title }}</h2>
+                <form method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Début de la réservation</label>
+                            <input type="date" class="date form-control" name="date1" id="d1" value="" required>
+                            <br>
+                            <input type="time" class="date form-control" data-theme="a" data-clear-btn="true" name="time1" id="t1" value="" required>
+                            <input type="text" value="{{ spacesReser.price }}" id="price">
+                            <input type="text" value="{{ spacesReser.price }}" id="settedPrice" name="priceTotal">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Fin de la réservation</label>
+                            <input type="date" class="date form-control" name="date2" id="d2" value="" required>
+                            <br>
+                            <input type="time" class="date form-control" data-theme="a" data-clear-btn="true" name="time2" id="t2" value="" required>
+                        </div>
+                        <br>
+                    </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="cc-name">Nom sur carte</label>
+                                    <input type="text" class="form-control" id="cc-name" placeholder="" name="name_cart" required>
+                                    <small class="text-muted">Nom complet tel qu'il apparaît sur la carte</small>
+                                    <div class="invalid-feedback">
+                                        Name on card is required
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="cc-number">Numéro de Carte de Crédit</label>
+                                    <input type="text" class="form-control" id="cc-number" placeholder="" name="num_cart" maxlength="14" minlength="2" required>
+                                    <div class="invalid-feedback">
+                                        Credit card number is required
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 mb-3">
+                                    <label for="cc-expiration">Expiration</label>
+                                    <input type="text" class="form-control" id="cc-expiration" placeholder="" name="num_exp" maxlength="4" minlength="4" required>
+                                    <div class="invalid-feedback">
+                                        Expiration date required
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="cc-expiration">CVV</label>
+                                    <input type="text" class="form-control" id="cc-cvv" placeholder="" name="num_cvv" maxlength="3" minlength="3" required>
+                                    <div class="invalid-feedback">
+                                        Security code required
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="mb-4">
+                            <dl id="diff" style="float: right">
+                            </dl>
+                            <button class="btn btn-orange btn-lg btn-block" type="submit">Poursuivre la commande</button>
+                </form>
+                <hr>
+                <div class="card text-center">
+                    <img src="{{ vich_uploader_asset(spacesReser, 'imageFile') | imagine_filter('thumb')}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">A disposition</h5>
+                        <div class="row">
+                            <div class="col-sm">
+                                <img src="{{ asset('image/wifi.png') }}" class="card-img-top" alt="photo" style="width: 30px">
+                                <p class="card-text">Internet</p>
+                            </div>
+                            <div class="col-sm">
+                                <img src="{{ asset('image/coffee-cup (1).png') }}" class="card-img-top" alt="photo" style="width: 30px">
+                                <p class="card-text">Boissons chaudes</p>
+                            </div>
+                            <div class="col-sm">
+                                <img src="{{ asset('image/cocktail (1).png') }}" class="card-img-top" alt="photo" style="width: 30px">
+                                <p class="card-text">Boissons fraîches</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm">
+                                <img src="{{ asset('image/apple (1).png') }}" class="card-img-top" alt="photo" style="width: 30px">
+                                <p class="card-text">Snacks & Fruits</p>
+                            </div>
+                            <div class="col-sm">
+                                <img src="{{ asset('image/monitor (1).png') }}" class="card-img-top" alt="photo" style="width: 30px">
+                                <p class="card-text">Ecran</p>
+                            </div>
+                            <div class="col-sm">
+                                <img src="{{ asset('image/printer.png') }}" class="card-img-top" alt="photo" style="width: 30px">
+                                <p class="card-text">Imprimante wifi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    {% endif %}
 {% endblock %}

@@ -8,33 +8,55 @@
         <div class="container">
             <section class="text-center my-5">
                 <h2 class="h1-responsive font-weight-bold text-center my-5 text-uppercase">Salons Privés</h2>
-                <div class="row">
-                    <div class="col-6 text-left">
-                        {% for spaces in space %}
-                        <div class="card mb-3">
-                            <img src="{{ vich_uploader_asset(spaces, 'imageFile') | imagine_filter('thumb')}}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ spaces.title }}</h5>
-                                <p class="card-text">{{ spaces.content }}</p>
-                                <div class="form-row">
-                                    <div class="col">
-                                        <small class="text-muted">Nombre de place : {{ spaces.nbPlace }}</small>
-                                        <a href="{{ path('reservation.space.private', {id: spaces.id, slug: spaces.slug}) }}"><button class="btn peach-gradient my-4 btn-sm" style="float: right">Reservez</button></a>
-                                    </div>
-                                </div>
+                <div class="card-deck">
+                    {% for spaces in space %}
+                    <div class="card">
+                        <img src="{{ vich_uploader_asset(spaces, 'imageFile') | imagine_filter('thumb')}}" class="card-img-top" alt="photo">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ spaces.title }}</h5>
+                            <small class="text-muted">Nombre de place : {{ spaces.nbPlace }}</small>
+                            <p class="card-text">{{ spaces.content }}</p>
+                            <div class="text-center">
+                                <a href="{{ path('reservation.space.private', {id: spaces.id, slug: spaces.slug}) }}"><button class="btn peach-gradient my-4 btn-sm" style="float: right">Reservez</button></a>
                             </div>
                         </div>
-                        {% endfor %}
                     </div>
-                    <hr>
-                    <div class="col-6">
-                        <div class="card">
-                            <div class="card-body text-left">
-                                <h5>A disposition</h5>
-                                <img src="{{ asset('image/wifi.png') }}" class="card-img-top" alt="photo" style="width: 30px"> Internet
-                                <br>
-                                <img src="{{ asset('image/coffee-cup (1).png') }}" class="card-img-top" alt="photo" style="width: 30px"> Boissons chaudes
-                                <br>
+                    {% endfor %}
+
+                    <div class="card text-center" style="border-color: transparent">
+                        <div class="card-header">
+                            A disposition
+                        </div>
+                        <div class="container">
+                            <br>
+                            <div class="row">
+                                <div class="col-sm">
+                                    <img src="{{ asset('image/wifi.png') }}" class="card-img-top" alt="photo" style="width: 30px">
+                                    <p class="card-text">Internet</p>
+                                </div>
+                                <div class="col-sm">
+                                    <img src="{{ asset('image/coffee-cup (1).png') }}" class="card-img-top" alt="photo" style="width: 30px">
+                                    <p class="card-text">Boissons chaudes</p>
+                                </div>
+                                <div class="col-sm">
+                                    <img src="{{ asset('image/cocktail (1).png') }}" class="card-img-top" alt="photo" style="width: 30px">
+                                    <p class="card-text">Boissons fraîches</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm">
+                                    <img src="{{ asset('image/apple (1).png') }}" class="card-img-top" alt="photo" style="width: 30px">
+                                    <p class="card-text">Snacks & Fruits</p>
+                                </div>
+                                <div class="col-sm">
+                                    <img src="{{ asset('image/monitor (1).png') }}" class="card-img-top" alt="photo" style="width: 30px">
+                                    <p class="card-text">Ecran</p>
+                                </div>
+                                <div class="col-sm">
+                                    <img src="{{ asset('image/printer.png') }}" class="card-img-top" alt="photo" style="width: 30px">
+                                    <p class="card-text">Imprimante wifi</p>
+                                </div>
                             </div>
                         </div>
                     </div>

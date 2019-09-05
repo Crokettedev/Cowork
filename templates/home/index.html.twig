@@ -46,7 +46,7 @@
                                     <h5 class="card-title">Salons privés</h5>
                                     <p class="card-text">Des espaces fermés pouvant accueillir les équipes comptant jusqu'à X membres, avec accès, aux salons et aux équipements partagés de Gusto Coffee, tels que nos sélections de café et les services d'impression.</p>
                                     <div class="text-center">
-                                        <a href=""><button class="btn peach-gradient my-4 btn-sm" >Reservez</button></a>
+                                        <a href="{{ path('viewspaceprivate') }}"><button class="btn peach-gradient my-4 btn-sm" >Reservez</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +63,29 @@
                         </div>
                     </section>
                     <hr class="my-5">
+                    <div class="row text-center">
+                        <div class="col-md-12 mb-5">
+                            <h2 class="mb-2 font-weight-bold ">NOS ÉVÉNEMENTS</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-8">
+                            <div class="card bg-dark text-white">
+                                <img src="{{ asset('image/image3.png') }}" class="card-img" alt="...">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h3 class="card-title"><b>GUSTO EST BIEN PLUS QU'UN LIEU OÙ BRANCHER SON ORDINATEUR.</b></h3>
+                                    <p class="card-text">Ce qui rend ce concept véritablement unique, c'est la communauté. Ajoutez à cela un réseau international d'espaces de travail flexibles et un calendrier d'événements, de conférences, de déjeuners d'échanges et vous aurez une meilleure idée des efforts que déploie Gusto pour vous maintenir motivé et ouvert à de nouvelles opportunités.</p>
+                                    <a href="{{ path('view_event') }}"><button class="btn peach-gradient my-4 btn-sm" >Tous les évenements</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <hr>
                 <section id="carousel-shop">
                     <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
                         <div class="carousel-inner" role="listbox">
@@ -137,7 +159,7 @@
                                     <h5 class="card-title">Salons privés</h5>
                                     <p class="card-text">Des espaces fermés pouvant accueillir les équipes comptant jusqu'à X membres, avec accès, aux salons et aux équipements partagés de Gusto Coffee, tels que nos sélections de café et les services d'impression.</p>
                                     <div class="text-center">
-                                        <a href=""><button class="btn peach-gradient my-4 btn-sm" >Reservez</button></a>
+                                        <a href="{{ path('viewspaceprivate') }}"><button class="btn peach-gradient my-4 btn-sm" >Reservez</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -184,8 +206,6 @@
             </div>
         </main>
 
-
-
     {% endif %}
 
     {% if is_granted('ROLE_USERS')  %}
@@ -205,7 +225,7 @@
                                                 {% if app.user.filename %}
                                                     <img src="{{ vich_uploader_asset(app.user, 'imageFile') | imagine_filter('thumb')}}" class="mr-3" alt="..." style="width: 300px;">
                                                 {% else %}
-                                                    <img src="{{ asset('image/chair.png') | imagine_filter('thumb')}}" class="mr-3" alt="..." style="width: 300px;">
+                                                    <img src="{{ asset('image/users.jpeg') | imagine_filter('thumb')}}" class="mr-3" alt="..." style="width: 300px;">
                                                 {% endif %}
                                             </div>
                                             <div class="col text-center">
@@ -256,7 +276,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Vos réservations</h5>
                                         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <a href=""><button class="btn peach-gradient my-4 btn-sm" >Consulter</button></a>
+                                        <a href="{{ path('viewmyreservation') }}"><button class="btn peach-gradient my-4 btn-sm" >Consulter</button></a>
                                     </div>
                                 </div>
                                 <hr>

@@ -51,6 +51,31 @@ class ReservationSpace
      */
     private $customer;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $nameCart;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $numCart;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $numExp;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $numCvv;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $priceTotal;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -124,6 +149,66 @@ class ReservationSpace
     public function setCustomer(?Customer $customer): self
     {
         $this->customer = $customer;
+
+        return $this;
+    }
+
+    public function getNameCart(): ?string
+    {
+        return $this->nameCart;
+    }
+
+    public function setNameCart(string $nameCart): self
+    {
+        $this->nameCart = $nameCart;
+
+        return $this;
+    }
+
+    public function getNumCart(): ?string
+    {
+        return $this->numCart;
+    }
+
+    public function setNumCart(string $numCart): self
+    {
+        $this->numCart = $numCart;
+
+        return $this;
+    }
+
+    public function getNumExp(): ?string
+    {
+        return $this->numExp;
+    }
+
+    public function setNumExp(string $numExp): self
+    {
+        $this->numExp = $numExp;
+
+        return $this;
+    }
+
+    public function getNumCvv(): ?string
+    {
+        return $this->numCvv;
+    }
+
+    public function setNumCvv(string $numCvv): self
+    {
+        $this->numCvv = $numCvv;
+
+        return $this;
+    }
+
+    public function getPriceTotal(): ?int
+    {
+        return $this->priceTotal;
+    }
+
+    public function setPriceTotal(int $priceTotal): self
+    {
+        $this->priceTotal = $priceTotal;
 
         return $this;
     }

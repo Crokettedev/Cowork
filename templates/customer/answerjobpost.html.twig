@@ -6,6 +6,11 @@
     <main class="my-5 toped">
         <section class="shopping-cart dark">
             <div class="container">
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success text-center">
+                        {{ message }}
+                    </div>
+                {% endfor %}
                 <div class="block-heading">
                     <h2 class="text-uppercase font-weight-bold">
                         Repondre au post de {{ jobs.author }}

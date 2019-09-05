@@ -1,92 +1,67 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello SpacePublicController!{% endblock %}
+{% block title %}La carte{% endblock %}
 
 {% block body %}
-    <br>
-    <div class="container">
-        <div class="card text-center">
-            <div class="card-body">
-                <b>Composer votre menu</b>
-            </div>
-        </div>
-        <br>
-        <div class="card-deck">
-            <div class="card">
-                <div class="container">
-                    <img src="" class="card-img-top" alt="..." id="img_food">
+    <main class="my-5 toped">
+        <section class="shopping-cart dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-uppercase font-weight-bold">
+                        Acheter un menu
+                    </h2>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">Fruits</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-                <div class="card-footer text-muted" id="card_footer_home">
-                    <a href="{{ path('show_fruit') }}"><button type="button" class="btn btn-primary" id="btn_card_home">Acheter</button></a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="{{ asset('image/cocktail.png') }}" class="card-img-top" alt="..." id="img_food_cocktail">
-                <div class="card-body">
-                    <h5 class="card-title">Boissons</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                </div>
-                <div class="card-footer text-muted" id="card_footer_home">
-                    <a href="{{ path('show_drink') }}"><button type="button" class="btn btn-primary" id="btn_card_home">Acheter</button></a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="{{ asset('image/salad (1).png') }}" class="card-img-top" alt="..." id="img_food_salad">
-                <div class="card-body">
-                    <h5 class="card-title">Menu</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                </div>
-                <div class="card-footer text-muted" id="card_footer_home">
-                    <a href="{{ path('show_menu') }}"><button type="button" class="btn btn-primary" id="btn_card_home">Acheter</button></a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="{{ asset('image/tasse.png') }}" class="card-img-top" alt="..." id="img_food_coffee">
-                <div class="card-body">
-                    <h5 class="card-title">Cafés</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                </div>
-                <div class="card-footer text-muted" id="card_footer_home">
-                    <a href="{{ path('show_coffee') }}"><button type="button" class="btn btn-primary" id="btn_card_home">Acheter</button></a>
-                </div>
-            </div>
-        </div>
-        <br>
-        <h4 style="text-align: center">OU</h4>
-    </div>
-    <div class="container">
-        <div class="card text-center">
-            <div class="card-body">
-                <b>Acheter un menu</b>
-            </div>
-        </div>
-        <br>
-        <div class="container" style="display: grid; justify-content: space-between; grid-template-columns: repeat(8, auto); grid-gap: 22px;">
-            <br>
-            {% if showMenu is empty %}
-                <div class="alert alert-danger" role="alert">
-                    Aucune table disponible
-                </div>
-            {% endif %}
-            {% for showMenus in showMenu %}
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ vich_uploader_asset(showMenus, 'imageFile') | imagine_filter('thumb')}}" class="card-img-top" alt="..." style="width: 100%; height: auto">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ showMenus.title }}</h5>
-                        <p class="card-text" style=" overflow-y: hidden; height: 70px;">{{ showMenus.content }}</p>
-                        <h5 style="float: right">{{ showMenus.price }}€</h5>
+                <div class="content">
+
+                    <div class="card-deck">
+                        {% for showMenus in showMenu %}
+                        <div class="card">
+                            <h6 class="card-img-overlay">{{ showMenus.title }}</h6>
+                            <div class="view zoom">
+                                <a href="{{ path('add_supply_food', {id: showMenus.id, slug: showMenus.slug}) }}"><img src="{{ vich_uploader_asset(showMenus, 'imageFile') | imagine_filter('thumb')}}" class="card-img-top" alt="..." style="cursor: pointer; width: 590px;"></a>
+                            </div>
+                        </div>
+                        {% endfor %}
                     </div>
-                    <div class="card-footer text-muted" id="card_footer_home">
-                        <a href="{{ path('add_supply_food', {id: showMenus.id, slug: showMenus.slug}) }}"><button type="button" class="btn btn-primary" id="btn_card_home">Acheter</button></a>
+                    <hr>
+                </div>
+        </section>
+        <section class="shopping-cart dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-uppercase font-weight-bold">
+                        Composer votre menu
+                    </h2>
+                </div>
+                <div class="content">
+                    <div class="card-deck">
+                        <div class="card">
+                            <div class="view zoom">
+                                <a href="{{ path('show_menu') }}"><img src="{{ asset('image/manger.jpeg') }}" class="card-img-top" alt="..." style="cursor: pointer; width: 590px;"></a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="view zoom">
+                                <a href="{{ path('show_fruit') }}"><img src="{{ asset('image/fruits.jpeg') }}" class="card-img-top" alt="..." style="width: 600px"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="card-deck">
+                        <div class="card">
+                            <div class="view zoom">
+                                <a href="{{ path('show_drink') }}"><img src="{{ asset('image/drink.jpeg') }}" class="card-img-top" alt="..." style="cursor: pointer; width: 590px;"></a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="view zoom">
+                                <a href="{{ path('show_coffee') }}"><img src="{{ asset('image/food2.jpeg') }}" class="card-img-top" alt="..."></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <br>
-            {% endfor %}
-        </div>
-    </div>
+        </section>
+    </main>
+
 
 {% endblock %}

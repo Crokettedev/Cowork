@@ -131,13 +131,6 @@ var {
     margin-left: 10px
 }
 
-label {
-    display: inline-block;
-    width: 36px;
-    margin: 8px;
-    text-align: right;
-}
-
 dl {
     display: grid;
     grid-template-columns: max-content auto;

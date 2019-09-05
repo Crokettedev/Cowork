@@ -36,12 +36,20 @@ class ReservationController extends AbstractController
             $reservation->setSpace($private);
             $reservation->setBeginAt($request->request->get('date1'));
             $reservation->setEndAt($request->request->get('date2'));
+            $reservation->setTimeBeginAt($request->request->get('time1'));
+            $reservation->setTimeEndAt($request->request->get('time2'));
+            $reservation->setNameCart($request->request->get('name_cart'));
+            $reservation->setNumCart($request->request->get('num_cart'));
+            $reservation->setNumExp($request->request->get('num_exp'));
+            $reservation->setNumCvv($request->request->get('num_cvv'));
+            $reservation->setPriceTotal($request->request->get('priceTotal'));
+
 
 
             $manager->persist($reservation);
             $manager->flush();
 
-            $this->addFlash('success','Vos informations ont bien été changé.');
+            return $this->redirectToRoute('viewmyreservation');
         }
 
         return $this->render('reservation/reservationspaceprivate.html.twig', [

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Cart;
 use App\Entity\Command;
+use App\Entity\CommandBis;
 use App\Entity\SupplyFood;
 use App\Repository\CartRepository;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -68,22 +69,23 @@ class CartController extends AbstractController
 
         if ($request->request->count() > 0)
         {
-            $command = new Command();
-            $command->setFirstname($request->request->get('firstname'));
-            $command->setLastname($request->request->get('lastname'));
-            $command->setEmail($request->request->get('email'));
-            $command->setAdress($request->request->get('adress'));
-            $command->setNameCart($request->request->get('name_cart'));
-            $command->setNumCart($request->request->get('num_cart'));
-            $command->setNumExp($request->request->get('num_exp'));
-            $command->setNumCvv($request->request->get('num_cvv'));
-            $command->setSupply($request->request->get('supply_id'));
-            $command->setCommandPrice($request->request->get('totalPrice'));
-            $command->setCreatedAt(new \DateTime());
+            $paiment = new Command();
+            $paiment->setFirstname($request->request->get('firstname'));
+            $paiment->setLastname($request->request->get('lastname'));
+            $paiment->setEmail($request->request->get('email'));
+            $paiment->setAdress($request->request->get('adress'));
+            $paiment->setNameCart($request->request->get('name_cart'));
+            $paiment->setNumCart($request->request->get('num_cart'));
+            $paiment->setNumExp($request->request->get('num_exp'));
+            $paiment->setNumCvv($request->request->get('num_cvv'));
+            $paiment->setSupply($request->request->get('supply_id'));
+            $paiment->setCommandPrice($request->request->get('totalPrice'));
+            $paiment->setCreatedAt(new \DateTime());
 
-            $manager->persist($command);
+            $manager->persist($paiment);
             $manager->flush();
         }
+
 
 
         return $this->render('paiement/index.html.twig', [

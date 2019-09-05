@@ -12,34 +12,6 @@
                     <div class="card">
                         <form class="card-body" method="post">
                             <div class="row">
-                                <div class="col-md-6 mb-2">
-                                    <div class="md-form ">
-                                        <input type="text" id="firstName" class="form-control" name="firstname" required>
-                                        <label for="firstName" class="">Prénom</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-2">
-                                    <div class="md-form">
-                                        <input type="text" id="lastName" class="form-control" name="lastname" required>
-                                        <label for="lastName" class="">Nom</label>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="md-form mb-5">
-                                <input type="text" id="email" class="form-control" placeholder="" name="email" required>
-                                <label for="email" class="">Email</label>
-                            </div>
-                            <div class="md-form mb-5">
-                                <input type="text" id="address" class="form-control" placeholder="" name="adress" required>
-                                <label for="address" class="">Addresse</label>
-                            </div>
-                            <div class="md-form mb-5">
-                                <input type="text" id="address-2" class="form-control" placeholder="">
-                                <label for="address-2" class="">Addresse 2 (optionnel)</label>
-                            </div>
-                            <hr>
-                            <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="cc-name">Nom sur carte</label>
                                     <input type="text" class="form-control" id="cc-name" placeholder="" name="name_cart" required>
@@ -91,7 +63,7 @@
                             <h6>Dans votre panier <a href="{{ path('cart') }}" style="float: right; color: black;">Edit</a></h6>
                         </div>
                         <div class="card-body">
-                            {% for carts in cart  %}
+                            {% for carts in app.user.carts  %}
                                 {% if carts.food.title is defined and carts.food.title is not empty  %}
                                     <div class="media">
                                         <img class="img-fluid mx-auto d-block image" src="{{ vich_uploader_asset(carts.food, 'imageFile') | imagine_filter('thumb')}}" style="width: 90px">

@@ -22,7 +22,7 @@
                                 <hr>
                             {% endif %}
                             {% set totalPrice = 0 %}
-                            {% for carts in cart  %}
+                            {% for carts in app.user.carts  %}
                                 {% if carts.food.title is defined and carts.food.title is not empty  %}
                                     <div class="items">
                                         <div class="product">

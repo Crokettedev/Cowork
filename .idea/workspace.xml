@@ -2,53 +2,688 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65996f6f-a527-4a1b-8809-5f35bec722b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/aboutus/legalnoticecookie.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/aboutus/legalnoticevente.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/customer/messagejob.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/space_private/add.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/.6.5.md5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/.github/CODE_OF_CONDUCT.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/.github/CONTRIBUTING.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/.github/ISSUE_TEMPLATE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/.php_cs.dist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/ChangeLog-6.5.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/appveyor.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/bin/simple-phpunit" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/build.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/phive.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/phpunit" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/phpunit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/phpunit.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Exception.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Assert.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Assert/Functions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/AssertionFailedError.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/BaseTestListener.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/CodeCoverageException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/ArrayHasKey.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/ArraySubset.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/Attribute.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/Callback.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/ClassHasAttribute.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/ClassHasStaticAttribute.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/Composite.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/Constraint.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/Count.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/DirectoryExists.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/Exception.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/ExceptionCode.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/ExceptionMessage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/ExceptionMessageRegularExpression.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/FileExists.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/GreaterThan.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/IsAnything.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/IsEmpty.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/IsEqual.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/IsFalse.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/IsFinite.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/IsIdentical.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/IsInfinite.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/IsInstanceOf.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/IsJson.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/IsNan.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/IsNull.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/IsReadable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/IsTrue.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/IsType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/IsWritable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/JsonMatches.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/JsonMatchesErrorMessageProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/LessThan.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/LogicalAnd.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/LogicalNot.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/LogicalOr.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/LogicalXor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/ObjectHasAttribute.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/RegularExpression.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/SameSize.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/StringContains.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/StringEndsWith.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/StringMatchesFormatDescription.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/StringStartsWith.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/TraversableContains.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Constraint/TraversableContainsOnly.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/CoveredCodeNotExecutedException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/DataProviderTestSuite.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Error/Deprecated.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Error/Error.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Error/Notice.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Error/Warning.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Exception.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/ExceptionWrapper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/ExpectationFailedException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/IncompleteTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/IncompleteTestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/IncompleteTestError.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/InvalidCoversTargetException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/MissingCoversAnnotationException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/OutputError.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/RiskyTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/RiskyTestError.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/SelfDescribing.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/SkippedTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/SkippedTestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/SkippedTestError.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/SkippedTestSuiteError.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/SyntheticError.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/TestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/TestFailure.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/TestListener.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/TestListenerDefaultImplementation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/TestResult.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/TestSuite.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/TestSuiteIterator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/UnintentionallyCoveredCodeError.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/Warning.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Framework/WarningTestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Runner/BaseTestRunner.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Runner/Exception.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Runner/Filter/ExcludeGroupFilterIterator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Runner/Filter/Factory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Runner/Filter/GroupFilterIterator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Runner/Filter/IncludeGroupFilterIterator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Runner/Filter/NameFilterIterator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Runner/PhptTestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Runner/StandardTestSuiteLoader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Runner/TestSuiteLoader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Runner/Version.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/TextUI/Command.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/TextUI/ResultPrinter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/TextUI/TestRunner.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/Blacklist.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/Configuration.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/ConfigurationGenerator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/ErrorHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/Fileloader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/Filesystem.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/Filter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/Getopt.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/GlobalState.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/InvalidArgumentHelper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/Json.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/Log/JUnit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/Log/TeamCity.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/PHP/AbstractPhpProcess.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/PHP/DefaultPhpProcess.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/PHP/Template/PhptTestCase.tpl.dist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/PHP/Template/TestCaseClass.tpl.dist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/PHP/Template/TestCaseMethod.tpl.dist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/PHP/WindowsPhpProcess.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/PHP/eval-stdin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/Printer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/RegularExpression.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/TestDox/HtmlResultPrinter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/TestDox/NamePrettifier.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/TestDox/ResultPrinter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/TestDox/TextResultPrinter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/TestDox/XmlResultPrinter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/TextTestListRenderer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/Type.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/Xml.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/src/Util/XmlTestListRenderer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/Entity/CustomerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/AbstractTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/ArrayAccessible.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/AssertionExample.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/AssertionExampleTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/Author.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/BankAccount.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/BankAccountTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/BankAccountTest.test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/BankAccountTest2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/BaseTestListenerSample.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/BeforeAndAfterTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/BeforeClassAndAfterClassTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/BeforeClassWithOnlyDataProviderTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/Book.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/Calculator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/ChangeCurrentWorkingDirectoryTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/ClassWithNonPublicAttributes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/ClassWithScalarTypeDeclarations.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/ClassWithToString.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/ClonedDependencyTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/ConcreteTest.my.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/ConcreteTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CountConstraint.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CoverageClassExtendedTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CoverageClassTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CoverageFunctionParenthesesTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CoverageFunctionParenthesesWhitespaceTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CoverageFunctionTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CoverageMethodOneLineAnnotationTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CoverageMethodParenthesesTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CoverageMethodParenthesesWhitespaceTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CoverageMethodTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CoverageNamespacedFunctionTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CoverageNoneTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CoverageNotPrivateTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CoverageNotProtectedTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CoverageNotPublicTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CoverageNothingTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CoveragePrivateTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CoverageProtectedTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CoveragePublicTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CoverageTwoDefaultClassAnnotations.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CoveredClass.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CoveredFunction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/CustomPrinter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/DataProviderDebugTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/DataProviderDependencyTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/DataProviderFilterTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/DataProviderIncompleteTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/DataProviderIssue2833/FirstTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/DataProviderIssue2833/SecondTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/DataProviderIssue2859/phpunit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/DataProviderIssue2859/tests/another/TestWithDataProviderTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/DataProviderIssue2922/FirstTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/DataProviderIssue2922/SecondTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/DataProviderSkippedTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/DataProviderTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/DataProviderTestDoxTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/DependencyFailureTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/DependencySuccessTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/DependencyTestSuite.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/DoubleTestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/DummyBarTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/DummyException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/DummyFooTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/EmptyTestCaseTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/ExceptionInAssertPostConditionsTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/ExceptionInAssertPreConditionsTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/ExceptionInSetUpTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/ExceptionInTearDownTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/ExceptionInTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/ExceptionNamespaceTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/ExceptionStackTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/ExceptionTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/Failure.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/FailureTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/FalsyConstraint.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/FatalTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/IgnoreCodeCoverageClass.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/IgnoreCodeCoverageClassTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/IncompleteTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/Inheritance/InheritanceA.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/Inheritance/InheritanceB.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/InheritedTestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/IniTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/IsolationTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/JsonData/arrayObject.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/JsonData/simpleObject.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/MockRunner.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/Mockable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/MultiDependencyTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/MultipleDataProviderTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/MyCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/NamedConstraint.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/NamespaceCoverageClassExtendedTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/NamespaceCoverageClassTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/NamespaceCoverageCoversClassPublicTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/NamespaceCoverageCoversClassTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/NamespaceCoverageMethodTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/NamespaceCoverageNotPrivateTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/NamespaceCoverageNotProtectedTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/NamespaceCoverageNotPublicTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/NamespaceCoveragePrivateTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/NamespaceCoverageProtectedTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/NamespaceCoveragePublicTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/NamespaceCoveredClass.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/NamespaceCoveredFunction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/NoArgTestCaseTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/NoTestCaseClass.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/NoTestCases.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/NonStatic.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/NotExistingCoveredElementTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/NotPublicTestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/NotVoidTestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/NothingTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/OneTestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/OutputTestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/OverrideTestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/ParseTestMethodAnnotationsMock.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/RequirementsClassBeforeClassHookTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/RequirementsClassDocBlockTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/RequirementsTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/SampleArrayAccess.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/SampleClass.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/Singleton.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/StackTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/StatusTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/StopOnWarningTestSuite.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/StopsOnWarningTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/Struct.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/Success.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/TemplateMethodsTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/TestAutoreferenced.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/TestDoxGroupTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/TestGeneratorMaker.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/TestIncomplete.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/TestIterator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/TestIterator2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/TestIteratorAggregate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/TestIteratorAggregate2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/TestSkipped.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/TestTestError.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/TestWithTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/ThrowExceptionTestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/ThrowNoExceptionTestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/TruthyConstraint.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/VariousIterableDataProviderTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/WasRun.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/WrapperIteratorAggregate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/bar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/configuration.colors.empty.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/configuration.colors.false.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/configuration.colors.invalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/configuration.colors.true.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/configuration.custom-printer.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/configuration.defaulttestsuite.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/configuration.one-file-suite.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/configuration.suites.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/configuration_empty.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/configuration_stop_on_warning.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/configuration_xinclude.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/expectedFileFormat.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/foo.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/phpt-for-coverage.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/phpt-xfail.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/phpunit-example-extension/phpunit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/phpunit-example-extension/tests/OneTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.1.phar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/structureAttributesAreSameButValuesAreNot.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/structureExpected.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/structureIgnoreTextNodes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/structureIsSameButDataIsNot.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/structureWrongNumberOfAttributes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/_files/structureWrongNumberOfNodes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/bootstrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/_files/expect_external.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/_files/phpt-env.expected.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/_files/phpt_external.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/abstract-test-class.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/assertion.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/code-coverage-ignore.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/code-coverage-phpt.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/colors-always.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/concrete-test-class.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/custom-printer-debug.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/custom-printer-verbose.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/dataprovider-debug.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/dataprovider-issue-2833.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/dataprovider-issue-2859.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/dataprovider-issue-2922.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/dataprovider-log-xml-isolation.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/dataprovider-log-xml.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/dataprovider-testdox.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/debug.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/default-isolation.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/default.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/defaulttestsuite-using-testsuite.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/defaulttestsuite.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/dependencies-clone.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/dependencies-isolation.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/dependencies.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/dependencies2-isolation.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/dependencies2.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/dependencies3-isolation.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/dependencies3.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/disable-code-coverage-ignore.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/empty-testcase.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/exception-stack.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/exclude-group-isolation.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/exclude-group.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/failure-isolation.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/failure-reverse-list.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/failure.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/fatal-isolation.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-class-isolation.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-class.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-dataprovider-by-classname-and-range-isolation.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-dataprovider-by-classname-and-range.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-dataprovider-by-number-isolation.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-dataprovider-by-number.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-dataprovider-by-only-range-isolation.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-dataprovider-by-only-range.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-dataprovider-by-only-regexp-isolation.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-dataprovider-by-only-regexp.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-dataprovider-by-only-string-isolation.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-dataprovider-by-only-string.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-dataprovider-by-range-isolation.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-dataprovider-by-range.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-dataprovider-by-regexp-isolation.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-dataprovider-by-regexp.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-dataprovider-by-string-isolation.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-dataprovider-by-string.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-method-case-insensitive.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-method-case-sensitive-no-result.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-method-isolation.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-method.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/filter-no-results.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/forward-compatibility.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/group-isolation.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/group.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/help.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/help2.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/ini-isolation.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/list-groups.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/list-suites.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/list-tests-dataprovider.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/list-tests-xml-dataprovider.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/log-junit.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/log-teamcity.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/mycommand.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/options-after-arguments.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/output-isolation.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/phar-extension-suppressed.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/phar-extension.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/phpt-args.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/phpt-env.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/phpt-external.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/phpt-stderr.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/phpt-stdin.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/phpt-xfail.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1149.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1149/Issue1149Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1216.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1216/Issue1216Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1216/bootstrap1216.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1216/phpunit1216.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1265.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1265/Issue1265Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1265/phpunit1265.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1330.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1330/Issue1330Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1330/phpunit1330.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1335.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1335/Issue1335Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1335/bootstrap1335.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1337.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1337/Issue1337Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1348.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1348/Issue1348Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1351.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1351/ChildProcessClass1351.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1351/Issue1351Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1374.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1374/Issue1374Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1437.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1437/Issue1437Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1468.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1468/Issue1468Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1471.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1471/Issue1471Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1472.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1472/Issue1472Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1570.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/1570/Issue1570Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2137-filter.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2137-no_filter.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2137/Issue2137Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2145.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2145/Issue2145Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2158.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2158/Issue2158Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2158/constant.inc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2366.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2366/Issue2366Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2380.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2380/Issue2380Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2382.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2382/Issue2382Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2435.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2435/Issue2435Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/244.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/244/Issue244Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2448-existing-test.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2448-not-existing-test.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2448/Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2591-separate-class-preserve-no-bootstrap.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2591-separate-class-preserve.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2591-separate-function-no-preserve-no-bootstrap-xdebug.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2591-separate-function-no-preserve-no-bootstrap.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2591-separate-function-no-preserve.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2591-separate-function-preserve.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2591/SeparateClassPreserveTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2591/SeparateFunctionNoPreserveTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2591/SeparateFunctionPreserveTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2591/bootstrapNoBootstrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2591/bootstrapWithBootstrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2591/bootstrapWithBootstrapNoGlobal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2725-separate-class-before-after-pid.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2725/BeforeAfterClassPidTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2731.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2731/Issue2731Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2811.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2811/Issue2811Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2830.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2830/Issue2830Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2972.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2972/issue-2972-test.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/2972/unconventiallyNamedIssue2972Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/322.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/322/Issue322Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/322/phpunit322.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/433.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/433/Issue433Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/445.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/445/Issue445Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/498.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/498/Issue498Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/503.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/503/Issue503Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/581.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/581/Issue581Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/74.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/74/Issue74Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/74/NewException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/765.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/765/Issue765Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/797.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/797/Issue797Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/797/bootstrap797.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/863.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/873.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/GitHub/873/Issue873Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/Trac/1021.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/Trac/1021/Issue1021Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/Trac/523.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/Trac/523/Issue523Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/Trac/578.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/Trac/578/Issue578Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/Trac/684.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/Trac/684/Issue684Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/Trac/783.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/Trac/783/ChildSuite.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/Trac/783/OneTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/Trac/783/ParentSuite.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/regression/Trac/783/TwoTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/repeat.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/report-useless-tests-incomplete.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/report-useless-tests-isolation.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/report-useless-tests.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/stop-on-warning-via-cli.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/stop-on-warning-via-config.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/teamcity-inner-exceptions.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/teamcity.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/test-suffix-multiple.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/test-suffix-single.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/testdox-exclude-group.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/testdox-group.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/testdox-html.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/testdox-text.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/testdox-xml.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/end-to-end/testdox.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/fail/fail.phpt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/AssertTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/BaseTestListenerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/ArrayHasKeyTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/ArraySubsetTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/AttributeTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/CallbackTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/ClassHasAttributeTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/ClassHasStaticAttributeTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/ConstraintTestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/CountTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/DirectoryExistsTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/ExceptionMessageRegExpTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/ExceptionMessageTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/FileExistsTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/GreaterThanTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/IsEmptyTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/IsEqualTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/IsIdenticalTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/IsJsonTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/IsNullTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/IsReadableTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/IsTypeTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/IsWritableTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/JsonMatchesErrorMessageProviderTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/JsonMatchesTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/LessThanTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/LogicalAndTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/LogicalOrTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/LogicalXorTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/ObjectHasAttributeTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/RegularExpressionTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/SameSizeTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/StringContainsTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/StringEndsWithTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/StringMatchesFormatDescriptionTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/StringStartsWithTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/Constraint/TraversableContainsTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/ConstraintTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/SuiteTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/TestCaseTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/TestFailureTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/TestImplementorTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Framework/TestListenerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Runner/Filter/NameFilterIteratorTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Runner/PhptTestCaseTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/TextUI/TestRunnerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Util/ConfigurationGeneratorTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Util/ConfigurationTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Util/CustomerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Util/GetoptTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Util/GlobalStateTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Util/JsonTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Util/PHP/AbstractPhpProcessTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Util/RegularExpressionTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Util/TestDox/NamePrettifierTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Util/TestTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Util/XmlTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/apple (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/cocktail (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/coffee-cup (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/crepe (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/drink.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/food.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/food2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/fourniture.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/fruits.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/image3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/logo_solo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/manger.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/monitor (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/paperpen.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/printer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/usb.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/usb2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/waffle (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/wifi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/event/5d6131ca8bfa5737451539.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/event/5d6524c4ea25f095003408.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/event/5d67d00e05c2e029357156.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/event/5d67d0dd0a89d873210494.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/event/5d67d74e1bf28758275951.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/event/5d67d7fd5a04d384799765.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/event/5d67d8286cc93608551232.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/event/5d67da7861f57602243653.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/spacesprivate/5d6aef4d0df9f640261584.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/CommandBis.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20190903190311.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/customer/myreservation.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Cowork.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Cowork.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes/api_platform.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AboutusController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AboutusController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AddCartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AddCartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CartController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ReservationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SupplyFoodController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SupplyFoodController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Customer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/JobPosts.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/JobPosts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/AddJobPostType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/AddJobPostType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationCustomerType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationCustomerType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/templates/aboutus/legalnotice.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190727155826.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190727161000.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190729125238.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190729134235.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190729135015.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190730102321.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190730145702.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190731090844.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190731143232.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190813081545.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190813094941.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190813142719.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190813152654.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190819135452.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190819140714.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190820075013.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190820154416.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190828075816.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190828081911.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190829125444.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190829134219.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190830083742.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190830132512.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/MessageJob.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/MessageJob.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ReservationSpace.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ReservationSpace.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/SupplyFood.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/SupplyFood.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/SupplyOffice.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/SupplyOffice.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190901032831.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20190904095427.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190902195843.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20190905090107.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190902223022.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190902223653.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20190902224041.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/MessageJobRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MessageJobRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/add_cart/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_cart/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/customer/addjobpost.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer/addjobpost.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cart/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/customer/answerjobpost.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer/answerjobpost.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/customer/myjobpost.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer/myjobpost.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/customer/discJobPost.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer/discJobPost.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/customer/mynetwork.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer/mynetwork.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/registercustomer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/registercustomer.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/paiement/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/paiement/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reservation/reservationspaceprivate.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reservation/reservationspaceprivate.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/shop/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shop/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/space_private/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/space_private/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/supply_food/coffee.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supply_food/coffee.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/supply_food/drink.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supply_food/drink.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/supply_food/food.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supply_food/food.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/supply_food/fruits.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supply_food/fruits.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/supply_food/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supply_food/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/supply_office/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supply_office/index.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,84 +712,49 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="689">
-              <caret line="191" column="41" selection-start-line="191" selection-start-column="41" selection-end-line="191" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composer.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/space_private/add.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/reservation/reservationspaceprivate.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="593">
-              <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+            <state relative-caret-position="567">
+              <caret line="85" column="49" selection-start-line="85" selection-start-column="49" selection-end-line="85" selection-end-column="49" />
+              <folding>
+                <element signature="n#style#0;n#dl#0;n#form#0;n#form#0;n#div#0;n#main#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/customer/myreservation.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="458">
+              <caret line="61" column="64" selection-start-line="61" selection-start-column="64" selection-end-line="61" selection-end-column="64" />
+              <folding>
+                <element signature="e#2848#2868#0#HTML" expanded="true" />
+                <element signature="e#4009#4029#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/space_private/index.html.twig">
+        <entry file="file://$PROJECT_DIR$/src/Entity/ReservationSpace.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="114" selection-start-line="21" selection-start-column="114" selection-end-line="21" selection-end-column="114" />
+            <state relative-caret-position="65">
+              <caret line="109" column="33" selection-start-line="109" selection-start-column="22" selection-end-line="109" selection-end-column="33" />
+              <folding>
+                <element signature="e#30#62#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/home/index.html.twig">
+        <entry file="file://$PROJECT_DIR$/src/Entity/SpacePrivate.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="47" column="49" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Form/AddJobPostType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/customer/myjobpost.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/customer/addjobpost.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+            <state relative-caret-position="481">
+              <caret line="77" column="81" selection-start-line="77" selection-start-column="76" selection-end-line="77" selection-end-column="81" />
             </state>
           </provider>
         </entry>
@@ -162,8 +762,56 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/CustomerController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1005">
-              <caret line="84" column="36" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="36" />
+            <state relative-caret-position="-265">
+              <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+              <folding>
+                <element signature="e#34#58#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/RegistrationController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="786">
+              <caret line="72" column="52" selection-start-line="72" selection-start-column="52" selection-end-line="72" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/ReservationController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="44" column="74" selection-start-line="44" selection-start-column="74" selection-end-line="44" selection-end-column="74" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/security/loginUser.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="196" selection-start-line="196" selection-end-line="196" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/paiement/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="48" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -197,57 +845,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Migrations/Version20190829134219.php" />
-        <option value="$PROJECT_DIR$/src/Form/PostsType.php" />
-        <option value="$PROJECT_DIR$/templates/posts/new.html.twig" />
-        <option value="$PROJECT_DIR$/src/Entity/Posts.php" />
-        <option value="$PROJECT_DIR$/templates/posts/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/CartController.php" />
-        <option value="$PROJECT_DIR$/templates/customer/myevent.html.twig" />
-        <option value="$PROJECT_DIR$/templates/aboutus/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Migrations/Version20190830083742.php" />
-        <option value="$PROJECT_DIR$/translations/forms.fr.yaml" />
-        <option value="$PROJECT_DIR$/src/Repository/JobPostsRepository.php" />
-        <option value="$PROJECT_DIR$/src/Migrations/Version20190830132512.php" />
-        <option value="$PROJECT_DIR$/src/Entity/JobPosts.php" />
-        <option value="$PROJECT_DIR$/src/Migrations/Version20190830143554.php" />
-        <option value="$PROJECT_DIR$/templates/aboutus/legalnotice.html.twig" />
-        <option value="$PROJECT_DIR$/templates/aboutus/legalnoticevente.html.twig" />
-        <option value="$PROJECT_DIR$/src/Entity/Customer.php" />
-        <option value="$PROJECT_DIR$/src/Controller/AboutusController.php" />
-        <option value="$PROJECT_DIR$/templates/aboutus/legalnoticecookie.html.twig" />
-        <option value="$PROJECT_DIR$/src/Migrations/Version20190831133837.php" />
-        <option value="$PROJECT_DIR$/src/Migrations/Version20190831134246.php" />
-        <option value="$PROJECT_DIR$/templates/customer/messagejob.html.twig" />
-        <option value="$PROJECT_DIR$/src/Migrations/Version20190831160652.php" />
-        <option value="$PROJECT_DIR$/src/Entity/MessageJob.php" />
-        <option value="$PROJECT_DIR$/src/Migrations/Version20190831212634.php" />
-        <option value="$PROJECT_DIR$/config/packages/vich_uploader.yaml" />
-        <option value="$PROJECT_DIR$/src/Migrations/Version20190831214400.php" />
-        <option value="$PROJECT_DIR$/src/Form/SpacePrivateType.php" />
-        <option value="$PROJECT_DIR$/src/Entity/SpacePrivate.php" />
-        <option value="$PROJECT_DIR$/templates/space_private/add.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/SpacePrivateController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/SupplyFoodController.php" />
-        <option value="$PROJECT_DIR$/src/Migrations/Version20190831225819.php" />
-        <option value="$PROJECT_DIR$/templates/home/index.html.twig" />
-        <option value="$PROJECT_DIR$/templates/space_private/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/ReservationController.php" />
-        <option value="$PROJECT_DIR$/templates/register_post/index.html.twig" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
-        <option value="$PROJECT_DIR$/src/Migrations/Version20190901032831.php" />
-        <option value="$PROJECT_DIR$/src/Form/RegistrationCustomerType.php" />
-        <option value="$PROJECT_DIR$/templates/registration/registercustomer.html.twig" />
-        <option value="$PROJECT_DIR$/templates/security/login.html.twig" />
-        <option value="$PROJECT_DIR$/templates/customer/answerjobpost.html.twig" />
-        <option value="$PROJECT_DIR$/templates/customer/mynetwork.html.twig" />
         <option value="$PROJECT_DIR$/src/Form/AddJobPostType.php" />
         <option value="$PROJECT_DIR$/templates/customer/addjobpost.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/CustomerController.php" />
         <option value="$PROJECT_DIR$/templates/customer/myjobpost.html.twig" />
-        <option value="$PROJECT_DIR$/templates/reservation/reservationspaceprivate.html.twig" />
-        <option value="$PROJECT_DIR$/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/config/bundles.php" />
+        <option value="$PROJECT_DIR$/config/services.yaml" />
+        <option value="$PROJECT_DIR$/config/routes/api_platform.yaml" />
+        <option value="$PROJECT_DIR$/config/routes.yaml" />
+        <option value="$PROJECT_DIR$/src/Entity/Customer.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/src/Entity/MessageJob.php" />
+        <option value="$PROJECT_DIR$/src/Entity/JobPosts.php" />
+        <option value="$PROJECT_DIR$/src/Entity/User.php" />
+        <option value="$PROJECT_DIR$/templates/shop/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/customer/myevent.html.twig" />
+        <option value="$PROJECT_DIR$/templates/add_cart/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/supply_food/food.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/SupplyFoodController.php" />
+        <option value="$PROJECT_DIR$/templates/supply_food/drink.html.twig" />
+        <option value="$PROJECT_DIR$/templates/supply_food/coffee.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/AddCartController.php" />
+        <option value="$PROJECT_DIR$/src/Entity/SupplyFood.php" />
+        <option value="$PROJECT_DIR$/src/Migrations/Version20190903185922.php" />
+        <option value="$PROJECT_DIR$/src/Migrations/Version20190903190311.php" />
+        <option value="$PROJECT_DIR$/src/Controller/CartController.php" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
+        <option value="$PROJECT_DIR$/templates/supply_food/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/supply_office/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/cart/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/supply_food/fruits.html.twig" />
+        <option value="$PROJECT_DIR$/templates/paiement/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Repository/JobPostsRepository.php" />
+        <option value="$PROJECT_DIR$/src/Repository/MessageJobRepository.php" />
+        <option value="$PROJECT_DIR$/src/Migrations/Version20190904095427.php" />
+        <option value="$PROJECT_DIR$/templates/customer/answerjobpost.html.twig" />
+        <option value="$PROJECT_DIR$/bin/.phpunit/CustomerTest.php" />
+        <option value="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/Entity/CustomerTest.php" />
         <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Util/CustomerTest.php" />
+        <option value="$PROJECT_DIR$/templates/customer/discJobPost.html.twig" />
+        <option value="$PROJECT_DIR$/templates/space_private/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/posts/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/customer/mynetwork.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/CustomerController.php" />
+        <option value="$PROJECT_DIR$/templates/home/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/RegistrationController.php" />
+        <option value="$PROJECT_DIR$/src/Migrations/Version20190905090107.php" />
+        <option value="$PROJECT_DIR$/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/ReservationController.php" />
+        <option value="$PROJECT_DIR$/templates/reservation/reservationspaceprivate.html.twig" />
+        <option value="$PROJECT_DIR$/src/Entity/ReservationSpace.php" />
+        <option value="$PROJECT_DIR$/templates/customer/myreservation.html.twig" />
       </list>
     </option>
   </component>
@@ -398,6 +1046,13 @@
       <path value="$PROJECT_DIR$/vendor/vendor/psr" />
       <path value="$PROJECT_DIR$/vendor/vendor/sensio" />
       <path value="$PROJECT_DIR$/vendor/vendor/stof" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/api-pack" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/core" />
+      <path value="$PROJECT_DIR$/vendor/willdurand/negotiation" />
+      <path value="$PROJECT_DIR$/vendor/zircote/swagger-php" />
+      <path value="$PROJECT_DIR$/vendor/nelmio/api-doc-bundle" />
+      <path value="$PROJECT_DIR$/vendor/exsyst/swagger" />
+      <path value="$PROJECT_DIR$/vendor/nelmio/cors-bundle" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
@@ -412,12 +1067,31 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cowork" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name=".phpunit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name=".phpunit" type="462c0819:PsiDirectoryNode" />
+              <item name="phpunit-6.5" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
@@ -433,13 +1107,13 @@
             <path>
               <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cowork" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cowork" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
@@ -451,7 +1125,42 @@
               <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cowork" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="event" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="food" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="office" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="spaces" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="spacesprivate" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
@@ -474,36 +1183,12 @@
               <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cowork" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Form" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cowork" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="aboutus" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="add_cart" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
@@ -521,19 +1206,13 @@
               <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cowork" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="paiement" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="posts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="register_post" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="registration" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
@@ -551,41 +1230,12 @@
               <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cowork" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="space_private" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="space_public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="supply_food" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
-              <item name="translations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cowork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cowork" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -623,6 +1273,12 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -648,6 +1304,8 @@
       <workItem from="1567409147974" duration="5162000" />
       <workItem from="1567416184091" duration="998000" />
       <workItem from="1567418893323" duration="1499000" />
+      <workItem from="1567595956641" duration="629000" />
+      <workItem from="1567599456147" duration="24558000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <created>1566596425864</created>
@@ -695,7 +1353,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117409000" />
+    <option name="totallyTimeSpent" value="165507000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -708,11 +1366,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.18383405" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19027181" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.49785408" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49785408" weight="0.32891566" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50214595" side_tool="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32891566" />
@@ -783,7 +1442,8 @@
     <MESSAGE value="Commit ericka" />
     <MESSAGE value="Commit Junior" />
     <MESSAGE value="Commit Junior du 30/08" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit Junior du 30/08" />
+    <MESSAGE value="Commit Junior du 06/08" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit Junior du 06/08" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -793,369 +1453,386 @@
           <line>26</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/templates/reservation/reservationspaceprivate.html.twig</url>
+          <line>137</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/aboutus/legalnotice.html.twig">
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="51" selection-end-line="51" selection-end-column="14" />
+        <state relative-caret-position="425">
+          <caret line="141" column="1" selection-start-line="141" selection-start-column="1" selection-end-line="141" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/security/loginUser.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AboutusController.php">
+    <entry file="file://$PROJECT_DIR$/templates/supply_office/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="44" column="34" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/aboutus/legalnoticevente.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="55" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/aboutus/legalnoticecookie.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="71" selection-start-line="11" selection-start-column="71" selection-end-line="11" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190831133837.php" />
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190831134246.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190831160652.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/JobPosts.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="32" column="78" selection-start-line="32" selection-start-column="70" selection-end-line="32" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/customer/myevent.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="17" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/customer/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190831212634.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/vich_uploader.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="26" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190831214400.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/SpacePublicType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/SpacePublic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="450">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
           <folding>
-            <element signature="e#30#78#0#PHP" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#main#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/space_public/new.html.twig">
+    <entry file="file://$PROJECT_DIR$/templates/supply_food/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="28" selection-end-column="41" />
+        <state relative-caret-position="222">
+          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="62" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#1;n#main#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#section#1;n#main#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/SpacePrivateType.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/RegisterPostType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+        <state relative-caret-position="-207">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
           <folding>
             <element signature="e#28#56#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/posts/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/posts/eventUser.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/shop/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Entity/Cart.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="11" selection-start-line="5" selection-start-column="4" selection-end-line="38" selection-end-column="11" />
+        <state relative-caret-position="285">
+          <caret line="19" column="75" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="75" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/SupplyFoodRepository.php">
+    <entry file="file://$PROJECT_DIR$/templates/cart/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+        <state relative-caret-position="147">
+          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/SupplyFoodController.php">
+    <entry file="file://$PROJECT_DIR$/templates/supply_food/food.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="56" column="21" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="21" />
+        <state relative-caret-position="630">
+          <caret line="42" column="14" selection-end-line="42" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190831225819.php">
+    <entry file="file://$PROJECT_DIR$/templates/supply_food/fruits.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="33" column="62" selection-start-line="33" selection-start-column="62" selection-end-line="33" selection-end-column="62" />
+        <state relative-caret-position="405">
+          <caret line="27" column="52" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/SpacePrivate.php">
+    <entry file="file://$PROJECT_DIR$/src/Controller/CartController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="160" column="29" selection-start-line="160" selection-start-column="22" selection-end-line="160" selection-end-column="29" />
+        <state relative-caret-position="475">
+          <caret line="80" column="55" selection-start-line="80" selection-start-column="55" selection-end-line="80" selection-end-column="55" />
           <folding>
-            <element signature="e#30#62#0#PHP" expanded="true" />
+            <element signature="e#34#54#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/posts/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Controller/PostsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="23" selection-end-column="141" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/SpacePrivateController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
-          <folding>
-            <element signature="e#34#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/register_post/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="50" column="94" selection-start-line="50" selection-start-column="94" selection-end-line="50" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2280">
-          <caret line="152" column="1" selection-start-line="152" selection-start-column="1" selection-end-line="152" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190901032831.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/ReservationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="26" column="71" selection-start-line="26" selection-start-column="71" selection-end-line="26" selection-end-column="71" />
-          <folding>
-            <element signature="e#34#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/SpacePublicController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
+        <state relative-caret-position="89">
           <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-          <folding>
-            <element signature="e#34#61#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/RegistrationCustomerType.php">
+    <entry file="file://$PROJECT_DIR$/src/Repository/JobPostsRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="68" column="37" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/registration/registercustomer.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="68" selection-start-line="22" selection-start-column="68" selection-end-line="22" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/security/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+        <state relative-caret-position="270">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="29" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/MessageJob.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="81" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="81" />
+        <state relative-caret-position="360">
+          <caret line="25" column="81" selection-start-line="25" selection-start-column="70" selection-end-line="25" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/register_post/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="26" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/MessageJobRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/customer/answerjobpost.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/.phpunit/CustomerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="17" selection-end-column="1" />
+          <folding>
+            <element signature="e#42#66#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/Entity/CustomerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="17" selection-end-column="1" />
+          <folding>
+            <element signature="e#42#66#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Util/TestTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <folding>
+            <element signature="e#254#291#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/vendor/autoload.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/unit/Util/CustomerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="24" />
+          <folding>
+            <element signature="e#34#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/aboutus/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="19" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/services.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/bundles.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/swiftmailer.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/customer/discJobPost.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/security/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="85" selection-start-line="24" selection-start-column="64" selection-end-line="24" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/posts/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/space_private/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="25" column="82" selection-start-line="25" selection-start-column="82" selection-end-line="25" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Security/LoginFromCustomerAuthenticator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="278" column="75" selection-start-line="278" selection-start-column="75" selection-end-line="278" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/customer/mynetwork.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="30" selection-start-column="28" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Customer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="23" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="23" />
+        <state relative-caret-position="1116">
+          <caret line="80" column="21" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="21" />
           <folding>
             <element signature="e#30#78#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/customer/answerjobpost.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
-          <folding>
-            <element signature="e#1366#1386#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/customer/messagejob.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190904095427.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
-          <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/customer/mynetwork.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190905090107.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="72" column="47" selection-start-line="72" selection-start-column="47" selection-end-line="72" selection-end-column="47" />
-          <folding>
-            <element signature="e#4537#4557#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="570">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/PostsType.php">
+    <entry file="file://$PROJECT_DIR$/src/Controller/LoginCustomerController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/space_private/add.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Entity/Command.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
+        <state relative-caret-position="-2336">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/space_private/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/templates/security/loginUser.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="114" selection-start-line="21" selection-start-column="114" selection-end-line="21" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="49" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/AddJobPostType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/customer/myjobpost.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/customer/addjobpost.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/CustomerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="84" column="36" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/reservation/reservationspaceprivate.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
-          <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="689">
-          <caret line="191" column="41" selection-start-line="191" selection-start-column="41" selection-end-line="191" selection-end-column="41" />
+        <state relative-caret-position="313">
+          <caret line="196" selection-start-line="196" selection-end-line="196" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/paiement/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="48" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/CustomerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-265">
+          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+          <folding>
+            <element signature="e#34#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/RegistrationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="786">
+          <caret line="72" column="52" selection-start-line="72" selection-start-column="52" selection-end-line="72" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ReservationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="44" column="74" selection-start-line="44" selection-start-column="74" selection-end-line="44" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/SpacePrivate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="77" column="81" selection-start-line="77" selection-start-column="76" selection-end-line="77" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/reservation/reservationspaceprivate.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="85" column="49" selection-start-line="85" selection-start-column="49" selection-end-line="85" selection-end-column="49" />
+          <folding>
+            <element signature="n#style#0;n#dl#0;n#form#0;n#form#0;n#div#0;n#main#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/ReservationSpace.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="109" column="33" selection-start-line="109" selection-start-column="22" selection-end-line="109" selection-end-column="33" />
+          <folding>
+            <element signature="e#30#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/customer/myreservation.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="61" column="64" selection-start-line="61" selection-start-column="64" selection-end-line="61" selection-end-column="64" />
+          <folding>
+            <element signature="e#2848#2868#0#HTML" expanded="true" />
+            <element signature="e#4009#4029#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

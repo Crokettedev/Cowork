@@ -1,29 +1,44 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello SpacePublicController!{% endblock %}
+{% block title %}Boissons{% endblock %}
 
 {% block body %}
-    <div class="tab-pane" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-        <div class="container" style="display: grid; grid-template-columns: repeat(4, auto); grid-gap: 0px;">
-            <br>
-            {% if showDrink is empty %}
-                <div class="alert alert-danger" role="alert">
-                    Aucune table disponible
+    <main class="my-5 toped">
+        <section class="shopping-cart dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-uppercase font-weight-bold">Boissons</h2>
                 </div>
-            {% endif %}
-            {% for showDrinks in showDrink %}
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ vich_uploader_asset(showDrinks, 'imageFile') | imagine_filter('thumb')}}" class="card-img-top" alt="..." style="width: 100%; height: auto">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ showDrinks.title }}</h5>
-                        <h5 style="float: right">{{ showDrinks.price }}€</h5>
-                    </div>
-                    <div class="card-footer text-muted" id="card_footer_home">
-                        <a href="{{ path('add_supply_food', {id: showDrinks.id, slug: showDrinks.slug}) }}"><button type="button" class="btn btn-primary" id="btn_card_home">Acheter</button></a>
-                    </div>
+                <div class="content">
+                    {% if showDrink is empty %}
+                        <div class="card">
+                            <div class="card-header text-center">
+                                Aucun aliment pour le moment
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% for showDrinks in showDrink %}
+                        <div class="row">
+                            <div class="col-12 col-md-8">
+                                <div class="card bg-dark text-white">
+                                    <img src="{{ vich_uploader_asset(showDrinks, 'imageFile') | imagine_filter('thumb')}}" class="card-img" alt="...">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ showDrinks.title }}</h5>
+                                        <p>Prix : {{ showDrinks.price }}€</p>
+                                        <p class="card-text">{{ showDrinks.content }}.</p>
+                                        <a href="{{ path('add_supply_food', {id: showDrinks.id, slug: showDrinks.slug}) }}"><button type="button" class="btn btn-primary" id="btn_card_home">Ajouter au panier</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    {% endfor %}
                 </div>
-            {% endfor %}
-        </div>
-    </div>
+        </section>
+    </main>
 
 {% endblock %}

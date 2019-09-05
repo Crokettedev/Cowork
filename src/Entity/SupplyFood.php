@@ -76,13 +76,14 @@ class SupplyFood
     private $carts;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Customer", inversedBy="supplyFoods")
+     * @ORM\OneToMany(targetEntity="App\Entity\CommandBis", mappedBy="supplyFood")
      */
-    private $customer;
+    private $commandBis;
 
     public function __construct()
     {
         $this->carts = new ArrayCollection();
+        $this->commandBis = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -257,14 +258,33 @@ class SupplyFood
 
     }
 
-    public function getCustomer(): ?Customer
+    /**
+     * @return Collection|CommandBis[]
+     */
+    public function getCommandBis(): Collection
     {
-        return $this->customer;
+        return $this->commandBis;
     }
 
-    public function setCustomer(?Customer $customer): self
+    public function addCommandBi(CommandBis $commandBi): self
     {
-        $this->customer = $customer;
+        if (!$this->commandBis->contains($commandBi)) {
+            $this->commandBis[] = $commandBi;
+            $commandBi->setSupplyFood($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommandBi(CommandBis $commandBi): self
+    {
+        if ($this->commandBis->contains($commandBi)) {
+            $this->commandBis->removeElement($commandBi);
+            // set the owning side to null (unless already changed)
+            if ($commandBi->getSupplyFood() === $this) {
+                $commandBi->setSupplyFood(null);
+            }
+        }
 
         return $this;
     }

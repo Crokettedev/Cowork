@@ -12,11 +12,9 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
-use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CustomerRepository")
- * @ApiResource(attributes={"filters"={"customer.search"}})
  * @Vich\Uploadable()
  * @UniqueEntity(fields="email", message="Cet email est déjà existant")
  * @UniqueEntity(fields="phone", message="Ce numéro de téléphone est déjà utiliser")
@@ -150,6 +148,11 @@ class Customer implements UserInterface
      */
     private $reservationSpaces;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\CommandBis", mappedBy="customer")
+     */
+    private $commandBis;
+
     public function __construct()
     {
         $this->registerPosts = new ArrayCollection();
@@ -161,6 +164,7 @@ class Customer implements UserInterface
         $this->messageCustomerJob = new ArrayCollection();
         $this->bookings = new ArrayCollection();
         $this->reservationSpaces = new ArrayCollection();
+        $this->commandBis = new ArrayCollection();
     }
 
 
@@ -636,6 +640,37 @@ class Customer implements UserInterface
             // set the owning side to null (unless already changed)
             if ($reservationSpace->getCustomer() === $this) {
                 $reservationSpace->setCustomer(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|CommandBis[]
+     */
+    public function getCommandBis(): Collection
+    {
+        return $this->commandBis;
+    }
+
+    public function addCommandBi(CommandBis $commandBi): self
+    {
+        if (!$this->commandBis->contains($commandBi)) {
+            $this->commandBis[] = $commandBi;
+            $commandBi->setCustomer($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommandBi(CommandBis $commandBi): self
+    {
+        if ($this->commandBis->contains($commandBi)) {
+            $this->commandBis->removeElement($commandBi);
+            // set the owning side to null (unless already changed)
+            if ($commandBi->getCustomer() === $this) {
+                $commandBi->setCustomer(null);
             }
         }
 

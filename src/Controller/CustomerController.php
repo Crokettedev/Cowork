@@ -12,9 +12,8 @@ use App\Form\UpdateCustomerType;
 use App\Form\UpdateJobPostType;
 use App\Repository\CustomerRepository;
 use App\Repository\JobPostsRepository;
-//use App\Repository\MessageJobRepository;
+use App\Repository\MessageJobRepository;
 use Doctrine\Common\Persistence\ObjectManager;
-use phpDocumentor\Reflection\Types\This;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\Request;
@@ -30,12 +29,12 @@ class CustomerController extends AbstractController
     private $jobPostsRepository;
     private $messageJobRepo;
 
-    public function __construct(CustomerRepository $repository, ObjectManager $em, JobPostsRepository $jobPostsRepository)
+    public function __construct(CustomerRepository $repository, ObjectManager $em, JobPostsRepository $jobPostsRepository, MessageJobRepository $messageJobRepository)
     {
         $this->repository = $repository;
         $this->em = $em;
         $this->jobPostsRepository = $jobPostsRepository;
-//        $this->messageJobRepo = $messageJobRepository;
+        $this->messageJobRepo = $messageJobRepository;
 
     }
 
@@ -66,6 +65,14 @@ class CustomerController extends AbstractController
     public function viewmymessagejob()
     {
         return $this->render('customer/messagejob.html.twig');
+    }
+
+    /**
+     * @Route("/Reservation", name="viewmyreservation")
+     */
+    public function viewmyreservation()
+    {
+        return $this->render('customer/myreservation.html.twig');
     }
 
     /**
@@ -147,6 +154,7 @@ class CustomerController extends AbstractController
             $message->setMessage($jobPosts);
             $message->setCustomerMsg($this->getUser());
             $message->setContent($request->request->get('message'));
+            $message->setCreatedAt(new \DateTime('now'));
 
             $manager->persist($message);
             $manager->flush();
@@ -214,6 +222,7 @@ class CustomerController extends AbstractController
             $message->setMessage($jobPosts);
             $message->setCustomerMsg($this->getUser());
             $message->setContent($request->request->get('message'));
+            $message->setCreatedAt(new \DateTime('now'));
 
             $manager->persist($message);
             $manager->flush();

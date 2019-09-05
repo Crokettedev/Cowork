@@ -29,8 +29,8 @@
                     <li class="nav-item dropdown color-me">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Espaces de travail</a>
                         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Espace partagé</a>
-                            <a class="dropdown-item" href="#">Salons privé</a>
+                            <a class="dropdown-item" href="#">Poste de travail</a>
+                            <a class="dropdown-item" href="{{ path('viewspaceprivate') }}">Salons privé</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -43,7 +43,7 @@
                         <a class="nav-link" href="{{ path('view_event') }}">Evenements</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('mynetwork') }}">Reseau</a>
+                        <a class="nav-link" href="{{ path('mynetwork') }}">Communauté</a>
                     </li>
                     {% if not app.user %}
                     <li class="nav-item">
@@ -74,37 +74,39 @@
                     <strong>Gusto Coffee</strong>
                 </h6>
                 <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit
-                    amet, consectetur adipisicing elit.</p>
+                <p>Né en Italie, le concept Gusto Coffee repose sur l’idée que le succès appelle le succès. Notre ambition est de repenser votre façon de travailler. C’est pourquoi nous avons cultivé une communauté de membres constituée de visionnaires, de bâtisseurs et de créateurs.</p>
             </div>
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                 <h6 class="text-uppercase font-weight-bold">
-                    <strong>Products</strong>
+                    <strong>Produits</strong>
                 </h6>
                 <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p>
-                    <a href="#!">MDBootstrap</a>
+                    <a href="{{ path('viewspaceprivate') }}">Salons privé</a>
                 </p>
                 <p>
-                    <a href="#!">MDWordPress</a>
+                    <a href="#!">Poste de travail</a>
                 </p>
                 <p>
-                    <a href="#!">BrandFlow</a>
+                    <a href="{{ path('mynetwork') }}">Communauté</a>
                 </p>
                 <p>
-                    <a href="#!">Bootstrap Angular</a>
+                    <a href="{{ path('shop')}}">Shop</a>
+                </p>
+                <p>
+                    <a href="{{ path('view_event') }}">Evenements</a>
                 </p>
             </div>
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                 <h6 class="text-uppercase font-weight-bold">
-                    <strong>Useful links</strong>
+                    <strong>Liens utiles</strong>
                 </h6>
                 <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p>
-                    <a href="">Créer un compte</a>
+                    <a href="{{ path('app_login') }}">Créer un compte</a>
                 </p>
                 <p>
-                    <a href="#!">S'inscrire</a>
+                    <a href="{{ path('app_register_customer') }}">S'inscrire</a>
                 </p>
                 <p>
                     <a href="{{ path('legalnotice') }}">Mentions légagles</a>
@@ -122,9 +124,9 @@
                 </h6>
                 <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p>
-                    <i class="fas fa-home  mr-3"></i> New York, NY 10012, US</p>
+                    <i class="fas fa-home  mr-3"></i> Créteil, 94000, France</p>
                 <p>
-                    <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+                    <a href="mailto:gusto-contact@gmail.com"><i class="fas fa-envelope mr-3"></i>gusto-contact@gmail.com</p></a>
                 <p>
                     <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
                 <p>
@@ -154,14 +156,14 @@
         </div>
     </div>
     <div class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="#"> Opus.com</a>
+        <a href="#"> Gusto-Coffee.com</a>
     </div>
 
 </footer>
 
 
 {% block javascripts %}
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="{{ asset('js/cookiechoices.js') }}"></script>
@@ -196,13 +198,14 @@
                 var date1 = new Date($('#d1').val() + " " + $('#t1').val()).getTime();
                 var date2 = new Date($('#d2').val() + " " + $('#t2').val()).getTime();
                 var msec = date2 - date1;
-                var p = document.getElementById("price").value
+                var price = document.getElementById("price").value;
                 var mins = Math.floor(msec / 60000);
                 var hrs = Math.floor(mins / 60);
                 var days = Math.floor(hrs / 24);
                 var yrs = Math.floor(days / 365);
-                p = hrs * p;
+                p = hrs * price;
                 append(dl, "Prix total: ", p + " € ");
+                document.getElementById("settedPrice").value = p
             });
 
             // trigger change
@@ -220,6 +223,17 @@
             $('#datetimepicker12').datetimepicker({
                 inline: true,
                 sideBySide: true
+            });
+        });
+
+        $(function(){
+            $('*[name=debut]').appendDtpicker({
+                "closeOnSelected": true
+            });
+        });
+        $(function(){
+            $('*[name=fin]').appendDtpicker({
+                "closeOnSelected": true
             });
         });
     </script>

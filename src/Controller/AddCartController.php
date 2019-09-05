@@ -36,7 +36,7 @@ class AddCartController extends AbstractController
         {
             $cart->setFood($supplyFood);
             //$cart->setOffice($supplyOffice);
-            //$cart->setUser($this->getUser());
+            $cart->setUser($this->getUser());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($cart);
             $entityManager->flush();

@@ -3,6 +3,48 @@
 {% block title %}Suivre la discussion{% endblock %}
 
 {% block body %}
+    {% if not app.user %}
+        <main class="my-5 toped">
+            <section class="shopping-cart dark">
+                <div class="container">
+                    <div class="block-heading">
+                        <h2 class="text-uppercase font-weight-bold">
+                            Réponse au post {{ jobs.title }}
+                        </h2>
+                        <div class="card">
+                            <div class="card-body text-center">
+                                Connectez-vous pour profiter de notre réseau de professionnel <a href="{{ path('app_login') }}"><button class="btn peach-gradient my-4 btn-sm" >Connexion</button></a> ou
+                                <a href="{{ path('app_login') }}">Inscrivez-vous</a>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="content">
+                        <div class="card">
+                            <div class="card-header">
+                                {{ jobs.title }}
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">{{ jobs.content }}</p>
+                            </div>
+                            <hr>
+                            <div class="container">
+                                {% for jobsAnswer in jobs.messageJobs %}
+                                    {% if app.user == jobsAnswer.customerMsg %}
+                                        {{ jobsAnswer.customerMsg.lastname }}
+                                    {% else %}
+                                        <p>{{ jobsAnswer.message.author }}</p>
+                                    {% endif %}
+                                    <p>{{ jobsAnswer.content }}</p>
+                                    <hr>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+            </section>
+        </main>
+    {% endif %}
+    {% if is_granted('ROLE_USERS') %}
     <main class="my-5 toped">
         <section class="shopping-cart dark">
             <div class="container">
@@ -21,10 +63,9 @@
                         </div>
                         <hr>
                         <div class="container">
-                            <h6>Reponse</h6>
                             {% for jobsAnswer in jobs.messageJobs %}
                                 {% if app.user == jobsAnswer.customerMsg %}
-                                    Votre message {{ jobsAnswer.id }}
+                                  {{ jobsAnswer.customerMsg.lastname }}
                                 {% else %}
                                 <p>{{ jobsAnswer.message.author }}</p>
                                     {% endif %}
@@ -33,12 +74,13 @@
                             {% endfor %}
                             <form method="post">
                                 <input type="text" class="form-control" id="exampleInputEmail1" name="message" placeholder="Votre réponse .." required>
-                                <button type="submit" class="btn btn-primary">Envoyer</button>
+                                <button type="submit" class="btn peach-gradient my-4 btn-sm">Envoyer</button>
                             </form>
                         </div>
                     </div>
                 </div>
         </section>
     </main>
+    {% endif %}
 
 {% endblock %}

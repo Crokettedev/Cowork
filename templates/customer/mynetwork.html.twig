@@ -8,7 +8,7 @@
             <section class="shopping-cart dark">
                 <div class="container">
                     <div class="block-heading">
-                        <h2 class="text-uppercase font-weight-bold">Réseau</h2>
+                        <h2 class="text-uppercase font-weight-bold">Communauté</h2>
                         <div class="card">
                             <div class="card-body text-center">
                                 Connectez-vous pour profiter de notre réseau de professionnel <a href="{{ path('app_login') }}"><button class="btn peach-gradient my-4 btn-sm" >Connexion</button></a> ou
@@ -28,10 +28,13 @@
                         {% for jobPosts in jobPost %}
                             <div class="card">
                                 <div class="card-header">
-                                    <h6>{{ jobPosts.author }} <p style="float: right">{{ jobPosts.createdAt|date('d-m-Y') }}</p></h6>
+                                    <h6>{{ jobPosts.title }} <p style="float: right">{{ jobPosts.createdAt|date('d-m-Y') }}</p></h6>
                                 </div>
                                 <div class="card-body text-center">
                                     <p class="card-text">{{ jobPosts.content }}</p>
+                                    {% if jobPosts.messageJobs is not empty %}
+                                        <a href="{{ path('discussionJobPost', {id: jobPosts.id, slug: jobPosts.slug}) }}"><button class="btn peach-gradient my-4 btn-sm" >Suivre la discussion</button></a>
+                                    {% endif %}
                                 </div>
                             </div>
                             <hr>
@@ -47,7 +50,7 @@
             <section class="shopping-cart dark">
                 <div class="container">
                     <div class="block-heading">
-                        <h2 class="text-uppercase font-weight-bold">Réseau</h2>
+                        <h2 class="text-uppercase font-weight-bold">Communauté</h2>
                     </div>
                     <div class="content">
                         <div class="row">
